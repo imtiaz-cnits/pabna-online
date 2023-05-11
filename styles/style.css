@@ -1,0 +1,1092 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
+/* sora end */
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&family=Sora&display=swap");
+/* maven pro end */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sora: "Sora", sans-serif;
+  --text-color: #ffffff;
+  --maven-pro: "maven pro", sans-serif;
+  --header-color: #2da7df;
+  --btn-background: #ff8960;
+  --black: black;
+  --footer-color: #3f4f7e;
+}
+
+nav {
+  height: 90vh;
+  background-image: url(../image/hero-bg.png);
+  background-position: cover;
+  background-repeat: no-repeat;
+}
+
+.navber {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.navber .logo img {
+  width: 70%;
+}
+
+.navber ul {
+  display: flex;
+}
+
+.navber ul li {
+  list-style-type: none;
+  margin: 0 10px;
+}
+
+.navber ul li a {
+  text-decoration: none;
+  font-family: var(--sora);
+  color: var(--text-color);
+}
+
+.menu-btn a {
+  text-decoration: none;
+  font-family: var(--sora);
+  background-color: var(--header-color);
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: var(--text-color);
+  box-shadow: 2px 2px 30px rgba(45, 167, 223, 0.8);
+}
+
+.nav-content {
+  text-align: center;
+  padding-top: 130px;
+}
+
+.nav-content h2 {
+  font-family: var(--maven-pro);
+  color: var(--text-color);
+  font-size: 2rem;
+  padding-bottom: 18px;
+  font-weight: 600;
+}
+
+.nav-content h1 {
+  font-family: var(--maven-pro);
+  color: var(--text-color);
+  font-size: 4rem;
+  padding-bottom: 22px;
+  font-weight: 500;
+}
+
+.nav-content p {
+  font-family: var(--sora);
+  font-size: 14px;
+  color: var(--text-color);
+  line-height: 23px;
+  padding-bottom: 40px;
+}
+
+.nav-content p a {
+  text-decoration: none;
+  padding: 10px 30px;
+  border: 3px solid var(--header-color);
+  border-radius: 20px;
+  font-family: var(--maven-pro);
+  box-shadow: 0px 0px 30px rgba(45, 167, 223, 0.8);
+}
+
+@media screen and (max-width: 600px) {
+  .navber {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    display: none;
+  }
+
+  .navber .logo img {
+    width: 40%;
+  }
+}
+
+/* navber end */
+
+.about-our-company {
+  margin-top: 50px;
+}
+
+.about-our {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70%;
+  margin: auto;
+  grid-gap: 10px;
+}
+
+.about-content h3 {
+  line-height: 3rem;
+  font-family: var(--maven-pro);
+  color: var(--header-color);
+}
+
+.about-content h2 {
+  font-family: var(--maven-pro);
+  padding-bottom: 10px;
+}
+
+.about-content p {
+  padding-top: 21px;
+  font-family: var(--sora);
+  color: #3f4f7e;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+.about-content a {
+  text-decoration: none;
+  line-height: 5rem;
+  padding: 10px 30px;
+  color: var(--black);
+  font-family: var(--maven-pro);
+  background-color: var(--text-color);
+  border: 2px solid var(--btn-background);
+  border-radius: 30px;
+  box-shadow: 0px 0px 30px #ff8960;
+}
+
+.about-img img {
+  width: 60%;
+  display: block;
+  margin: auto;
+}
+
+@media screen and (max-width: 950px) {
+  .about-our {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+    grid-gap: 20px;
+  }
+
+  .about-img img {
+    width: 70%;
+    display: block;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .about-our {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    grid-gap: 20px;
+  }
+
+  .about-img img {
+    width: 70%;
+    display: block;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-our {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    grid-gap: 20px;
+  }
+
+  .about-img img {
+    width: 70%;
+    display: block;
+    margin: auto;
+  }
+}
+
+/* our company end */
+.our-service {
+  margin-top: 50px;
+}
+
+.our-service header {
+  text-align: center;
+  font-family: var(--maven-pro);
+}
+
+.our-service header h2 {
+  color: var(--header-color);
+  line-height: 3rem;
+}
+
+.our-service header h3 {
+  line-height: 2rem;
+}
+
+.our-services-container {
+  width: 65%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding-top: 40px;
+  grid-gap: 30px;
+}
+
+.service-card {
+  text-align: center;
+  border: 1px solid var(--header-color);
+  border-radius: 5px;
+  padding: 40px 0;
+  position: relative;
+}
+
+.service-card:hover {
+  box-shadow: 5px 5px 19px #e7e7e7, 5px 5px 19px #e7e7e7;
+  border: none;
+}
+
+.service-card:hover::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: -5px;
+  left: -5px;
+  border-top: 6px solid var(--header-color);
+  border-left: 6px solid var(--header-color);
+  border-radius: 7px;
+}
+
+.service-card:hover::before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  bottom: -5px;
+  right: -5px;
+  border-bottom: 6px solid var(--header-color);
+  border-right: 6px solid var(--header-color);
+  border-radius: 7px;
+}
+
+.service-card img {
+  width: 15%;
+  display: block;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+.service-card h3 {
+  padding-bottom: 10px;
+  font-family: var(--maven-pro);
+}
+
+.service-card p {
+  color: var(--btn-background);
+  font-family: var(--sora);
+  font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  .our-services-container {
+    width: 97%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 40px;
+    grid-gap: 5px;
+  }
+}
+
+/* our services end */
+.ftv-server {
+  margin-top: 50px;
+}
+
+.ftv-server header {
+  text-align: center;
+  font-family: var(--maven-pro);
+}
+
+.ftv-server header h2 {
+  color: var(--header-color);
+  line-height: 3rem;
+}
+
+.ftv-server header h3 {
+  line-height: 2rem;
+}
+
+.ftv-server-container {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  padding-top: 40px;
+  grid-gap: 20px;
+}
+
+.server-card {
+  text-align: center;
+  border-radius: 5px;
+  padding: 20px 0;
+}
+
+.ftv-logo {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.ftv-logo img {
+  width: 100%;
+  height: 60px;
+  object-fit: contain;
+}
+
+.server-card h4 {
+  font-family: var(--maven-pro);
+  padding-top: 20px;
+}
+
+.server-card:hover {
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 11px 11px 22px #e8e8e8, -11px -11px 22px #ffffff;
+}
+
+@media screen and (max-width: 600px) {
+  .ftv-server-container {
+    width: 97%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 40px;
+    grid-gap: 5px;
+  }
+}
+
+/* our services end */
+
+.iptv-links {
+  margin-top: 70px;
+  width: 100%;
+  background-image: url("../image/iptv-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.iptv-header {
+  text-align: center;
+  line-height: 3rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: var(--maven-pro);
+  color: var(--text-color);
+}
+
+.iptv-header .divider {
+  width: 50px;
+  height: 3px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 137, 96, 0.8) -2.25%,
+    rgba(45, 167, 223, 0.8) 102.81%
+  );
+  margin: auto;
+  border-radius: 5px;
+}
+
+.iptv-link-container {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-gap: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.iptv-card {
+  background-color: var(--text-color);
+  padding: 40px 10px;
+  text-align: center;
+  border-radius: 4px;
+  font-family: var(--maven-pro);
+}
+
+.iptv-card h4 {
+  padding-bottom: 30px;
+}
+
+.iptv-logo {
+  width: 100%;
+  height: 90px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iptv-logo a img {
+  width: 100%;
+  height: 70px;
+}
+
+.iptv-card p a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid var(--btn-background);
+  border-radius: 20px;
+  color: var(--btn-background);
+  transition: 0.5s;
+}
+
+.iptv-card p a:hover {
+  background-color: var(--btn-background);
+  color: var(--text-color);
+  border: none;
+}
+
+@media screen and (max-width: 600px) {
+  .iptv-link-container {
+    width: 97%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+/* iptv links sectin end */
+
+.iptv-apps {
+  margin-top: 10px;
+}
+
+.iptv-apps-conatiner {
+  width: 60%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.iptv-apps-card:hover {
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 11px 11px 22px #e8e8e8, -11px -11px 22px #ffffff;
+}
+
+.iptv-header h2 {
+  color: var(--header-color);
+  font-family: var(--maven-pro);
+}
+
+@media screen and (max-width: 600px) {
+  .iptv-apps-conatiner {
+    width: 97%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+}
+
+/* iptv apps end */
+.prising {
+  margin-top: 10px;
+}
+
+.prising-container {
+  width: 60%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.prising-content {
+  width: 300px;
+  margin: auto;
+  font-family: var(--maven-pro);
+  line-height: 2rem;
+  padding-bottom: 20px;
+}
+
+.prising-content h4:last-child {
+  color: var(--btn-background);
+  text-align: end;
+}
+
+.prising-logo {
+  padding-bottom: 10px;
+  line-height: 3rem;
+}
+
+.prising-logo a {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  border-radius: 50%;
+  background-color: #ffc5b0;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
+  transition: all 0.6s;
+}
+
+.prising-logo h1 span {
+  background-image: linear-gradient(90deg, white, white);
+  background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: calc(1em / 16);
+  -webkit-background-clip: text;
+  color: var(--btn-background);
+  font-size: 2.1rem;
+}
+
+.prising-card {
+  background-color: var(--btn-background);
+  transition: all 0.6s;
+  background-image: url("../image/jakha-naka.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 30%;
+  text-align: center;
+  padding: 50px 0;
+  font-family: var(--sora);
+  font-size: 14px;
+  border-radius: 9px;
+  color: var(--text-color);
+}
+
+.prising-card-content i {
+  padding-right: 5px;
+  font-size: 10px;
+}
+
+.prising-card-content {
+  width: 75%;
+  margin: auto;
+  text-align: left;
+  padding-left: 10px;
+  line-height: 2.3rem;
+}
+
+.prising-card-btn span {
+  font-family: var(--maven-pro);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.prising-card-btn sup {
+  font-family: var(--maven-pro);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.prising-card-btn {
+  padding-bottom: 30px;
+}
+
+.prising-card p a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid var(--text-color);
+  border-radius: 20px;
+  color: var(--text-color);
+  transition: 0.5s;
+  background-color: var(--btn-background);
+}
+
+.prising-card:hover p a {
+  border: none;
+}
+
+.prising-card:hover {
+  background-color: var(--black);
+  background-image: url("../image/black-jaka.png");
+  background-position: right top;
+}
+
+.prising-card:hover .prising-logo a {
+  color: var(--text-color);
+  background-color: var(--btn-background);
+}
+
+.prising-card:hover .prising-logo h1 span {
+  background-image: linear-gradient(90deg, white, white);
+  background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: calc(1em / 16);
+  -webkit-background-clip: text;
+  color: var(--black);
+  font-size: 2.1rem;
+}
+
+@media screen and (max-width: 900px) {
+  .prising-container {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .prising-container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .prising-container {
+    width: 98%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  }
+
+  .prising-card {
+    background-color: var(--btn-background);
+    transition: all 0.8s;
+    background-image: url("../image/jakha-naka.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 30%;
+    text-align: center;
+    padding: 19px 0;
+    font-family: var(--sora);
+    font-size: 10px;
+    border-radius: 9px;
+    color: var(--text-color);
+  }
+
+  .prising-card p a {
+    text-decoration: none;
+    border: 1px solid var(--text-color);
+    border-radius: 20px;
+    color: var(--text-color);
+    transition: 0.5s;
+    background-color: var(--btn-background);
+    font-family: var(--sora);
+  }
+
+  .prising-card-btn span {
+    font-family: var(--maven-pro);
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .prising-card-btn sup {
+    font-family: var(--maven-pro);
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .prising-logo {
+    padding-bottom: 10px;
+    line-height: 1rem;
+  }
+
+  .prising-card-content {
+    width: 75%;
+    margin: auto;
+    text-align: left;
+    padding-left: 6px;
+    line-height: 1.3rem;
+  }
+
+  .prising-logo h1 span {
+    background-image: linear-gradient(90deg, white, white);
+    background-clip: text;
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: calc(1em / 16);
+    -webkit-background-clip: text;
+    color: var(--btn-background);
+    font-size: 1.5rem;
+  }
+}
+
+/* prising section end */
+.bkash {
+  margin-top: 50px;
+}
+
+.bikash-container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--maven-pro);
+  background-image: url(../image/bikas-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--text-color);
+}
+
+.bikas-content {
+  text-align: center;
+  line-height: 2rem;
+}
+
+.bikas-content h1 {
+  line-height: 3rem;
+}
+
+.bkash-btn {
+  padding-top: 40px;
+}
+
+.bkash-btn a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid var(--btn-background);
+  border-radius: 20px;
+  color: var(--text-color);
+  box-shadow: 0px 0px 30px #ff8960;
+}
+
+@media screen and (max-width: 600px) {
+  .bikash-container {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--maven-pro);
+    background-image: url(../image/bikas-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--text-color);
+  }
+
+  .bikas-content h1 {
+    font-size: 15px;
+    line-height: 2rem;
+  }
+}
+/* bkash section end */
+.location {
+  background-image: linear-gradient(to left, #080530, #2da3df);
+}
+
+.location-conatiner {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.location-conatiner h1 {
+  padding-bottom: 20px;
+  color: var(--text-color);
+  font-family: var(--maven-pro);
+}
+
+.location-conatiner iframe {
+  width: 70%;
+  height: 50vh;
+}
+
+@media screen and (max-width: 600px) {
+  .location-conatiner iframe {
+    width: 90%;
+    height: 50vh;
+  }
+}
+
+/* our location section end */
+.footer {
+  margin-top: 20px;
+}
+
+.footer-container {
+  width: 70%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 10px;
+  font-family: var(--sora);
+}
+
+.footer-card {
+  line-height: 1.6rem;
+  padding: 15px;
+}
+
+.footer-card img {
+  width: 40%;
+}
+
+.footer-card p {
+  font-size: 14px;
+  color: var(--footer-color);
+  font-family: var(--sora);
+}
+
+.footer-card h5 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: var(--btn-background);
+}
+
+.footer-card h3 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: var(--header-color);
+}
+
+.footer-card i {
+  padding-bottom: 20px;
+}
+
+.footer-card a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.footer-card a:hover {
+  color: var(--header-color);
+}
+
+.footer-mail-icon {
+  margin-right: 10px;
+}
+
+.footer-mail-icon i {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: var(--header-color);
+  border-radius: 50%;
+  color: var(--text-color);
+}
+
+.social-icons {
+  padding-top: 20px;
+}
+
+.social-icons a i {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  color: var(--black);
+  border: 1px solid var(--header-color);
+  transition: all 0.6s;
+}
+
+.social-icons a i:hover {
+  background-color: var(--header-color);
+  color: var(--text-color);
+}
+
+.useful-content a {
+  line-height: 2.6rem;
+  font-size: var(--maven-pro);
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
+}
+
+.social-icons-contacts i {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  color: var(--text-color);
+  background-color: var(--header-color);
+}
+
+.social-icons-contacts a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
+}
+
+.social-icons-contacts p {
+  line-height: 3rem;
+  color: var(--btn-background);
+}
+
+.social-icons-contacts .fa-whatsapp {
+  background-color: green;
+}
+
+.hamid-road {
+  width: 70%;
+  margin: auto;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 750px) {
+  .footer-container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+    font-family: var(--sora);
+  }
+
+  .useful-content a {
+    line-height: 1.5rem;
+    font-size: var(--maven-pro);
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+  }
+
+  .social-icons-contacts p {
+    line-height: 2.3rem;
+    color: var(--btn-background);
+  }
+
+  .footer-card a {
+    font-size: 12px;
+  }
+}
+/* copy right start */
+
+.copy-right {
+  background-image: linear-gradient(to left, #2da3df, #080530);
+}
+
+.copy-right-container {
+  width: 68%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  font-family: var(--sora);
+  color: var(--text-color);
+  font-size: 12px;
+  line-height: 1.5rem;
+}
+
+.copy-right-container ul {
+  display: flex;
+  align-items: center;
+}
+
+.copy-right-container ul li {
+  list-style-type: none;
+  margin: 0 5px;
+}
+
+.copy-right-container ul li i {
+  font-size: 25px;
+  color: var(--text-color);
+  transition: all 0.6s;
+}
+
+.copy-right-container ul li i:hover {
+  color: var(--black);
+}
+
+@media screen and (max-width: 600px) {
+  .copy-right-container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-family: var(--sora);
+    color: var(--text-color);
+    font-size: 10px;
+    line-height: 1.2rem;
+  }
+
+  .copy-right-container ul li i {
+    font-size: 17px;
+    color: var(--text-color);
+    transition: all 0.6s;
+  }
+
+  .copy-right-container ul li {
+    list-style-type: none;
+    margin: 0 2px;
+  }
+}
+
+/* buuton efect */
+.hover a {
+  --color: #560bad;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--header-color);
+  transition: color 0.5s;
+  z-index: 1;
+  border-radius: 30px;
+  font-weight: 500;
+  color: var(--color);
+}
+
+.hover a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--header-color);
+  height: 150px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+.hover a:hover {
+  color: #fff;
+  transform: scale(1.1);
+  letter-spacing: 1.2px;
+}
+
+.hover a:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.5s;
+}
+
+.hover a:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.hover a:active:before {
+  background: var(--header-color);
+  transition: background 0s;
+}
+/* button efect end */

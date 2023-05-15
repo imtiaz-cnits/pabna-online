@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pabna online</title>
-    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="./style.css" />
 
     <!-- Icons Link -->
     <script
@@ -25,22 +25,34 @@
   <body>
     <!-- navifation ber  -->
 
-    <nav>
-      <div class="navber">
-        <div class="logo">
-          <img src="image/pabna-o-logo.png" alt="pabna online loog" />
-        </div>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">FTP</a></li>
-          <li><a href="#">Contact Us</a></li>
+    <section class="hero">
+      <nav>
+        <a href="#" class="logo">
+          <img src="./image/pabna-o-logo.png" alt="pabna-online-logo" />
+        </a>
+        <span class="open"><i class="fa-solid fa-bars"></i></span>
+        <ul class="navItems">
+          <span class="close"><i class="fa-solid fa-xmark"></i></span>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About Us</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">FTP</a>
+          </li>
+          <li>
+            <a href="#">Contact Us</a>
+          </li>
+          <li class="navbar-btn">
+            <a href="#">View Pricing</a>
+          </li>
         </ul>
-        <div class="menu-btn">
-          <a href="#">View Pricing</a>
-        </div>
-      </div>
+      </nav>
       <div class="nav-content">
         <h2>We’re Experienced</h2>
         <h1>Internet Service Provider</h1>
@@ -51,7 +63,7 @@
         </p>
         <p><a href="#">GET STARTED</a></p>
       </div>
-    </nav>
+    </section>
     <!-- navber end -->
 
     <section class="about-our-company">
@@ -513,5 +525,8 @@
     </section>
 
     <!-- footer section end -->
+
+    <!-- script -->
+    <script src="./js/navbar.js"></script>
   </body>
 </html>

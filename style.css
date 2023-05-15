@@ -18,49 +18,114 @@
   --footer-color: #3f4f7e;
 }
 
-nav {
+.hero {
   height: 90vh;
   background-image: url(../image/hero-bg.png);
   background-position: cover;
   background-repeat: no-repeat;
 }
 
-.navber {
+nav {
   display: flex;
   align-items: center;
-  width: 75%;
-  margin: auto;
   justify-content: space-between;
-  height: 80px;
+  background-color: transparent;
+  height: 70px;
+  width: 80%;
+  padding: 5px;
+  margin: auto;
+  font-family: var(--sora);
 }
 
-.navber .logo img {
-  width: 70%;
+.logo {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #fff;
 }
 
-.navber ul {
+nav ul {
   display: flex;
+  align-items: center;
 }
 
-.navber ul li {
-  list-style-type: none;
-  margin: 0 10px;
+nav ul li {
+  list-style: none;
+  margin: 0 20px;
 }
 
-.navber ul li a {
+nav ul li a {
   text-decoration: none;
-  font-family: var(--sora);
-  color: var(--text-color);
+  font-size: 14px;
+  color: #fff;
+  transition: all 0.5s;
 }
 
-.menu-btn a {
-  text-decoration: none;
-  font-family: var(--sora);
-  background-color: var(--header-color);
-  padding: 10px 20px;
-  border-radius: 20px;
-  color: var(--text-color);
+nav ul li a:hover {
+  color: var(--header-color);
+}
+
+.navbar-btn {
+  background-color: #2da7df;
+  padding: 6px 20px;
+  color: #fff;
+  border-radius: 30px;
   box-shadow: 2px 2px 30px rgba(45, 167, 223, 0.8);
+  font-size: 1.1em;
+}
+
+nav .close {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: none;
+}
+
+nav .open {
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    display: block;
+    padding-top: 40px;
+    width: 250px;
+    height: 100%;
+    background-color: #2da7df;
+    transition: 0.5s;
+  }
+
+  nav ul li {
+    margin: 20px;
+  }
+
+  nav ul li:nth-child(1) {
+    margin-top: 0;
+  }
+
+  nav ul li a {
+    font-size: 1.1em;
+  }
+
+  .navbar-btn {
+    display: inline-block;
+  }
+
+  nav .close {
+    display: block;
+  }
+
+  nav .open {
+    display: block;
+  }
 }
 
 .nav-content {

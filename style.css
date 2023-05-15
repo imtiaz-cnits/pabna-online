@@ -20,7 +20,7 @@
 
 .hero {
   height: 90vh;
-  background-image: url(./image/hero-bg.png);
+  background-image: url("./image/hero-bg.png");
   background-position: cover;
   background-repeat: no-repeat;
 }
@@ -816,7 +816,7 @@ nav .open {
   justify-content: center;
   align-items: center;
   font-family: var(--maven-pro);
-  background-image: url(./image/bikas-bg.png);
+  background-image: url("./image/bikas-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--text-color);
@@ -851,7 +851,7 @@ nav .open {
     justify-content: center;
     align-items: center;
     font-family: var(--maven-pro);
-    background-image: url(../image/bikas-bg.png);
+    background-image: url("./image/bikas-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--text-color);

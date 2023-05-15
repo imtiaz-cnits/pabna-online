@@ -20,7 +20,7 @@
 
 .hero {
   height: 90vh;
-  background-image: url(../image/hero-bg.png);
+  background-image: url(./image/hero-bg.png);
   background-position: cover;
   background-repeat: no-repeat;
 }
@@ -453,7 +453,7 @@ nav .open {
 .iptv-links {
   margin-top: 70px;
   width: 100%;
-  background-image: url("../image/iptv-bg.png");
+  background-image: url("./image/iptv-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -639,7 +639,7 @@ nav .open {
 .prising-card {
   background-color: var(--btn-background);
   transition: all 0.6s;
-  background-image: url("../image/jakha-naka.png");
+  background-image: url("./image/jakha-naka.png");
   background-repeat: no-repeat;
   background-position: right top;
   background-size: 30%;
@@ -696,7 +696,7 @@ nav .open {
 
 .prising-card:hover {
   background-color: var(--black);
-  background-image: url("../image/black-jaka.png");
+  background-image: url("./image/black-jaka.png");
   background-position: right top;
 }
 
@@ -747,7 +747,7 @@ nav .open {
   .prising-card {
     background-color: var(--btn-background);
     transition: all 0.8s;
-    background-image: url("../image/jakha-naka.png");
+    background-image: url("./image/jakha-naka.png");
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 30%;
@@ -816,7 +816,7 @@ nav .open {
   justify-content: center;
   align-items: center;
   font-family: var(--maven-pro);
-  background-image: url(../image/bikas-bg.png);
+  background-image: url(./image/bikas-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--text-color);

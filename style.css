@@ -149,7 +149,7 @@ nav .open {
 /* navber end */
 .nav-content {
   text-align: center;
-  padding-top: 130px;
+  padding-top: 150px;
 }
 
 .nav-content h2 {
@@ -186,16 +186,25 @@ nav .open {
 }
 
 @media screen and (max-width: 600px) {
-  .navber {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    display: none;
+  .nav-content {
+    text-align: center;
+    padding-top: 150px;
   }
 
-  .navber .logo img {
-    width: 40%;
+  .nav-content h2 {
+    font-family: var(--maven-pro);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    padding-bottom: 18px;
+    font-weight: 600;
+  }
+
+  .nav-content h1 {
+    font-family: var(--maven-pro);
+    color: var(--text-color);
+    font-size: 2rem;
+    padding-bottom: 22px;
+    font-weight: 600;
   }
 }
 

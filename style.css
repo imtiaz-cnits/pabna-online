@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -29,12 +30,16 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 70px;
   width: 80%;
   padding: 5px;
   margin: auto;
   font-family: var(--sora);
+  z-index: 9999;
 }
 
 .logo {
@@ -60,7 +65,7 @@ nav ul li a {
   transition: all 0.5s;
 }
 
-nav ul li a:hover {
+nav ul li a:not(.navbar-btn a):hover {
   color: var(--header-color);
 }
 
@@ -99,12 +104,18 @@ nav .open {
     padding-top: 40px;
     width: 250px;
     height: 100%;
-    background-color: #2da7df;
+    background-color: var(--btn-background);
     transition: 0.5s;
   }
 
   nav ul li {
-    margin: 20px;
+    margin: 0px;
+    padding: 20px;
+    transition: all 0.3s;
+  }
+
+  nav ul li:hover {
+    background-color: var(--header-color);
   }
 
   nav ul li:nth-child(1) {
@@ -115,8 +126,16 @@ nav .open {
     font-size: 1.1em;
   }
 
+  nav ul li a:hover {
+    color: var(--text-color) !important;
+  }
+
   .navbar-btn {
     display: inline-block;
+    background-color: #f36839;
+    box-shadow: 0px 0px 10px white;
+    transition: 0.5s;
+    margin: 20px 0 0 20px;
   }
 
   nav .close {
@@ -127,7 +146,7 @@ nav .open {
     display: block;
   }
 }
-
+/* navber end */
 .nav-content {
   text-align: center;
   padding-top: 130px;

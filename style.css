@@ -2,6 +2,10 @@
 /* sora end */
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&family=Sora&display=swap");
 /* maven pro end */
+
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Maven+Pro:wght@500&family=Sora&display=swap");
+
+/* hoind siliguri */
 * {
   margin: 0;
   padding: 0;
@@ -17,29 +21,96 @@
   --btn-background: #ff8960;
   --black: black;
   --footer-color: #3f4f7e;
+  --my-h-font-size: 1.8rem;
+  --my-font-size: 1.2rem;
+  --hind-siliguri: "Hind Siliguri" sans-serif;
 }
 
+/* ---- reset ---- */
+body {
+  margin: 0;
+  font: normal 75% Arial, Helvetica, sans-serif;
+}
+canvas {
+  display: block;
+  vertical-align: bottom;
+} /* ---- particles.js container ---- */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 1;
+} /* ---- stats.js ---- */
+.count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13e8e9;
+  font-size: 0.8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+.js-count-particles {
+  font-size: 1.1em;
+}
+#stats,
+.count-particles {
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+.count-particles {
+  border-radius: 0 0 3px 3px;
+}
+
+/* spitermen end */
 .hero {
-  height: 90vh;
+  height: 100vh;
   background-image: url("./image/hero-bg.png");
   background-position: cover;
   background-repeat: no-repeat;
 }
 
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 70px;
-  width: 80%;
-  padding: 5px;
-  margin: auto;
   font-family: var(--sora);
   z-index: 9999;
+  transition: 0.5s;
+}
+
+nav.navactive {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navcontainer {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 70px;
 }
 
 .logo {
@@ -63,6 +134,7 @@ nav ul li a {
   font-size: 14px;
   color: #fff;
   transition: all 0.5s;
+  font-size: 1rem;
 }
 
 nav ul li a:not(.navbar-btn a):hover {
@@ -71,11 +143,17 @@ nav ul li a:not(.navbar-btn a):hover {
 
 .navbar-btn {
   background-color: #2da7df;
-  padding: 6px 20px;
+  padding: 10px 20px;
+  display: inline-block;
   color: #fff;
   border-radius: 30px;
   box-shadow: 2px 2px 30px rgba(45, 167, 223, 0.8);
   font-size: 1.1em;
+  transition: 0.5s;
+}
+
+.navbar-btn:hover {
+  background-color: var(--black);
 }
 
 nav .close {
@@ -95,7 +173,7 @@ nav .open {
   display: none;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1085px) {
   nav ul {
     position: fixed;
     top: 0;
@@ -148,8 +226,12 @@ nav .open {
 }
 /* navber end */
 .nav-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  padding-top: 150px;
+  z-index: 999 !important;
 }
 
 .nav-content h2 {
@@ -178,17 +260,23 @@ nav .open {
 
 .nav-content p a {
   text-decoration: none;
-  padding: 10px 30px;
+  color: var(--text-color);
+  padding: 10px 40px;
   border: 3px solid var(--header-color);
   border-radius: 20px;
   font-family: var(--maven-pro);
   box-shadow: 0px 0px 30px rgba(45, 167, 223, 0.8);
+  z-index: 999999 !important;
+  transition: 0.5s;
+}
+
+.nav-content p a:hover {
+  background-color: var(--header-color);
 }
 
 @media screen and (max-width: 600px) {
   .nav-content {
     text-align: center;
-    padding-top: 150px;
   }
 
   .nav-content h2 {
@@ -202,7 +290,7 @@ nav .open {
   .nav-content h1 {
     font-family: var(--maven-pro);
     color: var(--text-color);
-    font-size: 2rem;
+    font-size: 1.9rem;
     padding-bottom: 22px;
     font-weight: 600;
   }
@@ -226,11 +314,13 @@ nav .open {
   line-height: 3rem;
   font-family: var(--maven-pro);
   color: var(--header-color);
+  font-size: var(--my-h-font-size);
 }
 
 .about-content h2 {
   font-family: var(--maven-pro);
   padding-bottom: 10px;
+  font-size: 1.7rem;
 }
 
 .about-content p {
@@ -251,10 +341,17 @@ nav .open {
   border: 2px solid var(--btn-background);
   border-radius: 30px;
   box-shadow: 0px 0px 30px #ff8960;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.about-content a:hover {
+  background-color: var(--btn-background);
 }
 
 .about-img img {
-  width: 60%;
+  width: 70%;
   display: block;
   margin: auto;
 }
@@ -298,7 +395,7 @@ nav .open {
   .about-our {
     display: grid;
     grid-template-columns: 1fr;
-    width: 70%;
+    width: 80%;
     margin: auto;
     justify-content: center;
     text-align: center;
@@ -309,6 +406,19 @@ nav .open {
     width: 70%;
     display: block;
     margin: auto;
+  }
+
+  .about-content h3 {
+    line-height: 3rem;
+    font-family: var(--maven-pro);
+    color: var(--header-color);
+    font-size: 1.4rem;
+  }
+
+  .about-content h2 {
+    font-family: var(--maven-pro);
+    padding-bottom: 10px;
+    font-size: 1.4rem;
   }
 }
 
@@ -325,10 +435,12 @@ nav .open {
 .our-service header h2 {
   color: var(--header-color);
   line-height: 3rem;
+  font-size: var(--my-h-font-size);
 }
 
 .our-service header h3 {
   line-height: 2rem;
+  font-size: 1.7rem;
 }
 
 .our-services-container {
@@ -387,6 +499,7 @@ nav .open {
 .service-card h3 {
   padding-bottom: 10px;
   font-family: var(--maven-pro);
+  font-size: var(--my-font-size);
 }
 
 .service-card p {
@@ -402,7 +515,8 @@ nav .open {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 40px;
-    grid-gap: 5px;
+    grid-column-gap: 5px;
+    grid-row-gap: 20px;
   }
 }
 
@@ -419,10 +533,12 @@ nav .open {
 .ftv-server header h2 {
   color: var(--header-color);
   line-height: 3rem;
+  font-size: var(--my-h-font-size);
 }
 
 .ftv-server header h3 {
   line-height: 2rem;
+  font-size: 1.7rem;
 }
 
 .ftv-server-container {
@@ -458,6 +574,7 @@ nav .open {
 .server-card h4 {
   font-family: var(--maven-pro);
   padding-top: 20px;
+  font-size: var(--my-font-size);
 }
 
 .server-card:hover {
@@ -474,9 +591,14 @@ nav .open {
     padding-top: 40px;
     grid-gap: 5px;
   }
+
+  .ftv-server header h3 {
+    line-height: 2rem;
+    font-size: 1.3rem;
+  }
 }
 
-/* our services end */
+/* our server end */
 
 .iptv-links {
   margin-top: 70px;
@@ -489,15 +611,16 @@ nav .open {
 
 .iptv-header {
   text-align: center;
-  line-height: 3rem;
+  line-height: 4rem;
   padding-top: 20px;
   padding-bottom: 20px;
   font-family: var(--maven-pro);
   color: var(--text-color);
+  font-size: var(--my-h-font-size);
 }
 
 .iptv-header .divider {
-  width: 50px;
+  width: 90px;
   height: 3px;
   background-image: linear-gradient(
     90deg,
@@ -528,6 +651,7 @@ nav .open {
 
 .iptv-card h4 {
   padding-bottom: 30px;
+  font-size: var(--my-font-size);
 }
 
 .iptv-logo {
@@ -551,6 +675,8 @@ nav .open {
   border-radius: 20px;
   color: var(--btn-background);
   transition: 0.5s;
+  font-size: 15px;
+  font-family: var(--sora);
 }
 
 .iptv-card p a:hover {
@@ -592,7 +718,7 @@ nav .open {
   box-shadow: 11px 11px 22px #e8e8e8, -11px -11px 22px #ffffff;
 }
 
-.iptv-header h2 {
+.iptv-header h4 {
   color: var(--header-color);
   font-family: var(--maven-pro);
 }
@@ -623,11 +749,12 @@ nav .open {
 }
 
 .prising-content {
-  width: 300px;
+  width: 330px;
   margin: auto;
   font-family: var(--maven-pro);
   line-height: 2rem;
   padding-bottom: 20px;
+  font-size: 17px;
 }
 
 .prising-content h4:last-child {
@@ -843,7 +970,7 @@ nav .open {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: var(--maven-pro);
+
   background-image: url("./image/bikas-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -853,23 +980,31 @@ nav .open {
 .bikas-content {
   text-align: center;
   line-height: 2rem;
+  font-family: var(--hind-siliguri);
 }
 
 .bikas-content h1 {
   line-height: 3rem;
+  font-size: var(--my-h-font-size);
 }
 
 .bkash-btn {
-  padding-top: 40px;
+  padding-top: 60px;
 }
 
 .bkash-btn a {
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 10px 30px;
   border: 2px solid var(--btn-background);
   border-radius: 20px;
   color: var(--text-color);
   box-shadow: 0px 0px 30px #ff8960;
+  transition: 0.5s;
+  font-size: 16px;
+}
+
+.bkash-btn a:hover {
+  background-color: var(--btn-background);
 }
 
 @media screen and (max-width: 600px) {
@@ -897,13 +1032,14 @@ nav .open {
 
 .location-conatiner {
   text-align: center;
-  padding: 50px 0;
+  padding: 30px 0;
 }
 
 .location-conatiner h1 {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   color: var(--text-color);
   font-family: var(--maven-pro);
+  font-size: var(--my-h-font-size);
 }
 
 .location-conatiner iframe {
@@ -944,19 +1080,19 @@ nav .open {
 .footer-card p {
   font-size: 14px;
   color: var(--footer-color);
-  font-family: var(--sora);
 }
-
 .footer-card h5 {
   padding-top: 20px;
   padding-bottom: 20px;
   color: var(--btn-background);
+  font-size: 1rem;
 }
 
 .footer-card h3 {
   padding-top: 20px;
   padding-bottom: 20px;
   color: var(--header-color);
+  font-size: 1rem;
 }
 
 .footer-card i {
@@ -1088,7 +1224,7 @@ nav .open {
   padding: 20px 0;
   font-family: var(--sora);
   color: var(--text-color);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5rem;
 }
 

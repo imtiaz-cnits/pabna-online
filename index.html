@@ -25,46 +25,54 @@
   <body>
     <!-- navifation ber  -->
 
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <!-- stats - count particles -->
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
     <section class="hero">
       <nav>
-        <a href="#" class="logo">
-          <img src="./image/pabna-o-logo.png" alt="pabna-online-logo" />
-        </a>
-        <span class="open"><i class="fa-solid fa-bars"></i></span>
-        <ul class="navItems">
-          <span class="close"><i class="fa-solid fa-xmark"></i></span>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#about">About Us</a>
-          </li>
-          <li>
-            <a href="#service">Services</a>
-          </li>
-          <li>
-            <a href="#ftv">FTP</a>
-          </li>
-          <li>
-            <a href="#contact">Contact Us</a>
-          </li>
-          <li class="navbar-btn">
-            <a href="#">View Pricing</a>
-          </li>
-        </ul>
+        <div class="navcontainer">
+          <a href="#" class="logo">
+            <img src="./image/pabna-o-logo.png" alt="pabna-online-logo" />
+          </a>
+          <span class="open"><i class="fa-solid fa-bars"></i></span>
+          <ul class="navItems">
+            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#about">About Us</a>
+            </li>
+            <li>
+              <a href="#service">Services</a>
+            </li>
+            <li>
+              <a href="#ftv">FTP</a>
+            </li>
+            <li>
+              <a href="#contact">Contact Us</a>
+            </li>
+            <li class="navbar-btn">
+              <a href="#prising">View Pricing</a>
+            </li>
+          </ul>
+        </div>
       </nav>
-
-      <div class="nav-content">
-        <h2>We’re Experienced</h2>
-        <h1>Internet Service Provider</h1>
-        <p>
-          Contented continued any happiness instantly objection yet her
-          allowance.<br />
-          Use correct day new brought tendious.
-        </p>
-        <p><a href="#">GET STARTED</a></p>
-      </div>
     </section>
+    <div class="nav-content">
+      <h2>We’re Experienced</h2>
+      <h1>Internet Service Provider</h1>
+      <p>
+        Contented continued any happiness instantly objection yet her
+        allowance.<br />
+        Use correct day new brought tendious.
+      </p>
+      <p><a href="#prising">GET STARTED</a></p>
+    </div>
     <!-- navber end -->
 
     <section class="about-our-company" id="about">
@@ -193,7 +201,7 @@
     <!-- our services section end  -->
     <section class="iptv-links">
       <header class="iptv-header">
-        <h2>IPTV Links</h2>
+        <h4>IPTV Links</h4>
         <div class="divider"></div>
       </header>
       <div class="iptv-link-container">
@@ -237,7 +245,7 @@
     <!-- iptv links section end -->
     <section class="iptv-apps">
       <header class="iptv-header">
-        <h2>IPTV Apps</h2>
+        <h4>IPTV Apps</h4>
         <div class="divider"></div>
       </header>
       <div class="iptv-apps-conatiner">
@@ -267,9 +275,9 @@
       </div>
     </section>
     <!-- iptv-apps-sectioin end -->
-    <section class="prising">
+    <section class="prising" id="prising">
       <header class="iptv-header">
-        <h2>PRICING</h2>
+        <h4>PRICING</h4>
         <div class="divider"></div>
       </header>
       <div class="prising-content">

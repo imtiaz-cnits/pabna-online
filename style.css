@@ -41,8 +41,8 @@ canvas {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: black;
-  opacity: 0.5;
+  /* background-color: black;
+  opacity: 0.5; */
   background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
@@ -50,7 +50,7 @@ canvas {
   z-index: 1;
 } /* ---- stats.js ---- */
 .count-particles {
-  background: #000022;
+  background: #080530;
   position: absolute;
   top: 48px;
   left: 0;
@@ -81,7 +81,7 @@ canvas {
   border-radius: 0 0 3px 3px;
 }
 
-/* spitermen end */
+/* spiterman end */
 .hero {
   height: 100vh;
   background-image: url("./image/hero-bg.png");
@@ -104,13 +104,13 @@ nav.navactive {
 }
 
 .navcontainer {
-  width: 80%;
+  width: 90%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  height: 70px;
+  height: 90px;
 }
 
 .logo {
@@ -225,13 +225,13 @@ nav .open {
   }
 }
 /* navber end */
+
 .nav-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  z-index: 999 !important;
 }
 
 .nav-content h2 {
@@ -240,6 +240,7 @@ nav .open {
   font-size: 2rem;
   padding-bottom: 18px;
   font-weight: 600;
+  z-index: 2;
 }
 
 .nav-content h1 {
@@ -258,7 +259,7 @@ nav .open {
   padding-bottom: 40px;
 }
 
-.nav-content p a {
+.nav-content button {
   text-decoration: none;
   color: var(--text-color);
   padding: 10px 40px;
@@ -266,8 +267,8 @@ nav .open {
   border-radius: 20px;
   font-family: var(--maven-pro);
   box-shadow: 0px 0px 30px rgba(45, 167, 223, 0.8);
-  z-index: 999999 !important;
   transition: 0.5s;
+  z-index: 2 !important;
 }
 
 .nav-content p a:hover {
@@ -277,6 +278,7 @@ nav .open {
 @media screen and (max-width: 600px) {
   .nav-content {
     text-align: center;
+    width: 100%;
   }
 
   .nav-content h2 {
@@ -299,7 +301,7 @@ nav .open {
 /* navber end */
 
 .about-our-company {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .about-our {
@@ -315,6 +317,7 @@ nav .open {
   font-family: var(--maven-pro);
   color: var(--header-color);
   font-size: var(--my-h-font-size);
+  padding-bottom: 10px;
 }
 
 .about-content h2 {
@@ -424,7 +427,7 @@ nav .open {
 
 /* our company end */
 .our-service {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .our-service header {
@@ -436,11 +439,13 @@ nav .open {
   color: var(--header-color);
   line-height: 3rem;
   font-size: var(--my-h-font-size);
+  padding-bottom: 10px;
 }
 
 .our-service header h3 {
   line-height: 2rem;
   font-size: 1.7rem;
+  padding-bottom: 10px;
 }
 
 .our-services-container {
@@ -510,19 +515,18 @@ nav .open {
 
 @media screen and (max-width: 600px) {
   .our-services-container {
-    width: 97%;
+    width: 90%;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding-top: 40px;
-    grid-column-gap: 5px;
-    grid-row-gap: 20px;
+    grid-gap: 20px;
   }
 }
 
 /* our services end */
 .ftv-server {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .ftv-server header {
@@ -534,11 +538,13 @@ nav .open {
   color: var(--header-color);
   line-height: 3rem;
   font-size: var(--my-h-font-size);
+  padding-bottom: 10px;
 }
 
 .ftv-server header h3 {
   line-height: 2rem;
   font-size: 1.7rem;
+  padding-bottom: 10px;
 }
 
 .ftv-server-container {
@@ -547,7 +553,8 @@ nav .open {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   padding-top: 40px;
-  grid-gap: 20px;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
 }
 
 .server-card {
@@ -584,24 +591,24 @@ nav .open {
 
 @media screen and (max-width: 600px) {
   .ftv-server-container {
-    width: 97%;
+    width: 90%;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding-top: 40px;
-    grid-gap: 5px;
+    grid-gap: 20px;
   }
 
   .ftv-server header h3 {
     line-height: 2rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 }
 
 /* our server end */
 
 .iptv-links {
-  margin-top: 70px;
+  margin-top: 100px;
   width: 100%;
   background-image: url("./image/iptv-bg.png");
   background-repeat: no-repeat;
@@ -687,11 +694,11 @@ nav .open {
 
 @media screen and (max-width: 600px) {
   .iptv-link-container {
-    width: 97%;
+    width: 90%;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 5px;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -700,7 +707,7 @@ nav .open {
 /* iptv links sectin end */
 
 .iptv-apps {
-  margin-top: 10px;
+  margin-top: 100px;
 }
 
 .iptv-apps-conatiner {
@@ -725,11 +732,11 @@ nav .open {
 
 @media screen and (max-width: 600px) {
   .iptv-apps-conatiner {
-    width: 97%;
+    width: 90%;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 5px;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
     padding-top: 30px;
     padding-bottom: 40px;
   }
@@ -746,6 +753,7 @@ nav .open {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
+  justify-content: center;
 }
 
 .prising-content {
@@ -870,7 +878,7 @@ nav .open {
   font-size: 2.1rem;
 }
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
   .prising-container {
     width: 80%;
     margin: auto;
@@ -878,19 +886,19 @@ nav .open {
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
   }
-}
+} */
 
 @media screen and (max-width: 700px) {
   .prising-container {
     width: 90%;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-gap: 20px;
   }
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .prising-container {
     width: 98%;
     margin: auto;
@@ -958,7 +966,7 @@ nav .open {
     color: var(--btn-background);
     font-size: 1.5rem;
   }
-}
+} */
 
 /* prising section end */
 .bkash {
@@ -1064,7 +1072,7 @@ nav .open {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 10px;
+  grid-gap: 5px;
   font-family: var(--sora);
 }
 
@@ -1074,11 +1082,11 @@ nav .open {
 }
 
 .footer-card img {
-  width: 40%;
+  width: 45%;
 }
 
 .footer-card p {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--footer-color);
 }
 .footer-card h5 {
@@ -1092,7 +1100,7 @@ nav .open {
   padding-top: 20px;
   padding-bottom: 20px;
   color: var(--header-color);
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .footer-card i {
@@ -1129,14 +1137,15 @@ nav .open {
 }
 
 .social-icons a i {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
   border-radius: 50%;
   color: var(--black);
   border: 1px solid var(--header-color);
   transition: all 0.6s;
+  font-size: 15px;
 }
 
 .social-icons a i:hover {
@@ -1146,7 +1155,7 @@ nav .open {
 
 .useful-content a {
   line-height: 2.6rem;
-  font-size: var(--maven-pro);
+  font-family: var(--maven-pro);
   text-decoration: none;
   color: var(--black);
   font-weight: bold;
@@ -1180,12 +1189,12 @@ nav .open {
 .hamid-road {
   width: 70%;
   margin: auto;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 @media screen and (max-width: 750px) {
   .footer-container {
-    width: 90%;
+    width: 99%;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -1193,21 +1202,30 @@ nav .open {
     font-family: var(--sora);
   }
 
-  .useful-content a {
+  .useful-content p a {
     line-height: 1.5rem;
-    font-size: var(--maven-pro);
+    font-family: var(--maven-pro);
     text-decoration: none;
     color: var(--black);
     font-weight: bold;
+    font-size: 1rem;
   }
 
   .social-icons-contacts p {
     line-height: 2.3rem;
     color: var(--btn-background);
+    font-size: 1rem;
   }
 
   .footer-card a {
-    font-size: 12px;
+    font-size: 14px;
+  }
+
+  .footer-card h3 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--header-color);
+    font-size: 1.4rem;
   }
 }
 /* copy right start */
@@ -1262,7 +1280,7 @@ nav .open {
   }
 
   .copy-right-container ul li i {
-    font-size: 17px;
+    font-size: 18px;
     color: var(--text-color);
     transition: all 0.6s;
   }

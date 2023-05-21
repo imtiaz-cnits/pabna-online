@@ -85,8 +85,10 @@ canvas {
 .hero {
   height: 100vh;
   background-image: url("./image/hero-bg.png");
-  background-position: cover;
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 nav {
@@ -104,7 +106,7 @@ nav.navactive {
 }
 
 .navcontainer {
-  width: 90%;
+  width: 75%;
   margin: auto;
   display: flex;
   align-items: center;
@@ -173,6 +175,17 @@ nav .open {
   display: none;
 }
 
+@media screen and (max-width: 1250px) {
+  nav ul li {
+    padding: 0 15px;
+    margin: 0;
+  }
+
+  nav ul li a {
+    font-size: 1em;
+  }
+}
+
 @media screen and (max-width: 1085px) {
   nav ul {
     position: fixed;
@@ -232,6 +245,7 @@ nav .open {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
 }
 
 .nav-content h2 {
@@ -259,23 +273,34 @@ nav .open {
   padding-bottom: 40px;
 }
 
-.nav-content button {
+.hero-btn a {
   text-decoration: none;
+  padding: 10px 30px;
+  border: 2px solid var(--header-color);
+  border-radius: 30px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
   color: var(--text-color);
-  padding: 10px 40px;
-  border: 3px solid var(--header-color);
-  border-radius: 20px;
-  font-family: var(--maven-pro);
-  box-shadow: 0px 0px 30px rgba(45, 167, 223, 0.8);
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  display: inline-block;
+  font-size: 1.2rem;
+  box-shadow: 2px 2px 30px rgba(45, 167, 223, 0.8);
   transition: 0.5s;
-  z-index: 2 !important;
+  font-family: var(--sora);
+}
+
+.hero-btn a:hover {
+  background-color: var(--black);
+  border: 2px solid var(--black);
 }
 
 .nav-content p a:hover {
   background-color: var(--header-color);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .nav-content {
     text-align: center;
     width: 100%;
@@ -743,11 +768,11 @@ nav .open {
 }
 
 /* iptv apps end */
-.prising {
+.pricing {
   margin-top: 10px;
 }
 
-.prising-container {
+.pricing-container {
   width: 60%;
   margin: auto;
   display: grid;
@@ -756,7 +781,7 @@ nav .open {
   justify-content: center;
 }
 
-.prising-content {
+.pricing-content {
   width: 330px;
   margin: auto;
   font-family: var(--maven-pro);
@@ -765,17 +790,17 @@ nav .open {
   font-size: 17px;
 }
 
-.prising-content h4:last-child {
+.pricing-content h4:last-child {
   color: var(--btn-background);
   text-align: end;
 }
 
-.prising-logo {
+.pricing-logo {
   padding-bottom: 10px;
   line-height: 3rem;
 }
 
-.prising-logo a {
+.pricing-logo a {
   width: 50px;
   height: 50px;
   margin: auto;
@@ -789,7 +814,7 @@ nav .open {
   transition: all 0.6s;
 }
 
-.prising-logo h1 span {
+.pricing-logo h1 span {
   background-image: linear-gradient(90deg, white, white);
   background-clip: text;
   -webkit-text-stroke-color: transparent;
@@ -799,7 +824,7 @@ nav .open {
   font-size: 2.1rem;
 }
 
-.prising-card {
+.pricing-card {
   background-color: var(--btn-background);
   transition: all 0.6s;
   background-image: url("./image/jakha-naka.png");
@@ -814,12 +839,12 @@ nav .open {
   color: var(--text-color);
 }
 
-.prising-card-content i {
+.pricing-card-content i {
   padding-right: 5px;
   font-size: 10px;
 }
 
-.prising-card-content {
+.pricing-card-content {
   width: 75%;
   margin: auto;
   text-align: left;
@@ -827,23 +852,23 @@ nav .open {
   line-height: 2.3rem;
 }
 
-.prising-card-btn span {
+.pricing-card-btn span {
   font-family: var(--maven-pro);
   font-size: 25px;
   font-weight: 800;
 }
 
-.prising-card-btn sup {
+.pricing-card-btn sup {
   font-family: var(--maven-pro);
   font-size: 20px;
   font-weight: bold;
 }
 
-.prising-card-btn {
+.pricing-card-btn {
   padding-bottom: 30px;
 }
 
-.prising-card p a {
+.pricing-card p a {
   text-decoration: none;
   padding: 10px 20px;
   border: 2px solid var(--text-color);
@@ -853,22 +878,22 @@ nav .open {
   background-color: var(--btn-background);
 }
 
-.prising-card:hover p a {
+.pricing-card:hover p a {
   border: none;
 }
 
-.prising-card:hover {
+.pricing-card:hover {
   background-color: var(--black);
   background-image: url("./image/black-jaka.png");
   background-position: right top;
 }
 
-.prising-card:hover .prising-logo a {
+.pricing-card:hover .prising-logo a {
   color: var(--text-color);
   background-color: var(--btn-background);
 }
 
-.prising-card:hover .prising-logo h1 span {
+.pricing-card:hover .prising-logo h1 span {
   background-image: linear-gradient(90deg, white, white);
   background-clip: text;
   -webkit-text-stroke-color: transparent;
@@ -889,7 +914,7 @@ nav .open {
 } */
 
 @media screen and (max-width: 700px) {
-  .prising-container {
+  .pricing-container {
     width: 90%;
     margin: auto;
     display: grid;

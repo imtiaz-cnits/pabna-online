@@ -23,7 +23,7 @@
   --footer-color: #3f4f7e;
   --my-h-font-size: 1.8rem;
   --my-font-size: 1.2rem;
-  --hind-siliguri: "Hind Siliguri" sans-serif;
+  --hind-siliguri: "Hind Siliguri";
 }
 
 /* ---- reset ---- */
@@ -289,6 +289,7 @@ nav .open {
   box-shadow: 2px 2px 30px rgba(45, 167, 223, 0.8);
   transition: 0.5s;
   font-family: var(--sora);
+  background-color: var(--header-color);
 }
 
 .hero-btn a:hover {
@@ -368,7 +369,7 @@ nav .open {
   background-color: var(--text-color);
   border: 2px solid var(--btn-background);
   border-radius: 30px;
-  box-shadow: 0px 0px 30px #ff8960;
+  box-shadow: 0px 0px 10px #ff8960;
   font-size: 1rem;
   font-weight: bold;
   transition: 0.5s;
@@ -376,6 +377,7 @@ nav .open {
 
 .about-content a:hover {
   background-color: var(--btn-background);
+  color: var(--text-color);
 }
 
 .about-img img {
@@ -1029,7 +1031,7 @@ nav .open {
   text-decoration: none;
   padding: 10px 30px;
   border: 2px solid var(--btn-background);
-  border-radius: 20px;
+  border-radius: 30px;
   color: var(--text-color);
   box-shadow: 0px 0px 30px #ff8960;
   transition: 0.5s;

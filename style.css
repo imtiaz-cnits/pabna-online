@@ -1374,9 +1374,21 @@ nav .open {
 
 .chat-icon {
   position: fixed;
-  width: 65px;
+  width: 60px;
   bottom: 20px;
   left: 20px;
   z-index: 9999 !important;
 }
 /* chat icon */
+
+/* scroll thumb design */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--header-color);
+  border-radius: 15px;
+}
+
+/* scroll thumb design */

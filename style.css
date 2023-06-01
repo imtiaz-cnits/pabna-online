@@ -82,6 +82,7 @@ canvas {
 }
 
 /* spiterman end */
+
 .hero {
   height: 100vh;
   background-image: url("./image/hero-bg.png");
@@ -259,17 +260,19 @@ nav .open {
 
 .nav-content h1 {
   font-family: var(--maven-pro);
-  color: var(--text-color);
+  color: #f36839;
   font-size: 4rem;
   padding-bottom: 22px;
   font-weight: 500;
+  text-shadow: #00000039 3px 3px;
 }
 
 .nav-content p {
   font-family: var(--sora);
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-color);
-  line-height: 23px;
+  line-height: 28px;
+  padding-top: 20px;
   padding-bottom: 40px;
 }
 
@@ -1214,7 +1217,7 @@ nav .open {
 }
 
 .hamid-road {
-  width: 70%;
+  width: 80%;
   margin: auto;
   font-size: 15px;
 }
@@ -1383,7 +1386,7 @@ nav .open {
 
 /* scroll thumb design */
 body::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 body::-webkit-scrollbar-thumb {

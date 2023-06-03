@@ -1281,12 +1281,14 @@ nav .open {
   transition: 0.5s;
 }
 
-.back-top a {
+.back-top {
   position: fixed;
   right: 30px;
-  bottom: 40px;
-  width: 30px;
-  height: 30px;
+  bottom: 30px;
+}
+
+#bt-top {
+  display: none;
 }
 
 .back-top a:hover {

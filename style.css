@@ -491,7 +491,7 @@ nav .open {
   text-align: center;
   border: 1px solid var(--header-color);
   border-radius: 5px;
-  padding: 40px 0;
+  padding: 40px 10px;
   position: relative;
 }
 
@@ -859,7 +859,7 @@ nav .open {
 
 .pricing-card-btn span {
   font-family: var(--maven-pro);
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 800;
 }
 
@@ -1276,24 +1276,21 @@ nav .open {
   line-height: 1.5rem;
 }
 
-.copy-right-container ul {
-  display: flex;
-  align-items: center;
+.back-top a {
+  font-size: 20px;
+  transition: 0.5s;
 }
 
-.copy-right-container ul li {
-  list-style-type: none;
-  margin: 0 5px;
+.back-top a {
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  width: 30px;
+  height: 30px;
 }
 
-.copy-right-container ul li i {
-  font-size: 25px;
-  color: var(--text-color);
-  transition: all 0.6s;
-}
-
-.copy-right-container ul li i:hover {
-  color: var(--black);
+.back-top a:hover {
+  color: var(--btn-background);
 }
 
 @media screen and (max-width: 600px) {
@@ -1307,17 +1304,6 @@ nav .open {
     color: var(--text-color);
     font-size: 10px;
     line-height: 1.2rem;
-  }
-
-  .copy-right-container ul li i {
-    font-size: 18px;
-    color: var(--text-color);
-    transition: all 0.6s;
-  }
-
-  .copy-right-container ul li {
-    list-style-type: none;
-    margin: 0 2px;
   }
 }
 

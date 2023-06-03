@@ -1,600 +1,634 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pabna Online - Internet Service Provider</title>
+    <link rel="stylesheet" href="./style.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pabna Online - Internet Service Provider</title>
-  <link rel="stylesheet" href="./style.css" />
+    <!-- Icons Link -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- fontawsome icon cdn -->
+    <script
+      src="https://kit.fontawesome.com/95f6be8030.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- fontawesome icon cdn -->
 
-  <!-- Icons Link -->
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <!-- fontawsome icon cdn -->
-  <script src="https://kit.fontawesome.com/95f6be8030.js" crossorigin="anonymous"></script>
-  <!-- fontawesome icon cdn -->
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="/image/fav-icon" />
+    <!-- favicon -->
+  </head>
 
-  <!-- favicon -->
-  <link rel="icon" type="image/x-icon" href="/image/fav-icon" />
-  <!-- favicon -->
-</head>
+  <body>
+    <!-- navifation ber  -->
 
-<body>
-  <!-- navifation ber  -->
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <!-- stats - count particles -->
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <section class="hero">
+      <nav>
+        <div class="navcontainer">
+          <a href="#" class="logo">
+            <img src="./image/pabna-o-logo.png" alt="pabna-online-logo" />
+          </a>
+          <span class="open"><i class="fa-solid fa-bars"></i></span>
+          <ul class="navItems">
+            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#about">About Us</a>
+            </li>
+            <li>
+              <a href="#service">Services</a>
+            </li>
+            <li>
+              <a href="#ftv">FTP</a>
+            </li>
+            <li>
+              <a href="#contact">Contact Us</a>
+            </li>
+            <li class="navbar-btn">
+              <a href="#pricing">View Pricing</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-  <!-- particles.js container -->
-  <div id="particles-js"></div>
-  <!-- stats - count particles -->
-  <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
-  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <!-- stats.js lib -->
-  <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
-  <section class="hero">
-    <nav>
-      <div class="navcontainer">
-        <a href="#" class="logo">
-          <img src="./image/pabna-o-logo.png" alt="pabna-online-logo" />
-        </a>
-        <span class="open"><i class="fa-solid fa-bars"></i></span>
-        <ul class="navItems">
-          <span class="close"><i class="fa-solid fa-xmark"></i></span>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#about">About Us</a>
-          </li>
-          <li>
-            <a href="#service">Services</a>
-          </li>
-          <li>
-            <a href="#ftv">FTP</a>
-          </li>
-          <li>
-            <a href="#contact">Contact Us</a>
-          </li>
-          <li class="navbar-btn">
-            <a href="#pricing">View Pricing</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <div class="nav-content">
+        <h2>We’re Experienced</h2>
+        <h1
+          style="
+            background-color: #ffffff29;
+            text-align: center;
+            width: max-content;
+            margin: auto;
+            font-weight: 600;
+          "
+        >
+          &nbsp; Internet Service Provider &nbsp;
+        </h1>
 
-    <div class="nav-content">
-      <h2>We’re Experienced</h2>
-      <h1 style="background-color: #ffffff29; text-align: center; width: max-content; margin: auto; font-weight: 600;">
-        &nbsp; Internet
-        Service
-        Provider &nbsp;</h1>
-
-      <p>
-        Expert Internet Service Provider Based on Your Town Pabna.<br />
-        Let's get connected to the modern world.
-      </p>
-    </div>
-    <div class="hero-btn">
-      <a href="#pricing">Get Started</a>
-    </div>
-  </section>
-
-  <!-- navber end -->
-  <!-- massenger chat -->
-  <!-- Messenger Chat plugin Code -->
-  <div id="fb-root"></div>
-
-  <!-- Your Chat plugin code -->
-  <div id="fb-customer-chat" class="fb-customerchat"></div>
-
-  <script>
-    var chatbox = document.getElementById("fb-customer-chat");
-    chatbox.setAttribute("page_id", "112407695192531");
-    chatbox.setAttribute("attribution", "biz_inbox");
-  </script>
-
-  <!-- Your SDK code -->
-  <script>
-    window.fbAsyncInit = function () {
-      FB.init({
-        xfbml: true,
-        version: "v16.0",
-      });
-    };
-
-    (function (d, s, id) {
-      var js,
-        fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    })(document, "script", "facebook-jssdk");
-  </script>
-  <!-- massenger chat -->
-
-  <!-- whatsapp chat -->
-  <div class="chat-icon">
-    <a href="https://wa.me/+8801675249230" target="_blank"><img src="image/whatsapp.png" alt="whatsapp" /></a>
-  </div>
-
-  <!-- whatsapp chat -->
-  <!-- about our -->
-
-  <section class="about-our-company" id="about">
-    <div class="about-our">
-      <div class="about-content">
-        <h3>ABOUT OUR COMPANY</h3>
-        <h2>
-          Get connected with our high<br />
-          speed internet services
-        </h2>
         <p>
-          Hundreds of satisfied customers are already getting more buyers<br />
-          and earn much mor If you are looking for a reliable partner for
-          the<br />
-          growth of your business.
-        </p>
-        <a href="#">Get Connected</a>
-      </div>
-      <div class="about-img">
-        <img src="image/about-image.png" alt="about-image" />
-      </div>
-    </div>
-  </section>
-  <!-- about our section end -->
-  <!-- our services -->
-  <section class="our-service" id="service">
-    <header>
-      <h2>OUR SERVICES</h2>
-      <h3>
-        We are Specialized in the<br />
-        Following Services
-      </h3>
-    </header>
-    <div class="our-services-container">
-      <div class="service-card">
-        <a href="#pricing"> <img src="image/internet.png" alt="internet" /></a>
-        <h3>Broadband Internet</h3>
-        <p>Magazine and housed in a gilded in frame.</p>
-      </div>
-      <div class="service-card">
-        <a href="#"><img src="image/ftv.png" alt="internet" /></a>
-        <h3>FTP Service</h3>
-        <p>Magazine and housed in a gilded in frame.</p>
-      </div>
-      <div class="service-card">
-        <a href="#"> <img src="image/iptv.png" alt="internet" /></a>
-        <h3>IPTV Service</h3>
-        <p>Magazine and housed in a gilded in frame.</p>
-      </div>
-    </div>
-  </section>
-  <!-- our services end  -->
-  <!-- ftv server -->
-  <section class="ftv-server" id="ftv">
-    <header>
-      <h2>FTP SERVER</h2>
-      <h3>
-        Choose what you want to watch,<br />
-        with various FTP servers
-      </h3>
-    </header>
-    <div class="ftv-server-container">
-      <div class="server-card">
-        <div class="ftv-logo">
-          <a href="http://10.16.100.244"><img src="image/icc.png" alt="icc" /></a>
-        </div>
-        <h4>ICC FTP</h4>
-      </div>
-      <div class="server-card">
-        <div class="ftv-logo">
-          <a href="http://circleftp.net"><img src="image/circle-ftv.png" alt="icc" /></a>
-        </div>
-        <h4>Circle FTP</h4>
-      </div>
-      <div class="server-card">
-        <div class="ftv-logo">
-          <a href="http://www.metromedia.digital/"><img src="image/metro-media.png" alt="icc" /></a>
-        </div>
-        <h4>Metro Media FTP</h4>
-      </div>
-      <div class="server-card">
-        <div class="ftv-logo">
-          <a href="http://timepassbd.live/"><img src="image/time-pass.png" alt="icc" /></a>
-        </div>
-        <h4>TimePassBD FTP</h4>
-      </div>
-      <div class="server-card">
-        <div class="ftv-logo">
-          <a href="http://plusbox.tv/"><img src="image/plusbox.png" alt="icc" /></a>
-        </div>
-        <h4>PlusBox FTP</h4>
-      </div>
-      <div class="server-card">
-        <div class="ftv-logo">
-          <a href="http://ctghall.com/"><img src="image/ctghall.png" alt="icc" /></a>
-        </div>
-        <h4>CTG Hall FTP</h4>
-      </div>
-      <div class="server-card">
-        <div class="ftv-logo">
-          <a href="http://fs.ebox.live/"><img src="image/fs ebox live.png" alt="icc" /></a>
-        </div>
-        <h4>fs ebox Live FTP</h4>
-      </div>
-      <div class="server-card">
-        <div class="ftv-logo">
-          <a href="http://172.16.50.4"><img src="image/samonline.png" alt="icc" /></a>
-        </div>
-        <h4>Sam Online FTP</h4>
-      </div>
-      <div class="server-card">
-        <div class="ftv-logo">
-          <a href="http://fileserver.ebox.live/"><img src="image/E-Box Live!.png" alt="icc" /></a>
-        </div>
-        <h4>E-Box Live FTP</h4>
-      </div>
-      <div class="server-card">
-        <div class="ftv-logo">
-          <a href="https://naturalbd.com/"><img src="image/natural-bd.png" alt="icc" /></a>
-        </div>
-        <h4>Naturalbd FTP</h4>
-      </div>
-    </div>
-  </section>
-  <!-- ftv server -->
-
-  <!-- iptv links -->
-
-  <section class="iptv-links">
-    <header class="iptv-header">
-      <h4>IPTV Links</h4>
-      <div class="divider"></div>
-    </header>
-    <div class="iptv-link-container">
-      <div class="iptv-card">
-        <h4>ICC IPTV Link</h4>
-        <div class="iptv-logo">
-          <a href="http://10.16.100.244"><img src="image/icc.png" alt="icc" /></a>
-        </div>
-        <p class="hover"><a href="http://10.16.100.244">WATCH NOW</a></p>
-      </div>
-      <div class="iptv-card">
-        <h4>Circle IPTV Link</h4>
-        <div class="iptv-logo">
-          <a href="http://circleftp.net"><img src="image/circle-ftv.png" alt="icc" /></a>
-        </div>
-        <p class="hover"><a href="http://circleftp.net">WATCH NOW</a></p>
-      </div>
-      <div class="iptv-card">
-        <h4>E-BOX TV Link</h4>
-        <div class="iptv-logo">
-          <a href="http://tv2.ebox.live/"><img src="image/tv.png" alt="icc" /></a>
-        </div>
-        <p class="hover"><a href="http://tv2.ebox.live/">WATCH NOW</a></p>
-      </div>
-      <div class="iptv-card">
-        <h4>Unix TV Link</h4>
-        <div class="iptv-logo">
-          <a href="http://30.30.30.30/"><img src="image/tv.png" alt="icc" /></a>
-        </div>
-        <p class="hover"><a href="http://30.30.30.30/">WATCH NOW</a></p>
-      </div>
-      <div class="iptv-card">
-        <h4>ebox IPTV Link</h4>
-        <div class="iptv-logo">
-          <a href="http://tv2.ebox.live/"><img src="image/tv.png" alt="icc" /></a>
-        </div>
-        <p class="hover"><a href="http://tv2.ebox.live/">WATCH NOW</a></p>
-      </div>
-    </div>
-  </section>
-  <!-- iptv links section end -->
-
-  <!-- iptv apps -->
-  <section class="iptv-apps">
-    <header class="iptv-header">
-      <h4>IPTV Apps</h4>
-      <div class="divider"></div>
-    </header>
-    <div class="iptv-apps-conatiner">
-      <div class="iptv-apps-card iptv-card">
-        <h4>Toffee App</h4>
-        <div class="iptv-apps-logo iptv-logo">
-          <a href="https://play.google.com/store/apps/details?id=com.banglalink.toffee"><img src="image/toffe.png"
-              alt="icc" /></a>
-        </div>
-        <p class="hover">
-          <a href="https://play.google.com/store/apps/details?id=com.banglalink.toffee">WATCH NOW</a>
+          Expert Internet Service Provider Based on Your Town Pabna.<br />
+          Let's get connected to the modern world.
         </p>
       </div>
-      <div class="iptv-apps-card iptv-card">
-        <h4>Red Box App</h4>
-        <div class="iptv-apps-logo iptv-logo">
-          <h1 style="color: #db0606">Red Box</h1>
-        </div>
-        <p class="hover">
-          <a href="https://pabnaonline.net/wp-content/uploads/2022/11/base.apk">WATCH NOW</a>
-        </p>
+      <div class="hero-btn">
+        <a href="#pricing">Get Started</a>
       </div>
-      <div class="iptv-apps-card iptv-card">
-        <h4>CTGbox App</h4>
-        <div class="iptv-apps-logo iptv-logo">
-          <a href="http://ctgbox.com/"><img src="image/ct-tv-removebg-preview.png" alt="icc" /></a>
-        </div>
-        <p class="hover"><a href="http://ctgbox.com/">WATCH NOW</a></p>
-      </div>
-    </div>
-  </section>
-  <!-- iptv-apps-sectioin end -->
+    </section>
 
-  <!-- pricing -->
-  <section class="pricing" id="pricing">
-    <header class="iptv-header">
-      <h4>PRICING</h4>
-      <div class="divider"></div>
-    </header>
-    <div class="pricing-content">
-      <h4>No hidden charges!</h4>
-      <h4>Choose your best plan.</h4>
+    <!-- navber end -->
+
+    <!-- whatsapp chat -->
+    <div class="chat-icon">
+      <a href="https://wa.me/+8801675249230" target="_blank"
+        ><img src="image/whatsapp.png" alt="whatsapp"
+      /></a>
     </div>
 
-    <div class="pricing-container">
-      <div class="pricing-card">
-        <div class="pricing-logo">
-          <a href="#">
-            <ion-icon name="cloud-outline"></ion-icon>
-          </a>
-          <h1>Package <span>1</span></h1>
-        </div>
+    <!-- whatsapp chat -->
+    <!-- about our -->
 
-        <div class="pricing-card-content">
-          <p><i class="fa-solid fa-square-check"></i>10 Mbps/s Bandwidth</p>
-          <p><i class="fa-solid fa-square-check"></i>Youtube Speed 30 Mbps</p>
+    <section class="about-our-company" id="about">
+      <div class="about-our">
+        <div class="about-content">
+          <h3>ABOUT OUR COMPANY</h3>
+          <h2>
+            Get connected with our high<br />
+            speed internet services
+          </h2>
           <p>
-            <i class="fa-solid fa-square-check"></i>Facebook Speed 25 Mbps
+            Hundreds of satisfied customers are already getting more buyers<br />
+            and earn much mor If you are looking for a reliable partner for
+            the<br />
+            growth of your business.
           </p>
-          <p><i class="fa-solid fa-square-check"></i>Movie Server 25 Mbps</p>
-          <p><i class="fa-solid fa-square-check"></i>BDIX 25 Mbps</p>
+          <a href="#">Get Connected</a>
         </div>
-        <div class="pricing-card-btn">
-          <p><sup>৳</sup><span>500</span>/month</p>
+        <div class="about-img">
+          <img src="image/about-image.png" alt="about-image" />
         </div>
-        <p class="hover"><a href="#">CHOOSE PLAN</a></p>
       </div>
-      <div class="pricing-card">
-        <div class="pricing-logo">
-          <a href="#">
-            <ion-icon name="cloud-outline"></ion-icon>
-          </a>
-          <h1>Package <span>2</span></h1>
+    </section>
+    <!-- about our section end -->
+    <!-- our services -->
+    <section class="our-service" id="service">
+      <header>
+        <h2>OUR SERVICES</h2>
+        <h3>
+          We are Specialized in the<br />
+          Following Services
+        </h3>
+      </header>
+      <div class="our-services-container">
+        <div class="service-card">
+          <a href="#pricing">
+            <img src="image/internet.png" alt="internet"
+          /></a>
+          <h3>Broadband Internet</h3>
+          <p>Magazine and housed in a gilded in frame.</p>
         </div>
+        <div class="service-card">
+          <a href="#"><img src="image/ftv.png" alt="internet" /></a>
+          <h3>FTP Service</h3>
+          <p>Magazine and housed in a gilded in frame.</p>
+        </div>
+        <div class="service-card">
+          <a href="#"> <img src="image/iptv.png" alt="internet" /></a>
+          <h3>IPTV Service</h3>
+          <p>Magazine and housed in a gilded in frame.</p>
+        </div>
+      </div>
+    </section>
+    <!-- our services end  -->
+    <!-- ftv server -->
+    <section class="ftv-server" id="ftv">
+      <header>
+        <h2>FTP SERVER</h2>
+        <h3>
+          Choose what you want to watch,<br />
+          with various FTP servers
+        </h3>
+      </header>
+      <div class="ftv-server-container">
+        <div class="server-card">
+          <div class="ftv-logo">
+            <a href="http://10.16.100.244"
+              ><img src="image/icc.png" alt="icc"
+            /></a>
+          </div>
+          <h4>ICC FTP</h4>
+        </div>
+        <div class="server-card">
+          <div class="ftv-logo">
+            <a href="http://circleftp.net"
+              ><img src="image/circle-ftv.png" alt="icc"
+            /></a>
+          </div>
+          <h4>Circle FTP</h4>
+        </div>
+        <div class="server-card">
+          <div class="ftv-logo">
+            <a href="http://www.metromedia.digital/"
+              ><img src="image/metro-media.png" alt="icc"
+            /></a>
+          </div>
+          <h4>Metro Media FTP</h4>
+        </div>
+        <div class="server-card">
+          <div class="ftv-logo">
+            <a href="http://timepassbd.live/"
+              ><img src="image/time-pass.png" alt="icc"
+            /></a>
+          </div>
+          <h4>TimePassBD FTP</h4>
+        </div>
+        <div class="server-card">
+          <div class="ftv-logo">
+            <a href="http://plusbox.tv/"
+              ><img src="image/plusbox.png" alt="icc"
+            /></a>
+          </div>
+          <h4>PlusBox FTP</h4>
+        </div>
+        <div class="server-card">
+          <div class="ftv-logo">
+            <a href="http://ctghall.com/"
+              ><img src="image/ctghall.png" alt="icc"
+            /></a>
+          </div>
+          <h4>CTG Hall FTP</h4>
+        </div>
+        <div class="server-card">
+          <div class="ftv-logo">
+            <a href="http://fs.ebox.live/"
+              ><img src="image/fs ebox live.png" alt="icc"
+            /></a>
+          </div>
+          <h4>fs ebox Live FTP</h4>
+        </div>
+        <div class="server-card">
+          <div class="ftv-logo">
+            <a href="http://172.16.50.4"
+              ><img src="image/samonline.png" alt="icc"
+            /></a>
+          </div>
+          <h4>Sam Online FTP</h4>
+        </div>
+        <div class="server-card">
+          <div class="ftv-logo">
+            <a href="http://fileserver.ebox.live/"
+              ><img src="image/E-Box Live!.png" alt="icc"
+            /></a>
+          </div>
+          <h4>E-Box Live FTP</h4>
+        </div>
+        <div class="server-card">
+          <div class="ftv-logo">
+            <a href="https://naturalbd.com/"
+              ><img src="image/natural-bd.png" alt="icc"
+            /></a>
+          </div>
+          <h4>Naturalbd FTP</h4>
+        </div>
+      </div>
+    </section>
+    <!-- ftv server -->
 
-        <div class="pricing-card-content">
-          <p><i class="fa-solid fa-square-check"></i>20 Mbps/s Bandwidth</p>
-          <p><i class="fa-solid fa-square-check"></i>Youtube Speed 50 Mbps</p>
-          <p>
-            <i class="fa-solid fa-square-check"></i>Facebook Speed 40 Mbps
-          </p>
-          <p><i class="fa-solid fa-square-check"></i>Movie Server 50 Mbps</p>
-          <p><i class="fa-solid fa-square-check"></i>BDIX 50 Mbps</p>
-        </div>
-        <div class="pricing-card-btn">
-          <p><sup>৳</sup><span>800</span>/month</p>
-        </div>
-        <p class="hover"><a href="#">CHOOSE PLAN</a></p>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-logo">
-          <a href="#">
-            <ion-icon name="cloud-outline"></ion-icon>
-          </a>
-          <h1>Package <span>3</span></h1>
-        </div>
-        <div class="pricing-card-content">
-          <p><i class="fa-solid fa-square-check"></i>25 Mbps/s Bandwidth</p>
-          <p><i class="fa-solid fa-square-check"></i>Youtube Speed 70 Mbps</p>
-          <p>
-            <i class="fa-solid fa-square-check"></i>Facebook Speed 60 Mbps
-          </p>
-          <p><i class="fa-solid fa-square-check"></i>Movie Server 70 Mbps</p>
-          <p><i class="fa-solid fa-square-check"></i>BDIX 70 Mbps</p>
-        </div>
-        <div class="pricing-card-btn">
-          <p><sup>৳</sup><span>1000</span>/month</p>
-        </div>
-        <p class="hover"><a href="#">CHOOSE PLAN</a></p>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-logo">
-          <a href="#">
-            <ion-icon name="cloud-outline"></ion-icon>
-          </a>
-          <h1>Package <span>4</span></h1>
-        </div>
-        <div class="pricing-card-content">
-          <p><i class="fa-solid fa-square-check"></i>30 Mbps/s Bandwidth</p>
-          <p>
-            <i class="fa-solid fa-square-check"></i>Youtube Speed 100 Mbps
-          </p>
-          <p>
-            <i class="fa-solid fa-square-check"></i>Facebook Speed 80 Mbps
-          </p>
-          <p><i class="fa-solid fa-square-check"></i>Movie Server 90 Mbps</p>
-          <p><i class="fa-solid fa-square-check"></i>BDIX 90 Mbps</p>
-        </div>
-        <div class="pricing-card-btn">
-          <p><sup>৳</sup><span>1200</span>/month</p>
-        </div>
-        <p class="hover"><a href="#">CHOOSE PLAN</a></p>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-logo">
-          <a href="#">
-            <ion-icon name="cloud-outline"></ion-icon>
-          </a>
-          <h1>Package <span>5</span></h1>
-        </div>
-        <div class="pricing-card-content">
-          <p><i class="fa-solid fa-square-check"></i>40 Mbps/s Bandwidth</p>
-          <p>
-            <i class="fa-solid fa-square-check"></i>Youtube Speed 120 Mbps
-          </p>
-          <p>
-            <i class="fa-solid fa-square-check"></i>Facebook Speed 100 Mbps
-          </p>
-          <p><i class="fa-solid fa-square-check"></i>Movie Server 110 Mbps</p>
-          <p><i class="fa-solid fa-square-check"></i>BDIX 110 Mbps</p>
-        </div>
-        <div class="pricing-card-btn">
-          <p><sup>৳</sup><span>1500</span>/month</p>
-        </div>
-        <p class="hover"><a href="#">CHOOSE PLAN</a></p>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-logo">
-          <a href="#">
-            <ion-icon name="cloud-outline"></ion-icon>
-          </a>
-          <h1>Package <span>6</span></h1>
-        </div>
-        <div class="pricing-card-content">
-          <p><i class="fa-solid fa-square-check"></i>50 Mbps/s Bandwidth</p>
-          <p>
-            <i class="fa-solid fa-square-check"></i>Youtube Speed 150 Mbps
-          </p>
-          <p>
-            <i class="fa-solid fa-square-check"></i>Facebook Speed 120 Mbps
-          </p>
-          <p><i class="fa-solid fa-square-check"></i>Movie Server 130 Mbps</p>
-          <p><i class="fa-solid fa-square-check"></i>BDIX 130 Mbps</p>
-        </div>
-        <div class="pricing-card-btn">
-          <p><sup>৳</sup><span>2000</span>/month</p>
-        </div>
-        <p class="hover"><a href="#">CHOOSE PLAN</a></p>
-      </div>
-    </div>
-  </section>
-  <!-- prising section end -->
+    <!-- iptv links -->
 
-  <!-- bkash -->
-
-  <section class="bkash">
-    <div class="bikash-container">
-      <div class="bikas-content">
-        <h1>আপনার ইন্টারনেট বিল বিকাশের মাধ্যমে পে করার</h1>
-        <h1>নির্দেশাবলি দেখতে</h1>
-
-        <div class="bkash-btn">
-          <a href="https://pabnaonline.net/bkash-payment-instruction/">এখানে ক্লিক করুন</a>
+    <section class="iptv-links">
+      <header class="iptv-header">
+        <h4>IPTV Links</h4>
+        <div class="divider"></div>
+      </header>
+      <div class="iptv-link-container">
+        <div class="iptv-card">
+          <h4>ICC IPTV Link</h4>
+          <div class="iptv-logo">
+            <a href="http://10.16.100.244"
+              ><img src="image/icc.png" alt="icc"
+            /></a>
+          </div>
+          <p class="hover"><a href="http://10.16.100.244">WATCH NOW</a></p>
+        </div>
+        <div class="iptv-card">
+          <h4>Circle IPTV Link</h4>
+          <div class="iptv-logo">
+            <a href="http://circleftp.net"
+              ><img src="image/circle-ftv.png" alt="icc"
+            /></a>
+          </div>
+          <p class="hover"><a href="http://circleftp.net">WATCH NOW</a></p>
+        </div>
+        <div class="iptv-card">
+          <h4>E-BOX TV Link</h4>
+          <div class="iptv-logo">
+            <a href="http://tv2.ebox.live/"
+              ><img src="image/tv.png" alt="icc"
+            /></a>
+          </div>
+          <p class="hover"><a href="http://tv2.ebox.live/">WATCH NOW</a></p>
+        </div>
+        <div class="iptv-card">
+          <h4>Unix TV Link</h4>
+          <div class="iptv-logo">
+            <a href="http://30.30.30.30/"
+              ><img src="image/tv.png" alt="icc"
+            /></a>
+          </div>
+          <p class="hover"><a href="http://30.30.30.30/">WATCH NOW</a></p>
+        </div>
+        <div class="iptv-card">
+          <h4>ebox IPTV Link</h4>
+          <div class="iptv-logo">
+            <a href="http://tv2.ebox.live/"
+              ><img src="image/tv.png" alt="icc"
+            /></a>
+          </div>
+          <p class="hover"><a href="http://tv2.ebox.live/">WATCH NOW</a></p>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- bkash section end -->
+    </section>
+    <!-- iptv links section end -->
 
-  <!-- location -->
-  <section class="location">
-    <div class="location-conatiner">
-      <h1>OUR OFFICE LOCATION</h1>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4365.67501599949!2d89.23581115108303!3d24.00743753329592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe9b5b4a35c9e7%3A0xcb692fab6b815d87!2sCodeNext%20IT%20Solution!5e0!3m2!1sen!2sbd!4v1683702676032!5m2!1sen!2sbd"
-        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </section>
-  <!--oyr location section end -->
-
-  <!-- footer -->
-  <section class="footer" id="contact">
-    <div class="footer-container">
-      <div class="footer-card">
-        <div class="footer-logo">
-          <img src="image/pabna-o-logo.png" alt="pabna online" />
+    <!-- iptv apps -->
+    <section class="iptv-apps">
+      <header class="iptv-header">
+        <h4>IPTV Apps</h4>
+        <div class="divider"></div>
+      </header>
+      <div class="iptv-apps-conatiner">
+        <div class="iptv-apps-card iptv-card">
+          <h4>Toffee App</h4>
+          <div class="iptv-apps-logo iptv-logo">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.banglalink.toffee"
+              ><img src="image/toffe.png" alt="icc"
+            /></a>
+          </div>
+          <p class="hover">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.banglalink.toffee"
+              >WATCH NOW</a
+            >
+          </p>
         </div>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text
-          ever since the 1500s, when an unknown printer.
-        </p>
-        <h5>Ask any question?</h5>
-        <p>
-          <span class="footer-mail-icon"><i class="fa-regular fa-envelope-open"></i></span><a
-            href="mailto:info@pabnaonline.net">
-            info@pabnaonline.net</a>
-        </p>
-        <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <div class="iptv-apps-card iptv-card">
+          <h4>Red Box App</h4>
+          <div class="iptv-apps-logo iptv-logo">
+            <h1 style="color: #db0606">Red Box</h1>
+          </div>
+          <p class="hover">
+            <a
+              href="https://pabnaonline.net/wp-content/uploads/2022/11/base.apk"
+              >WATCH NOW</a
+            >
+          </p>
         </div>
-      </div>
-      <div class="footer-card">
-        <h3>Useful Links</h3>
-        <div class="useful-content">
-          <p><a href="#"> About Us</a></p>
-          <p><a href="#"> FTP</a></p>
-          <p><a href="#"> Terms & Conditions</a></p>
-          <p><a href="#"> Our Partners</a></p>
+        <div class="iptv-apps-card iptv-card">
+          <h4>CTGbox App</h4>
+          <div class="iptv-apps-logo iptv-logo">
+            <a href="http://ctgbox.com/"
+              ><img src="image/ct-tv-removebg-preview.png" alt="icc"
+            /></a>
+          </div>
+          <p class="hover"><a href="http://ctgbox.com/">WATCH NOW</a></p>
         </div>
       </div>
-      <div class="footer-card">
-        <h3>Contact Us</h3>
+    </section>
+    <!-- iptv-apps-sectioin end -->
 
-        <div class="social-icons-contacts">
-          <p>
-            <i class="fa-brands fa-whatsapp"></i>
-            <a href="tel: +88">01718 408 293</a>
-          </p>
-          <p>
-            <i class="fa-solid fa-phone-volume"></i>
-            <a href="tel:+8809639109639">096 391 09 639</a>
-            <span>(Customer Support)</span>
-          </p>
-          <p>
-            <i class="fa-solid fa-phone-volume"></i>
-            <a href="tel:+8801862112286">01862 112 286</a>
-            <span>(Account Management)</span>
-          </p>
-          <p>
-            <i class="fa-solid fa-phone-volume"></i>
-            <a href="tel:+8801705550857">01705 550 857</a>
-          </p>
-          <p>
-            <i class="fa-solid fa-location-dot"></i>
-            <a>3rd Floor, Hazi Akbar ali Super Market, </a>
-          </p>
-          <div class="hamid-road">
-            <a> Abdul Hamid Road, Pabna</a>
+    <!-- pricing -->
+    <section class="pricing" id="pricing">
+      <header class="iptv-header">
+        <h4>PRICING</h4>
+        <div class="divider"></div>
+      </header>
+      <div class="pricing-content">
+        <h4>No hidden charges!</h4>
+        <h4>Choose your best plan.</h4>
+      </div>
+
+      <div class="pricing-container">
+        <div class="pricing-card">
+          <div class="pricing-logo">
+            <a href="#">
+              <ion-icon name="cloud-outline"></ion-icon>
+            </a>
+            <h1>Package <span>1</span></h1>
+          </div>
+
+          <div class="pricing-card-content">
+            <p><i class="fa-solid fa-square-check"></i>10 Mbps/s Bandwidth</p>
+            <p><i class="fa-solid fa-square-check"></i>Youtube Speed 30 Mbps</p>
+            <p>
+              <i class="fa-solid fa-square-check"></i>Facebook Speed 25 Mbps
+            </p>
+            <p><i class="fa-solid fa-square-check"></i>Movie Server 25 Mbps</p>
+            <p><i class="fa-solid fa-square-check"></i>BDIX 25 Mbps</p>
+          </div>
+          <div class="pricing-card-btn">
+            <p><sup>৳</sup><span>500</span>/month</p>
+          </div>
+          <p class="hover"><a href="#">CHOOSE PLAN</a></p>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-logo">
+            <a href="#">
+              <ion-icon name="cloud-outline"></ion-icon>
+            </a>
+            <h1>Package <span>2</span></h1>
+          </div>
+
+          <div class="pricing-card-content">
+            <p><i class="fa-solid fa-square-check"></i>20 Mbps/s Bandwidth</p>
+            <p><i class="fa-solid fa-square-check"></i>Youtube Speed 50 Mbps</p>
+            <p>
+              <i class="fa-solid fa-square-check"></i>Facebook Speed 40 Mbps
+            </p>
+            <p><i class="fa-solid fa-square-check"></i>Movie Server 50 Mbps</p>
+            <p><i class="fa-solid fa-square-check"></i>BDIX 50 Mbps</p>
+          </div>
+          <div class="pricing-card-btn">
+            <p><sup>৳</sup><span>800</span>/month</p>
+          </div>
+          <p class="hover"><a href="#">CHOOSE PLAN</a></p>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-logo">
+            <a href="#">
+              <ion-icon name="cloud-outline"></ion-icon>
+            </a>
+            <h1>Package <span>3</span></h1>
+          </div>
+          <div class="pricing-card-content">
+            <p><i class="fa-solid fa-square-check"></i>25 Mbps/s Bandwidth</p>
+            <p><i class="fa-solid fa-square-check"></i>Youtube Speed 70 Mbps</p>
+            <p>
+              <i class="fa-solid fa-square-check"></i>Facebook Speed 60 Mbps
+            </p>
+            <p><i class="fa-solid fa-square-check"></i>Movie Server 70 Mbps</p>
+            <p><i class="fa-solid fa-square-check"></i>BDIX 70 Mbps</p>
+          </div>
+          <div class="pricing-card-btn">
+            <p><sup>৳</sup><span>1000</span>/month</p>
+          </div>
+          <p class="hover"><a href="#">CHOOSE PLAN</a></p>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-logo">
+            <a href="#">
+              <ion-icon name="cloud-outline"></ion-icon>
+            </a>
+            <h1>Package <span>4</span></h1>
+          </div>
+          <div class="pricing-card-content">
+            <p><i class="fa-solid fa-square-check"></i>30 Mbps/s Bandwidth</p>
+            <p>
+              <i class="fa-solid fa-square-check"></i>Youtube Speed 100 Mbps
+            </p>
+            <p>
+              <i class="fa-solid fa-square-check"></i>Facebook Speed 80 Mbps
+            </p>
+            <p><i class="fa-solid fa-square-check"></i>Movie Server 90 Mbps</p>
+            <p><i class="fa-solid fa-square-check"></i>BDIX 90 Mbps</p>
+          </div>
+          <div class="pricing-card-btn">
+            <p><sup>৳</sup><span>1200</span>/month</p>
+          </div>
+          <p class="hover"><a href="#">CHOOSE PLAN</a></p>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-logo">
+            <a href="#">
+              <ion-icon name="cloud-outline"></ion-icon>
+            </a>
+            <h1>Package <span>5</span></h1>
+          </div>
+          <div class="pricing-card-content">
+            <p><i class="fa-solid fa-square-check"></i>40 Mbps/s Bandwidth</p>
+            <p>
+              <i class="fa-solid fa-square-check"></i>Youtube Speed 120 Mbps
+            </p>
+            <p>
+              <i class="fa-solid fa-square-check"></i>Facebook Speed 100 Mbps
+            </p>
+            <p><i class="fa-solid fa-square-check"></i>Movie Server 110 Mbps</p>
+            <p><i class="fa-solid fa-square-check"></i>BDIX 110 Mbps</p>
+          </div>
+          <div class="pricing-card-btn">
+            <p><sup>৳</sup><span>1500</span>/month</p>
+          </div>
+          <p class="hover"><a href="#">CHOOSE PLAN</a></p>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-logo">
+            <a href="#">
+              <ion-icon name="cloud-outline"></ion-icon>
+            </a>
+            <h1>Package <span>6</span></h1>
+          </div>
+          <div class="pricing-card-content">
+            <p><i class="fa-solid fa-square-check"></i>50 Mbps/s Bandwidth</p>
+            <p>
+              <i class="fa-solid fa-square-check"></i>Youtube Speed 150 Mbps
+            </p>
+            <p>
+              <i class="fa-solid fa-square-check"></i>Facebook Speed 120 Mbps
+            </p>
+            <p><i class="fa-solid fa-square-check"></i>Movie Server 130 Mbps</p>
+            <p><i class="fa-solid fa-square-check"></i>BDIX 130 Mbps</p>
+          </div>
+          <div class="pricing-card-btn">
+            <p><sup>৳</sup><span>2000</span>/month</p>
+          </div>
+          <p class="hover"><a href="#">CHOOSE PLAN</a></p>
+        </div>
+      </div>
+    </section>
+    <!-- prising section end -->
+
+    <!-- bkash -->
+
+    <section class="bkash">
+      <div class="bikash-container">
+        <div class="bikas-content">
+          <h1>আপনার ইন্টারনেট বিল বিকাশের মাধ্যমে পে করার</h1>
+          <h1>নির্দেশাবলি দেখতে</h1>
+
+          <div class="bkash-btn">
+            <a href="https://pabnaonline.net/bkash-payment-instruction/"
+              >এখানে ক্লিক করুন</a
+            >
           </div>
         </div>
       </div>
-    </div>
-    <div class="copy-right">
-      <div class="copy-right-container">
-        <p>
-          © Copyright PABNA ONLINE.net. All Rights Reserved. <br />
-          Developed by <a href="https://www.codenextit.com/"
-            style="text-decoration: underline; color: #fff; font-weight: 600;" target="_blank">CodeNext
-            IT</a>.
-        </p>
-        <ul>
-          <li>Back To Top</li>
-          <li>
-            <a href="#"><i class="fa-solid fa-circle-arrow-up"></i></a>
-          </li>
-        </ul>
+    </section>
+    <!-- bkash section end -->
+
+    <!-- location -->
+    <section class="location">
+      <div class="location-conatiner">
+        <h1>OUR OFFICE LOCATION</h1>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227.7929077542913!2d89.23751159053505!3d24.006844305705968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe9b5b4a35c9e7%3A0xcb692fab6b815d87!2sCodeNext%20IT%20Solution!5e0!3m2!1sen!2sbd!4v1685784652503!5m2!1sen!2sbd"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
-    </div>
-  </section>
+    </section>
+    <!--oyr location section end -->
 
-  <!-- footer section end -->
+    <!-- footer -->
+    <section class="footer" id="contact">
+      <div class="footer-container">
+        <div class="footer-card">
+          <div class="footer-logo">
+            <img src="image/pabna-o-logo.png" alt="pabna online" />
+          </div>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer.
+          </p>
+          <h5>Ask any question?</h5>
+          <p>
+            <span class="footer-mail-icon"
+              ><i class="fa-regular fa-envelope-open"></i></span
+            ><a href="mailto:info@pabnaonline.net"> info@pabnaonline.net</a>
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-card">
+          <h3>Useful Links</h3>
+          <div class="useful-content">
+            <p><a href="#"> About Us</a></p>
+            <p><a href="#"> FTP</a></p>
+            <p><a href="#"> Terms & Conditions</a></p>
+            <p><a href="#"> Our Partners</a></p>
+          </div>
+        </div>
+        <div class="footer-card">
+          <h3>Contact Us</h3>
 
-  <!-- script -->
-  <script src="./js/navbar.js"></script>
-  <!-- script -->
-</body>
+          <div class="social-icons-contacts">
+            <p>
+              <i class="fa-brands fa-whatsapp"></i>
+              <a href="tel: +88">01718 408 293</a>
+            </p>
+            <p>
+              <i class="fa-solid fa-phone-volume"></i>
+              <a href="tel:+8809639109639">096 391 09 639</a>
+              <span>(Customer Support)</span>
+            </p>
+            <p>
+              <i class="fa-solid fa-phone-volume"></i>
+              <a href="tel:+8801862112286">01862 112 286</a>
+              <span>(Account Management)</span>
+            </p>
+            <p>
+              <i class="fa-solid fa-phone-volume"></i>
+              <a href="tel:+8801705550857">01705 550 857</a>
+            </p>
+            <p>
+              <i class="fa-solid fa-location-dot"></i>
+              <a>3rd Floor, Hazi Akbar ali Super Market, </a>
+            </p>
+            <div class="hamid-road">
+              <a> Abdul Hamid Road, Pabna</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="copy-right">
+        <div class="copy-right-container">
+          <p>
+            © Copyright PABNA ONLINE.net. All Rights Reserved. <br />
+            Developed by
+            <a
+              href="https://www.codenextit.com/"
+              style="text-decoration: underline; color: #fff; font-weight: 600"
+              target="_blank"
+              >CodeNext IT</a
+            >.
+          </p>
+        </div>
+      </div>
+      <div class="back-top">
+        <a href="#"><i class="fa-solid fa-circle-arrow-up"></i></a>
+      </div>
+    </section>
+
+    <!-- footer section end -->
+
+    <!-- script -->
+    <script src="./js/navbar.js"></script>
+    <!-- script -->
+  </body>
 </html>

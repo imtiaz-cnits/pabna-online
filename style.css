@@ -1277,8 +1277,9 @@ nav .open {
 }
 
 .back-top a {
-  font-size: 20px;
+  font-size: 40px;
   transition: 0.5s;
+  color: green;
 }
 
 .back-top {

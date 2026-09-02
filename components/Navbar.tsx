@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Sun, Moon, Menu, X, Wifi } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(true);
@@ -103,24 +103,16 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Logo */}
+          {/* Brand Logo with Website-img/logo-1.jpg */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-400 to-blue-600 p-0.5 shadow-lg shadow-cyan-500/20">
-              <div className="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
-                <Wifi className="w-5 h-5 text-cyan-400" />
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-white">
-                PABNA<span className="text-cyan-400">ONLINE</span>
-              </span>
-              <span className="text-[9px] uppercase font-bold tracking-widest text-slate-300 -mt-1">
-                Internet Service Provider
-              </span>
-            </div>
+            <img
+              src="/Website-img/logo-1.jpg"
+              alt="Pabna Online Logo"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain rounded-lg shadow-md"
+            />
           </Link>
 
-          {/* Desktop Navigation Links with Subtle Neon Glow Border */}
+          {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 xl:gap-2 bg-slate-950/80 dark:bg-slate-900/80 p-1.5 rounded-full border border-cyan-500/30 shadow-[0_0_15px_rgba(0,195,255,0.15)] backdrop-blur-md transition-all duration-300">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
@@ -159,17 +151,27 @@ export default function Navbar() {
               )}
             </button>
 
-            {/* Modern Professional View Pricing Button */}
+            {/* View Pricing Button with Cyan Gradient Matching Active Menu Theme */}
             <a
               href="#pricing"
-              className="relative group px-6 py-2 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 text-slate-950 font-extrabold text-xs shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105 transition-all duration-300 overflow-hidden cursor-pointer"
+              className="relative group px-8 py-3 rounded-full bg-gradient-to-r from-[#00c3ff] via-[#0099ff] to-[#0284c7] hover:from-[#00d4ff] hover:via-[#00aaff] hover:to-[#0396e6] text-white font-extrabold text-xs tracking-wider shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 overflow-hidden cursor-pointer flex items-center justify-center border border-white/30"
             >
-              <span className="relative z-10">View Pricing</span>
-              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
+              {/* Professional Concentric WiFi Signal Radar Background Waves */}
+              <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none opacity-40 group-hover:opacity-80 transition-opacity">
+                <div className="w-8 h-8 rounded-full border border-white/80 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
+                <div className="w-16 h-16 rounded-full border border-white/50 animate-[ping_2.8s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
+                <div className="w-24 h-24 rounded-full border border-cyan-100/30 animate-[ping_3.6s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
+              </div>
+
+              {/* Crisp Bold White Text Only */}
+              <span className="relative z-10 text-white tracking-widest font-black">View Pricing</span>
+
+              {/* Smooth Glass Sheen Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
             </a>
           </div>
 
-          {/* Mobile Topbar Controls: Dark Toggle on Left of Hamburger Menu */}
+          {/* Mobile Topbar Controls */}
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={toggleDarkMode}
@@ -190,7 +192,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Offcanvas Drawer & Backdrop (Left to Right Smooth Transition) */}
+      {/* Mobile Offcanvas Drawer & Backdrop */}
       <div
         onClick={() => setMobileMenuOpen(false)}
         className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 ${
@@ -207,9 +209,11 @@ export default function Navbar() {
         <div>
           {/* Offcanvas Header */}
           <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
-            <span className="text-lg font-black tracking-tight">
-              PABNA<span className="text-cyan-400">ONLINE</span>
-            </span>
+            <img
+              src="/Website-img/logo-1.jpg"
+              alt="Pabna Online Logo"
+              className="h-12 w-auto object-contain rounded-lg"
+            />
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="p-2 rounded-lg bg-white/10 text-white hover:bg-white/20 cursor-pointer"
@@ -219,7 +223,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Navigation Links with Active State */}
+          {/* Navigation Links */}
           <nav className="space-y-3">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
@@ -240,14 +244,21 @@ export default function Navbar() {
               );
             })}
 
-            {/* View Pricing button placed directly under Contact Us */}
-            <div className="pt-2">
+            {/* View Pricing Button inside mobile menu */}
+            <div className="pt-3">
               <a
                 href="#pricing"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-center py-3 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 text-slate-950 font-extrabold text-sm shadow-md hover:shadow-cyan-500/30 transition-all"
+                className="relative group flex items-center justify-center w-full text-center py-3 rounded-xl bg-gradient-to-r from-[#00c3ff] via-[#0099ff] to-[#0284c7] text-white font-extrabold text-sm shadow-lg shadow-cyan-500/30 overflow-hidden border border-white/30"
               >
-                View Pricing
+                {/* WiFi Signal Radar Wave Background Animation */}
+                <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none opacity-40 transition-opacity">
+                  <div className="w-8 h-8 rounded-full border border-white/80 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
+                  <div className="w-16 h-16 rounded-full border border-white/50 animate-[ping_2.8s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
+                </div>
+
+                <span className="relative z-10 text-white font-black tracking-widest">View Pricing</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
               </a>
             </div>
           </nav>

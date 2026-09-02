@@ -8,7 +8,7 @@ export default function BkashSection() {
       {/* Background Image with Dark Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('/bkash_bg.jpg')` }}
+        style={{ backgroundImage: `url('/Website-img/bkash_bg.jpg')` }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-slate-950/90" />
 

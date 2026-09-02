@@ -3,16 +3,16 @@
 import { Film } from "lucide-react";
 
 const ftpServers = [
-  { name: "ICC FTP", url: "http://10.16.100.244", logoColor: "text-emerald-500", bgLogo: "bg-emerald-50" },
-  { name: "Circle FTP", url: "http://circleftp.net", logoColor: "text-amber-500", bgLogo: "bg-amber-50" },
-  { name: "Metro Media FTP", url: "http://www.metromedia.digital/", logoColor: "text-purple-500", bgLogo: "bg-purple-50" },
-  { name: "TimePassBD FTP", url: "http://timepassbd.live/", logoColor: "text-cyan-500", bgLogo: "bg-cyan-50" },
-  { name: "PlusBox FTP", url: "http://plusbox.tv/", logoColor: "text-rose-500", bgLogo: "bg-rose-50" },
-  { name: "CTG Hall FTP", url: "http://ctghall.com/", logoColor: "text-[#d32f2f]", bgLogo: "bg-red-50" },
-  { name: "fs ebox Live", url: "http://fs.ebox.live/", logoColor: "text-rose-600", bgLogo: "bg-rose-50" },
-  { name: "Sam Online", url: "http://172.16.50.4", logoColor: "text-slate-900 dark:text-white bg-slate-900 text-white px-2 py-1 rounded font-black", bgLogo: "bg-slate-100" },
-  { name: "E-Box Live!", url: "http://fileserver.ebox.live/", logoColor: "text-rose-500 font-extrabold", bgLogo: "bg-rose-50" },
-  { name: "Naturalbd FTP", url: "https://naturalbd.com/", logoColor: "text-emerald-600", bgLogo: "bg-emerald-50" },
+  { name: "ICC FTP", url: "http://10.16.100.244", img: "/Website-img/ftp-server/moviedom-log.png" },
+  { name: "Circle FTP", url: "http://circleftp.net", img: null },
+  { name: "Metro Media FTP", url: "http://www.metromedia.digital/", img: "/Website-img/ftp-server/metro-media.png" },
+  { name: "TimePassBD FTP", url: "http://timepassbd.live/", img: "/Website-img/ftp-server/timepassbd-logo.png" },
+  { name: "PlusBox FTP", url: "http://plusbox.tv/", img: "/Website-img/ftp-server/plusbox-tv.png" },
+  { name: "CTG Hall FTP", url: "http://ctghall.com/", img: "/Website-img/ftp-server/ctghall.png" },
+  { name: "fs ebox Live", url: "http://fs.ebox.live/", img: null },
+  { name: "Sam Online", url: "http://172.16.50.4", img: "/Website-img/ftp-server/sam-online.png" },
+  { name: "E-Box Live!", url: "http://fileserver.ebox.live/", img: null },
+  { name: "Naturalbd FTP", url: "https://naturalbd.com/", img: "/Website-img/ftp-server/naturalbd-logo.png" },
 ];
 
 export default function FtpSection() {
@@ -37,8 +37,16 @@ export default function FtpSection() {
               rel="noopener noreferrer"
               className="bg-slate-50 dark:bg-slate-800/80 rounded-2xl p-6 text-center border border-slate-100 dark:border-slate-700/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center group"
             >
-              <div className={`w-14 h-14 rounded-2xl ${server.bgLogo} dark:bg-slate-700 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
-                <Film className={`w-7 h-7 ${server.logoColor}`} />
+              <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-700 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform p-2 border border-slate-100 dark:border-slate-600 shadow-xs">
+                {server.img ? (
+                  <img
+                    src={server.img}
+                    alt={server.name}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                ) : (
+                  <Film className="w-7 h-7 text-[#00c3ff]" />
+                )}
               </div>
               <h4 className="font-bold text-slate-900 dark:text-white text-sm">
                 {server.name}

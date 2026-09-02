@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-white dark:bg-slate-900 transition-colors">
@@ -35,7 +33,7 @@ export default function AboutSection() {
           <div className="flex justify-center">
             <div className="relative w-full max-w-lg rounded-2xl overflow-hidden shadow-xl border border-slate-100 dark:border-slate-800">
               <img
-                src="/about_img.jpg"
+                src="/Website-img/about_img.jpg"
                 alt="About Pabna Online"
                 className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
               />

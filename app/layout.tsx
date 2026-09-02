@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     "Optical Fiber Pabna",
     "FTP Server Pabna",
   ],
+  icons: {
+    icon: "/fav.png",
+    shortcut: "/fav.png",
+    apple: "/fav.png",
+  },
 };
 
 export default function RootLayout({
@@ -28,6 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} dark scroll-smooth`}>
+      <head>
+        <link rel="icon" href="/fav.png" type="image/png" />
+      </head>
       <body className="min-h-screen flex flex-col bg-slate-950 text-slate-100 antialiased font-sans">
         {children}
       </body>

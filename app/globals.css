@@ -1,107 +1,219 @@
 @import "tailwindcss";
 
+/* ============================================================
+   🎨  DESIGN TOKEN SYSTEM — PABNA ONLINE
+   ============================================================
+   ✅  Change any value here → it updates across the ENTIRE project.
+
+   QUICK REFERENCE:
+   ─────────────────────────────────────────────────────────────
+   Brand palette    → --brand-cyan / --brand-blue / --brand-indigo / --brand-purple
+   Surface / bg     → --surface / --surface-alt / --surface-dark
+   Text             → --text-heading / --text-body / --text-muted
+   Borders          → --border-base / --border-accent
+   Gradients        → --gradient-brand / --gradient-brand-hover / --gradient-brand-animated
+   Shadows          → --shadow-card / --shadow-button / --shadow-glow-cyan
+   ============================================================ */
+
 :root {
+  /* ── Next.js base ────────────────── */
   --background: #ffffff;
   --foreground: #171717;
+
+  /* ── 🔵 Brand Color Palette ─────────
+     Change these to rebrand the whole site instantly */
+  --brand-cyan:   #00c3ff;
+  --brand-blue:   #0088ff;
+  --brand-indigo: #6366f1;
+  --brand-purple: #a855f7;
+
+  /* Hover / brighter variants */
+  --brand-cyan-hover:   #00d4ff;
+  --brand-blue-hover:   #0099ff;
+  --brand-indigo-hover: #7c3aed;
+
+  /* ── 🏠 Surface / Background ────────── */
+  --surface:      #ffffff;   /* white sections          → bg-surface      */
+  --surface-alt:  #f8fafc;   /* off-white sections      → bg-surface-alt  */
+  --surface-card: #ffffff;   /* card backgrounds        → bg-surface-card */
+  --surface-dark: #0f172a;   /* dark overlay, scrollbar → bg-surface-dark */
+
+  /* ── 📝 Text ────────────────────────── */
+  --text-heading: #0f172a;   /* slate-900  → text-heading */
+  --text-body:    #475569;   /* slate-600  → text-body    */
+  --text-muted:   #94a3b8;   /* slate-400  → text-muted   */
+  --text-accent:  var(--brand-cyan);
+
+  /* ── 🔲 Borders ─────────────────────── */
+  --border-base:   #e2e8f0;
+  --border-accent: var(--brand-cyan);
+
+  /* ── 🌈 Gradients (use in style={{ background: "var(--gradient-brand)" }}) ── */
+  --gradient-brand:          linear-gradient(135deg, var(--brand-cyan), var(--brand-blue), var(--brand-indigo));
+  --gradient-brand-hover:    linear-gradient(135deg, var(--brand-cyan-hover), var(--brand-blue-hover), var(--brand-indigo-hover));
+  --gradient-brand-animated: linear-gradient(135deg, var(--brand-cyan), var(--brand-indigo), var(--brand-purple), var(--brand-cyan));
+  --gradient-scrollbar:      linear-gradient(180deg, var(--brand-cyan), var(--brand-blue), var(--brand-indigo));
+  --gradient-scrollbar-hover:linear-gradient(180deg, var(--brand-cyan-hover), var(--brand-blue-hover), var(--brand-indigo-hover));
+
+  /* ── 🌟 Box Shadows ──────────────────── */
+  --shadow-card:         0 10px 30px -5px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover:   0 20px 45px -8px rgba(0, 195, 255, 0.25);
+  --shadow-button:       0 12px 30px rgba(0, 195, 255, 0.35);
+  --shadow-button-hover: 0 18px 40px rgba(99, 102, 241, 0.45);
+  --shadow-glow-cyan:    0 8px 24px -4px rgba(0, 195, 255, 0.5);
+  --shadow-glow-indigo:  0 8px 24px -4px rgba(99, 102, 241, 0.5);
 }
 
+/* ============================================================
+   Tailwind v4 @theme
+   Maps CSS variables → Tailwind utility classes
+   e.g.  bg-brand, text-body, border-base, bg-surface-alt
+   ============================================================ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Next.js base */
+  --color-background:    var(--background);
+  --color-foreground:    var(--foreground);
+  --font-sans:           var(--font-geist-sans);
+  --font-mono:           var(--font-geist-mono);
+
+  /* Brand → bg-brand / text-brand / border-brand */
+  --color-brand:         var(--brand-cyan);
+  --color-brand-mid:     var(--brand-blue);
+  --color-brand-deep:    var(--brand-indigo);
+  --color-brand-purple:  var(--brand-purple);
+
+  /* Surface → bg-surface / bg-surface-alt / bg-surface-dark */
+  --color-surface:       var(--surface);
+  --color-surface-alt:   var(--surface-alt);
+  --color-surface-card:  var(--surface-card);
+  --color-surface-dark:  var(--surface-dark);
+
+  /* Text → text-heading / text-body / text-muted / text-accent */
+  --color-text-heading:  var(--text-heading);
+  --color-text-body:     var(--text-body);
+  --color-text-muted:    var(--text-muted);
+  --color-text-accent:   var(--text-accent);
+
+  /* Borders → border-base / border-accent */
+  --color-border-base:   var(--border-base);
+  --color-border-accent: var(--border-accent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================================
+   CSS Utility Classes
+   Compound gradient/shadow styles that are reusable
+   ============================================================ */
+
+/* Main brand gradient (buttons, highlights) */
+.bg-gradient-brand {
+  background: var(--gradient-brand);
+}
+.hover\:bg-gradient-brand:hover {
+  background: var(--gradient-brand-hover);
 }
 
+/* Animated cycling gradient (back-to-top button, etc.) */
+.bg-gradient-brand-animated {
+  background: var(--gradient-brand-animated);
+  background-size: 300% 300%;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Shadow utilities */
+.shadow-card       { box-shadow: var(--shadow-card); }
+.shadow-card-hover { box-shadow: var(--shadow-card-hover); }
+.shadow-button     { box-shadow: var(--shadow-button); }
+.shadow-glow-brand { box-shadow: var(--shadow-glow-cyan); }
+
+/* ============================================================
+   Global Base Styles
+   ============================================================ */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Global cursor pointer for interactive elements */
+button,
+a,
+[role="button"],
+input[type="submit"],
+input[type="button"] {
+  cursor: pointer;
+}
+
+/* ============================================================
+   Custom Global Scrollbar
+   Uses --gradient-scrollbar token → change brand colors above
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-scrollbar);
+  border-radius: 9999px;
+  border: 1.5px solid var(--surface-dark);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-scrollbar-hover);
+}
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-cyan) var(--surface-dark);
+}
+
+/* ============================================================
+   Keyframe Animations
+   ============================================================ */
+
 @keyframes floatSlow1 {
-
-  0%,
-  100% {
-    transform: translateY(0px) translateX(0px);
-  }
-
-  50% {
-    transform: translateY(-12px) translateX(4px);
-  }
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50%       { transform: translateY(-12px) translateX(4px); }
 }
-
 @keyframes floatSlow2 {
-
-  0%,
-  100% {
-    transform: translateY(0px) translateX(0px);
-  }
-
-  50% {
-    transform: translateY(14px) translateX(-6px);
-  }
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50%       { transform: translateY(14px) translateX(-6px); }
 }
-
 @keyframes floatSlow3 {
-
-  0%,
-  100% {
-    transform: translateY(0px) translateX(0px);
-  }
-
-  50% {
-    transform: translateY(-10px) translateX(-5px);
-  }
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50%       { transform: translateY(-10px) translateX(-5px); }
 }
 
-.animate-float-1 {
-  animation: floatSlow1 4.5s ease-in-out infinite;
+.animate-float-1 { animation: floatSlow1 4.5s ease-in-out infinite; }
+.animate-float-2 { animation: floatSlow2 5.5s ease-in-out infinite 0.7s; }
+.animate-float-3 { animation: floatSlow3 5s ease-in-out infinite 1.2s; }
+
+/* Back-to-top button & gradient badge animation */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.animate-float-2 {
-  animation: floatSlow2 5.5s ease-in-out infinite 0.7s;
-}
-
-.animate-float-3 {
-  animation: floatSlow3 5s ease-in-out infinite 1.2s;
-}
-
+/* Gradient text background pan */
 @keyframes shineText {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
+/* Hero title shine sweep */
 @keyframes shineSweep {
-  0% {
-    background-position: 250% 0;
-  }
-
-  100% {
-    background-position: -250% 0;
-  }
+  0%   { background-position: 250% 0; }
+  100% { background-position: -250% 0; }
 }
 
 .animate-title-sheen {
   background: linear-gradient(110deg,
-      #f06e53 38%,
-      #fdc8c8 50%,
-      #f06e53 62%);
+    #f06e53 38%,
+    #fdc8c8 50%,
+    #f06e53 62%);
   background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;

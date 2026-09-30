@@ -1,20 +1,23 @@
 "use client";
 
 import CobeGlobe from "./CobeGlobe";
+import UiverseButton from "./UiverseButton";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-0 lg:min-h-[90vh] flex items-center overflow-hidden bg-slate-950 text-white pt-[110px] pb-[50px] lg:pt-[110px] lg:pb-[30px]">
-      {/* Background Image with Lighter Gradient Overlay so Image is Clearly Visible */}
+    <section className="relative min-h-[85vh] lg:h-screen lg:min-h-screen flex items-center overflow-hidden bg-slate-950 text-white pt-[100px] pb-[40px] lg:pt-0 lg:pb-0">
+      {/* Background Image: Pure Dark Emerald Datacenter (Zero Blue) */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-all duration-1000 transform scale-105 opacity-75"
-        style={{ backgroundImage: `url('/Website-img/hero_bg.jpg')` }}
+        className="absolute inset-0 bg-cover bg-center transition-all duration-1000 transform scale-105 opacity-80"
+        style={{ backgroundImage: `url('/Website-img/hero_bg_dark.jpg')` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/65 to-slate-950/45" />
+      {/* Deep Atmospheric Obsidian & Dark Slate Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/60" />
 
       {/* Subtle Neon Glow Auras */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* 2-Column Responsive Layout */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -27,7 +30,7 @@ export default function Hero() {
             </h2>
 
             {/* Main Title (Larger & Infinite Sheen Light Sweep Animated) */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] animate-title-sheen drop-shadow-[0_5px_20px_rgba(240,110,83,0.35)] py-1">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] animate-title-sheen drop-shadow-[0_5px_20px_rgba(16,185,129,0.35)] py-1">
               Internet Service Provider
             </h1>
 
@@ -37,25 +40,13 @@ export default function Hero() {
               Let's get connected to the modern world.
             </p>
 
-            {/* CTA Button (Matching Navbar View Pricing root button styling) */}
+            {/* CTA Button: Root Theme Uiverse Button */}
             <div className="pt-3 flex justify-center lg:justify-start w-full">
-              <a
+              <UiverseButton
+                text="Get Started"
                 href="#pricing"
-                className="relative group inline-flex items-center justify-center px-9 py-3 rounded-full bg-gradient-to-r from-[#00c3ff] via-[#0099ff] to-[#0284c7] hover:from-[#00d4ff] hover:via-[#00aaff] hover:to-[#0396e6] text-white font-extrabold text-sm sm:text-base tracking-wider shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 overflow-hidden cursor-pointer border border-white/30"
-              >
-                {/* WiFi Radar Signal Background Wave Animation */}
-                <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none opacity-40 group-hover:opacity-80 transition-opacity">
-                  <div className="w-8 h-8 rounded-full border border-white/80 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
-                  <div className="w-16 h-16 rounded-full border border-white/50 animate-[ping_2.8s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
-                  <div className="w-24 h-24 rounded-full border border-cyan-100/30 animate-[ping_3.6s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
-                </div>
-
-                {/* Crisp Bold White Text */}
-                <span className="relative z-10 text-white tracking-widest font-black">Get Started</span>
-
-                {/* Smooth Hover Glass Sheen Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
-              </a>
+                className="!px-9 !py-3.5 !text-sm sm:!text-base"
+              />
             </div>
           </div>
 

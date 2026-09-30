@@ -1,6 +1,7 @@
 "use client";
 
 import { Wifi, Server, Tv, ArrowRight } from "lucide-react";
+import UiverseButton from "./UiverseButton";
 
 export default function ServicesSection() {
   const services = [
@@ -9,30 +10,30 @@ export default function ServicesSection() {
       description: "Magazine and housed in a gilded in frame.",
       icon: Wifi,
       link: "#pricing",
-      gradient: "from-cyan-500 via-sky-500 to-blue-600",
-      bgGlow: "from-cyan-500/10 via-sky-500/5 to-transparent",
-      accentText: "text-cyan-600",
-      btnBg: "group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-blue-600",
+      gradient: "from-emerald-500 to-teal-600",
+      bgGlow: "from-emerald-500/10 to-transparent",
+      accentText: "text-emerald-600 dark:text-emerald-400",
+      btnBg: "group-hover:bg-gradient-to-r group-hover:from-emerald-500 group-hover:to-teal-600",
     },
     {
       title: "FTP Service",
       description: "Magazine and housed in a gilded in frame.",
       icon: Server,
       link: "#ftv",
-      gradient: "from-blue-600 via-indigo-600 to-violet-600",
-      bgGlow: "from-blue-500/10 via-indigo-500/5 to-transparent",
-      accentText: "text-indigo-600",
-      btnBg: "group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600",
+      gradient: "from-teal-600 to-emerald-700",
+      bgGlow: "from-teal-600/10 to-transparent",
+      accentText: "text-teal-600 dark:text-teal-400",
+      btnBg: "group-hover:bg-gradient-to-r group-hover:from-teal-600 group-hover:to-emerald-700",
     },
     {
       title: "IPTV Service",
       description: "Magazine and housed in a gilded in frame.",
       icon: Tv,
       link: "#iptv",
-      gradient: "from-fuchsia-600 via-purple-600 to-pink-500",
-      bgGlow: "from-fuchsia-500/10 via-pink-500/5 to-transparent",
-      accentText: "text-fuchsia-600",
-      btnBg: "group-hover:bg-gradient-to-r group-hover:from-fuchsia-600 group-hover:to-pink-500",
+      gradient: "from-emerald-600 to-teal-500",
+      bgGlow: "from-emerald-500/10 to-transparent",
+      accentText: "text-emerald-500 dark:text-emerald-400",
+      btnBg: "group-hover:bg-gradient-to-r group-hover:from-emerald-600 group-hover:to-teal-500",
     },
   ];
 
@@ -42,23 +43,23 @@ export default function ServicesSection() {
       {/* --- Modern ISP Decorative Shapes & Network Constellation Lines --- */}
       {/* 1. Network Constellation Node Lines (Left) */}
       <svg className="absolute top-12 left-0 w-80 h-80 pointer-events-none opacity-20" viewBox="0 0 300 300" fill="none">
-        <line x1="20" y1="40" x2="120" y2="100" stroke="#00c3ff" strokeWidth="1.5" strokeDasharray="4 4" />
-        <line x1="120" y1="100" x2="80" y2="220" stroke="#3b82f6" strokeWidth="1.5" />
-        <line x1="120" y1="100" x2="240" y2="140" stroke="#6366f1" strokeWidth="1.5" strokeDasharray="4 4" />
-        <circle cx="20" cy="40" r="4" fill="#00c3ff" />
-        <circle cx="120" cy="100" r="6" fill="#3b82f6" className="animate-pulse" />
-        <circle cx="80" cy="220" r="4" fill="#00c3ff" />
-        <circle cx="240" cy="140" r="5" fill="#6366f1" />
+        <line x1="20" y1="40" x2="120" y2="100" stroke="#059669" strokeWidth="1.5" strokeDasharray="4 4" />
+        <line x1="120" y1="100" x2="80" y2="220" stroke="#047857" strokeWidth="1.5" />
+        <line x1="120" y1="100" x2="240" y2="140" stroke="#10b981" strokeWidth="1.5" strokeDasharray="4 4" />
+        <circle cx="20" cy="40" r="4" fill="#059669" />
+        <circle cx="120" cy="100" r="6" fill="#047857" className="animate-pulse" />
+        <circle cx="80" cy="220" r="4" fill="#059669" />
+        <circle cx="240" cy="140" r="5" fill="#10b981" />
       </svg>
 
       {/* 2. Fiber Optic Wave Arc (Right) */}
       <svg className="absolute bottom-6 right-0 w-96 h-64 pointer-events-none opacity-20" viewBox="0 0 400 250" fill="none">
         <path d="M 0 180 Q 200 40, 400 120" stroke="url(#serviceFiberGrad)" strokeWidth="2.5" strokeDasharray="8 6" />
-        <circle cx="200" cy="40" r="4" fill="#00c3ff" className="animate-ping" />
+        <circle cx="200" cy="40" r="4" fill="#10b981" className="animate-ping" />
         <defs>
           <linearGradient id="serviceFiberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#00c3ff" />
-            <stop offset="100%" stopColor="#8b5cf6" />
+            <stop offset="0%" stopColor="#059669" />
+            <stop offset="100%" stopColor="#10b981" />
           </linearGradient>
         </defs>
       </svg>
@@ -67,7 +68,7 @@ export default function ServicesSection() {
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
-          backgroundImage: "radial-gradient(#0284c7 1.5px, transparent 1.5px)",
+          backgroundImage: "radial-gradient(#059669 1.5px, transparent 1.5px)",
           backgroundSize: "28px 28px",
         }}
       />
@@ -76,19 +77,19 @@ export default function ServicesSection() {
 
         {/* Modern Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 reveal-on-scroll">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-500/30 dark:border-cyan-500/40 text-cyan-700 dark:text-cyan-300 text-xs sm:text-sm font-extrabold uppercase tracking-widest shadow-xs mb-4">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-500/30 dark:border-emerald-500/40 text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm font-extrabold uppercase tracking-widest shadow-xs mb-4">
             <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gradient-to-r from-cyan-500 to-blue-600" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
             </span>
-            <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="text-emerald-700 dark:text-emerald-300 font-extrabold">
               OUR SERVICES
             </span>
           </div>
 
           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight tracking-tight">
             We are Specialized in the<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] via-[#0077b6] to-[#7209b7]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-800 dark:from-emerald-400 dark:to-teal-300">
               Following Services
             </span>
           </h3>
@@ -101,13 +102,13 @@ export default function ServicesSection() {
             return (
               <div
                 key={index}
-                className="reveal-stagger-item group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200/90 dark:border-slate-800 shadow-[0_12px_35px_-8px_rgba(0,0,0,0.06)] dark:shadow-[0_12px_35px_-8px_rgba(0,0,0,0.4)] hover:shadow-[0_22px_50px_-10px_rgba(0,195,255,0.25)] hover:-translate-y-3 hover:scale-[1.02] hover:border-cyan-300 dark:hover:border-cyan-500/50 transition-all duration-500 flex flex-col justify-between overflow-hidden cursor-pointer"
+                className="reveal-stagger-item group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-3xl p-8 border border-slate-200/80 dark:border-white/10 shadow-[0_12px_35px_-8px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_12px_35px_-8px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_22px_50px_-10px_rgba(5,150,105,0.25)] hover:-translate-y-3 hover:scale-[1.02] hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-500 flex flex-col justify-between overflow-hidden cursor-pointer"
               >
                 {/* Dynamic Neon Background Bloom on Hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.bgGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
 
                 {/* Ambient Soft Glow Behind Icon */}
-                <div className="absolute -top-12 -right-12 w-36 h-36 bg-gradient-to-br from-cyan-400/20 to-indigo-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" />
+                <div className="absolute -top-12 -right-12 w-36 h-36 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none" />
 
                 <div className="relative z-10">
                   {/* Colorful Multi-Layer Icon Box */}
@@ -128,20 +129,13 @@ export default function ServicesSection() {
                   </p>
                 </div>
 
-                {/* Interactive Action Footer */}
-                <div className="relative z-10 pt-5 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                  <a
+                {/* Interactive Action Button: Root Theme Uiverse Button */}
+                <div className="relative z-10 pt-5 border-t border-slate-100 dark:border-slate-800 w-full flex justify-center">
+                  <UiverseButton
+                    text="Explore Details"
                     href={service.link}
-                    className={`inline-flex items-center gap-2 text-sm font-black ${service.accentText} transition-colors`}
-                  >
-                    <span>Explore Details</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
-                  </a>
-
-                  {/* Animated Circular Button */}
-                  <div className={`w-10 h-10 rounded-full bg-slate-100/90 dark:bg-slate-800 text-slate-600 dark:text-slate-300 ${service.btnBg} group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm group-hover:shadow-md group-hover:scale-110`}>
-                    <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
-                  </div>
+                    fullWidth
+                  />
                 </div>
 
                 {/* Corner Watermark Circle */}

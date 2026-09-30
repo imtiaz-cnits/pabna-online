@@ -104,11 +104,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? "bg-slate-950/90 dark:bg-slate-950/90 backdrop-blur-md shadow-xl py-3"
-            : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-4"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
+            ? "bg-slate-950/45 dark:bg-slate-950/50 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] py-3"
+            : "bg-slate-950/20 backdrop-blur-xl border-b border-white/[0.05] shadow-[0_4px_24px_rgba(0,0,0,0.15)] py-4"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Brand Logo with Website-img/logo-1.jpg */}
@@ -116,12 +115,12 @@ export default function Navbar() {
             <img
               src="/Website-img/logo-1.jpg"
               alt="Pabna Online Logo"
-              className="h-12 sm:h-14 md:h-16 w-auto object-contain rounded-lg shadow-md"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain rounded-lg"
             />
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 xl:gap-2 bg-slate-950/80 dark:bg-slate-900/80 p-1.5 rounded-full border border-cyan-500/30 shadow-[0_0_15px_rgba(0,195,255,0.15)] backdrop-blur-md transition-all duration-300">
+          {/* Desktop Navigation Links: iPhone-style Frosted Glass Capsule Dock */}
+          <nav className="hidden md:flex items-center gap-1 xl:gap-2 bg-white/[0.08] dark:bg-white/[0.05] p-1.5 rounded-full border border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_8px_25px_rgba(0,0,0,0.3)] backdrop-blur-2xl transition-all duration-300">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -129,14 +128,13 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => handleNavClick(link.id)}
-                  className={`relative px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 ease-in-out flex items-center gap-1.5 border ${
-                    isActive
-                      ? "bg-[#00c3ff]/15 text-[#00c3ff] font-extrabold border-[#00c3ff]/40 shadow-sm shadow-cyan-500/20"
-                      : "text-slate-200 hover:text-[#00c3ff] hover:bg-white/5 border-transparent"
-                  }`}
+                  className={`relative px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 ease-in-out flex items-center gap-1.5 border ${isActive
+                      ? "bg-emerald-500/25 text-emerald-300 font-extrabold border-emerald-400/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.35),0_2px_10px_rgba(16,185,129,0.3)]"
+                      : "text-slate-200 hover:text-white hover:bg-white/[0.1] border-transparent"
+                    }`}
                 >
                   {isActive && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00c3ff] animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   )}
                   <span>{link.label}</span>
                 </Link>
@@ -146,37 +144,45 @@ export default function Navbar() {
 
           {/* Desktop Right Controls: Dark Toggle on Left of View Pricing */}
           <div className="hidden md:flex items-center gap-4">
-            {/* Dark Mode Toggle Switch */}
+            {/* Dark Mode Toggle Switch (iPhone Frosted Glass Button) */}
             <button
               onClick={toggleDarkMode}
               aria-label="Toggle Dark Mode"
-              className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-amber-400 border border-white/20 transition-all cursor-pointer"
+              className="p-2.5 rounded-full bg-white/[0.08] hover:bg-white/[0.18] text-emerald-400 border border-white/20 backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_4px_12px_rgba(0,0,0,0.15)] transition-all cursor-pointer hover:scale-105 active:scale-95"
             >
               {darkMode ? (
-                <Sun className="w-4 h-4 text-amber-400" />
+                <Sun className="w-4 h-4 text-emerald-400" />
               ) : (
                 <Moon className="w-4 h-4 text-slate-200" />
               )}
             </button>
 
-            {/* View Pricing Button with Cyan Gradient Matching Active Menu Theme */}
-            <a
-              href="#pricing"
-              className="relative group px-8 py-3 rounded-full bg-gradient-to-r from-[#00c3ff] via-[#0099ff] to-[#0284c7] hover:from-[#00d4ff] hover:via-[#00aaff] hover:to-[#0396e6] text-white font-extrabold text-xs tracking-wider shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 overflow-hidden cursor-pointer flex items-center justify-center border border-white/30"
-            >
-              {/* Professional Concentric WiFi Signal Radar Background Waves */}
-              <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none opacity-40 group-hover:opacity-80 transition-opacity">
-                <div className="w-8 h-8 rounded-full border border-white/80 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
-                <div className="w-16 h-16 rounded-full border border-white/50 animate-[ping_2.8s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
-                <div className="w-24 h-24 rounded-full border border-cyan-100/30 animate-[ping_3.6s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
-              </div>
-
-              {/* Crisp Bold White Text Only */}
-              <span className="relative z-10 text-white tracking-widest font-black">View Pricing</span>
-
-              {/* Smooth Glass Sheen Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
-            </a>
+            {/* Uiverse Animated Button */}
+            <div className="btn-wrapper">
+              <a href="#pricing" className="btn-uiverse group" aria-label="View Pricing">
+                <svg className="btn-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
+                  />
+                </svg>
+                <span className="txt-wrapper">
+                  <span className="btn-letter">V</span>
+                  <span className="btn-letter">i</span>
+                  <span className="btn-letter">e</span>
+                  <span className="btn-letter">w</span>
+                  <span className="inline-block w-1.5" />
+                  <span className="btn-letter">P</span>
+                  <span className="btn-letter">r</span>
+                  <span className="btn-letter">i</span>
+                  <span className="btn-letter">c</span>
+                  <span className="btn-letter">i</span>
+                  <span className="btn-letter">n</span>
+                  <span className="btn-letter">g</span>
+                </span>
+              </a>
+            </div>
           </div>
 
           {/* Mobile Topbar Controls */}
@@ -184,14 +190,14 @@ export default function Navbar() {
             <button
               onClick={toggleDarkMode}
               aria-label="Toggle Dark Mode"
-              className="p-2 rounded-full bg-white/10 text-amber-400 hover:bg-white/20 border border-white/15 cursor-pointer"
+              className="p-2.5 rounded-full bg-white/[0.08] text-emerald-400 hover:bg-white/[0.18] border border-white/20 backdrop-blur-xl cursor-pointer"
             >
-              {darkMode ? <Sun className="w-4.5 h-4.5 text-amber-400" /> : <Moon className="w-4.5 h-4.5 text-slate-200" />}
+              {darkMode ? <Sun className="w-4.5 h-4.5 text-emerald-400" /> : <Moon className="w-4.5 h-4.5 text-slate-200" />}
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2 rounded-lg bg-white/10 text-white hover:bg-white/20 cursor-pointer"
+              className="p-2.5 rounded-xl bg-white/[0.08] text-white hover:bg-white/[0.18] border border-white/15 backdrop-blur-xl cursor-pointer"
               aria-label="Open Mobile Menu"
             >
               <Menu className="w-6 h-6" />
@@ -203,16 +209,14 @@ export default function Navbar() {
       {/* Mobile Offcanvas Drawer & Backdrop */}
       <div
         onClick={() => setMobileMenuOpen(false)}
-        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 ${
-          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
       />
 
-      {/* Left Offcanvas Sidebar */}
+      {/* Left Offcanvas Sidebar: Frosted Glass */}
       <div
-        className={`fixed top-0 left-0 z-50 h-full w-72 bg-slate-950/95 border-r border-white/10 p-6 shadow-2xl flex flex-col justify-between text-white transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-0 left-0 z-50 h-full w-72 bg-slate-950/80 backdrop-blur-2xl border-r border-white/15 p-6 shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col justify-between text-white transition-transform duration-300 ease-in-out ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <div>
           {/* Offcanvas Header */}
@@ -240,33 +244,46 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => handleNavClick(link.id)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200 border ${
-                    isActive
-                      ? "bg-[#00c3ff]/15 text-[#00c3ff] font-extrabold border-l-4 border-l-[#00c3ff] border-y-[#00c3ff]/20 border-r-[#00c3ff]/20 shadow-md shadow-cyan-500/10"
-                      : "text-slate-200 hover:text-[#00c3ff] hover:bg-white/5 border-transparent"
-                  }`}
+                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200 border ${isActive
+                      ? "bg-emerald-600/20 text-emerald-400 font-extrabold border-l-4 border-l-emerald-500 border-y-emerald-500/20 border-r-emerald-500/20 shadow-md shadow-emerald-500/10"
+                      : "text-slate-200 hover:text-emerald-400 hover:bg-white/5 border-transparent"
+                    }`}
                 >
                   <span>{link.label}</span>
-                  {isActive && <span className="w-2 h-2 rounded-full bg-[#00c3ff]" />}
+                  {isActive && <span className="w-2 h-2 rounded-full bg-emerald-400" />}
                 </Link>
               );
             })}
 
-            {/* View Pricing Button inside mobile menu */}
-            <div className="pt-3">
+            {/* Uiverse Animated Button inside mobile menu */}
+            <div className="pt-3 flex justify-center">
               <a
                 href="#pricing"
                 onClick={() => setMobileMenuOpen(false)}
-                className="relative group flex items-center justify-center w-full text-center py-3 rounded-xl bg-gradient-to-r from-[#00c3ff] via-[#0099ff] to-[#0284c7] text-white font-extrabold text-sm shadow-lg shadow-cyan-500/30 overflow-hidden border border-white/30"
+                className="btn-uiverse w-full py-3.5 flex items-center justify-center gap-2"
+                aria-label="View Pricing"
               >
-                {/* WiFi Signal Radar Wave Background Animation */}
-                <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none opacity-40 transition-opacity">
-                  <div className="w-8 h-8 rounded-full border border-white/80 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
-                  <div className="w-16 h-16 rounded-full border border-white/50 animate-[ping_2.8s_cubic-bezier(0,0,0.2,1)_infinite] absolute" />
-                </div>
-
-                <span className="relative z-10 text-white font-black tracking-widest">View Pricing</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
+                <svg className="btn-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
+                  />
+                </svg>
+                <span className="txt-wrapper">
+                  <span className="btn-letter">V</span>
+                  <span className="btn-letter">i</span>
+                  <span className="btn-letter">e</span>
+                  <span className="btn-letter">w</span>
+                  <span className="inline-block w-1.5" />
+                  <span className="btn-letter">P</span>
+                  <span className="btn-letter">r</span>
+                  <span className="btn-letter">i</span>
+                  <span className="btn-letter">c</span>
+                  <span className="btn-letter">i</span>
+                  <span className="btn-letter">n</span>
+                  <span className="btn-letter">g</span>
+                </span>
               </a>
             </div>
           </nav>

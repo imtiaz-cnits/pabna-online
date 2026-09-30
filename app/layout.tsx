@@ -1,10 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const hindSiliguri = Hind_Siliguri({
+  subsets: ["bengali", "latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-bangla",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -32,7 +46,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} dark scroll-smooth`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${plusJakartaSans.variable} ${hindSiliguri.variable} dark scroll-smooth`}
+    >
       <head>
         <link rel="icon" href="/fav.png" type="image/png" />
       </head>

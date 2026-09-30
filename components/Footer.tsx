@@ -62,7 +62,7 @@ export default function Footer() {
                   key={idx}
                   href="#"
                   aria-label={social.label}
-                  className="w-9 h-9 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-cyan-600 hover:border-cyan-600 hover:text-white transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+                  className="w-9 h-9 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
                 >
                   <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                     <path d={social.icon} />
@@ -83,7 +83,7 @@ export default function Footer() {
               {/* Static light background line fading to transparent */}
               <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-slate-200 dark:from-slate-800 to-transparent"></span>
               {/* Animated glowing line fading to transparent */}
-              <span className="absolute bottom-0 left-0 w-12 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent rounded-full animate-pulse"></span>
+              <span className="absolute bottom-0 left-0 w-12 h-[2px] bg-gradient-to-r from-emerald-500 to-transparent rounded-full animate-pulse"></span>
             </div>
 
             <ul className="space-y-4">
@@ -96,14 +96,14 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={item.link}
-                    className="group flex items-center text-[15px] font-medium text-slate-500 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300 w-fit"
+                    className="group flex items-center text-[15px] font-medium text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 w-fit"
                   >
                     {/* Modern Dot Icon */}
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:bg-cyan-500 group-hover:scale-[1.5] transition-all duration-300 mr-3"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:bg-emerald-500 group-hover:scale-[1.5] transition-all duration-300 mr-3"></span>
                     {/* Text with animated gradient underline */}
                     <span className="relative">
                       {item.name}
-                      <span className="absolute -bottom-0.5 left-0 w-0 h-[1.5px] bg-gradient-to-r from-cyan-500 to-transparent transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute -bottom-0.5 left-0 w-0 h-[1.5px] bg-gradient-to-r from-emerald-500 to-transparent transition-all duration-300 group-hover:w-full"></span>
                     </span>
                   </a>
                 </li>
@@ -135,21 +135,21 @@ export default function Footer() {
                 {/* Secondary Contacts Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
                       <Headphones className="w-4 h-4" />
                     </div>
                     <div>
-                      <a href="tel:+8809639109639" className="block text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">096 391 09 639</a>
+                      <a href="tel:+8809639109639" className="block text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">096 391 09 639</a>
                       <span className="block text-[11px] text-slate-400 dark:text-slate-500 font-medium">Hotline</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
                       <Mail className="w-4 h-4" />
                     </div>
                     {/* Added break-all so it never ellipses */}
                     <div className="w-full">
-                      <a href="mailto:info@pabnaonline.net" className="block text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-words">info@pabnaonline.net</a>
+                      <a href="mailto:info@pabnaonline.net" className="block text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors break-words">info@pabnaonline.net</a>
                       <span className="block text-[11px] text-slate-400 dark:text-slate-500 font-medium">Email Us</span>
                     </div>
                   </div>
@@ -179,7 +179,7 @@ export default function Footer() {
               href="https://www.codenextit.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cyan-600 font-bold hover:text-cyan-700 hover:underline transition-colors"
+              className="text-emerald-600 dark:text-emerald-400 font-bold hover:text-emerald-700 hover:underline transition-colors"
             >
               CodeNext IT
             </a>
@@ -203,11 +203,11 @@ export default function Footer() {
       <button
         onClick={scrollToTop}
         aria-label="Back to top"
-        className={`fixed right-6 z-50 p-3.5 rounded-full text-white shadow-[0_8px_24px_-4px_rgba(99,102,241,0.5)] hover:shadow-[0_12px_30px_-4px_rgba(99,102,241,0.7)] transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden group hover:scale-110 ${showScrollTop
+        className={`fixed right-6 z-50 p-3.5 rounded-full text-white shadow-[0_8px_24px_-4px_rgba(5,150,105,0.5)] hover:shadow-[0_12px_30px_-4px_rgba(5,150,105,0.7)] transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden group hover:scale-110 ${showScrollTop
           ? "bottom-6 opacity-100 scale-100 pointer-events-auto translate-y-0"
           : "bottom-0 opacity-0 scale-75 pointer-events-none translate-y-10"
           }`}
-        style={{ background: "linear-gradient(135deg, #00c3ff, #6366f1, #a855f7, #00c3ff)", backgroundSize: "300% 300%", animation: "gradientShift 3s ease infinite" }}
+        style={{ background: "linear-gradient(135deg, #10b981, #059669, #047857, #10b981)", backgroundSize: "300% 300%", animation: "gradientShift 3s ease infinite" }}
       >
         <ChevronUp className="w-5 h-5 stroke-[2.5] relative z-10 transition-transform duration-300 group-hover:-translate-y-1" />
       </button>

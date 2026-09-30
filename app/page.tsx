@@ -15,7 +15,7 @@ import ScrollRevealProvider from "@/components/ScrollRevealProvider";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-white">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-600 selection:text-white">
       <ScrollRevealProvider />
       <Navbar />
       <main>

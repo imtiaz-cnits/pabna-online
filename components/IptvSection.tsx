@@ -11,6 +11,7 @@ import {
   Video
 } from "lucide-react";
 import React from "react";
+import UiverseButton from "./UiverseButton";
 
 const iptvLinks = [
   { name: "ICC IPTV Link", url: "http://10.16.100.244", icon: Tv },
@@ -40,15 +41,16 @@ export default function IptvSection() {
   return (
     <>
       {/* IPTV Links Banner Section */}
+      {/* IPTV Links Banner Section */}
       <section className="py-20 bg-slate-50 dark:bg-slate-950 relative overflow-hidden transition-colors duration-500">
         {/* Subtle Background Glows */}
-        <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-cyan-200/30 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-emerald-200/30 dark:bg-emerald-950/20 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* Centered Section Title */}
           <div className="text-center mb-12 max-w-2xl mx-auto reveal-on-scroll">
-            <h4 className="text-3xl font-extrabold font-black text-slate-900 dark:text-white uppercase tracking-wide border-b-2 border-cyan-500 inline-block pb-1.5">
+            <h4 className="text-3xl font-extrabold font-black text-slate-900 dark:text-white uppercase tracking-wide border-b-2 border-emerald-500 inline-block pb-1.5">
               IPTV Links
             </h4>
             <p className="text-md font-medium text-slate-500 dark:text-slate-400 mt-3">Direct server links for live television</p>
@@ -59,37 +61,35 @@ export default function IptvSection() {
               <div
                 key={idx}
                 onMouseMove={handleMouseMove}
-                className="reveal-stagger-item group relative bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_15px_30px_rgba(0,0,0,0.06)] hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col items-center justify-between min-h-[190px] text-center"
+                className="reveal-stagger-item group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-2xl p-5 border border-slate-200/80 dark:border-white/10 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_15px_35px_rgba(5,150,105,0.18)] hover:-translate-y-2 hover:border-emerald-400/50 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-300 overflow-hidden flex flex-col items-center justify-between min-h-[190px] text-center"
               >
                 {/* Spotlight Glow Effect */}
                 <div
                   className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
                   style={{
-                    background: `radial-gradient(250px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(6, 182, 212, 0.1), transparent 40%)`
+                    background: `radial-gradient(250px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(5, 150, 105, 0.12), transparent 40%)`
                   }}
                 />
 
                 {/* Top Glowing Tab Bar */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-1 bg-cyan-400 rounded-b-md opacity-50 group-hover:opacity-100 group-hover:w-16 transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(6,182,212,0.8)]" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-2 bg-emerald-500 rounded-b-md opacity-60 group-hover:opacity-100 group-hover:w-16 transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(5,150,105,0.8)]" />
 
                 {/* Content: Centered Icon & Title */}
                 <div className="relative z-10 flex flex-col items-center mb-5 pt-3">
-                  <div className="text-cyan-500 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300 opacity-80 group-hover:opacity-100 mb-3">
+                  <div className="text-emerald-600 dark:text-emerald-400 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300 opacity-80 group-hover:opacity-100 mb-3">
                     <item.icon className="w-8 h-8 stroke-[1.5]" />
                   </div>
                   <h4 className="font-bold text-lg md:text-xl text-slate-800 dark:text-slate-100 leading-snug">{item.name}</h4>
                 </div>
 
-                {/* Updated Button matching IPTV Apps style */}
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative z-10 inline-flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl border-2 border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold text-[14px] uppercase tracking-wider transition-all duration-300 group-hover:border-cyan-500 group-hover:bg-cyan-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-cyan-500/30"
-                >
-                  WATCH NOW
-                  <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
+                {/* Root Theme Uiverse Button */}
+                <div className="relative z-10 w-full">
+                  <UiverseButton
+                    text="WATCH NOW"
+                    href={item.url}
+                    fullWidth
+                  />
+                </div>
               </div>
             ))}
           </div>
@@ -99,13 +99,13 @@ export default function IptvSection() {
       {/* IPTV Apps Section */}
       <section className="py-20 bg-white dark:bg-slate-900 relative overflow-hidden border-t border-slate-100 dark:border-slate-800 transition-colors duration-500">
         {/* Subtle Background Glows */}
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-amber-100/40 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-emerald-100/40 dark:bg-emerald-950/20 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* Centered Section Title */}
           <div className="text-center mb-12 max-w-2xl mx-auto reveal-on-scroll">
-            <h4 className="text-3xl font-extrabold font-black text-slate-900 dark:text-white uppercase tracking-wide border-b-2 border-amber-500 inline-block pb-1.5">
+            <h4 className="text-3xl font-extrabold font-black text-slate-900 dark:text-white uppercase tracking-wide border-b-2 border-emerald-500 inline-block pb-1.5">
               IPTV Apps
             </h4>
             <p className="text-md font-medium text-slate-500 dark:text-slate-400 mt-3">Download official apps for best experience</p>
@@ -116,18 +116,18 @@ export default function IptvSection() {
               <div
                 key={idx}
                 onMouseMove={handleMouseMove}
-                className="reveal-stagger-item group relative bg-slate-50/50 dark:bg-slate-950/80 rounded-[2rem] p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2.5 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[180px]"
+                className="reveal-stagger-item group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-[2rem] p-8 border border-slate-200/80 dark:border-white/10 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_10px_30px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_20px_45px_rgba(5,150,105,0.2)] hover:-translate-y-2.5 hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[180px]"
               >
                 {/* Spotlight Glow Effect */}
                 <div
                   className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
                   style={{
-                    background: `radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(245, 158, 11, 0.12), transparent 40%)`
+                    background: `radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(16, 185, 129, 0.12), transparent 40%)`
                   }}
                 />
 
-                {/* Top Glowing Tab Bar (Amber) */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1.5 bg-amber-400 rounded-b-md opacity-60 group-hover:opacity-100 group-hover:w-24 transition-all duration-300 shadow-sm group-hover:shadow-[0_0_20px_rgba(245,158,11,0.9)]" />
+                {/* Top Glowing Tab Bar (Emerald Green) */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1.5 bg-emerald-500 rounded-b-md opacity-70 group-hover:opacity-100 group-hover:w-24 transition-all duration-300 shadow-sm group-hover:shadow-[0_0_20px_rgba(16,185,129,0.9)]" />
 
                 {/* Content */}
                 <div className="relative z-10 flex items-start justify-between mb-8">
@@ -137,20 +137,19 @@ export default function IptvSection() {
                   </div>
 
                   {/* Larger icon with slight rotation on hover */}
-                  <div className="text-amber-500 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 origin-center">
+                  <div className="text-emerald-500 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 origin-center">
                     <app.icon className="w-14 h-14 stroke-[1.5] drop-shadow-sm" />
                   </div>
                 </div>
 
-                <a
-                  href={app.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative z-10 inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl border-2 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-bold text-sm transition-all duration-300 group-hover:border-amber-400 group-hover:bg-amber-400 group-hover:text-white group-hover:shadow-lg group-hover:shadow-amber-500/30"
-                >
-                  WATCH NOW
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
+                {/* Root Theme Uiverse Button */}
+                <div className="relative z-10 w-full">
+                  <UiverseButton
+                    text="WATCH NOW"
+                    href={app.url}
+                    fullWidth
+                  />
+                </div>
               </div>
             ))}
           </div>

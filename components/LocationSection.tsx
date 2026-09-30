@@ -48,7 +48,7 @@ export default function LocationSection() {
         <div className="relative max-w-5xl mx-auto group reveal-on-scroll">
 
           {/* Softer Animated Glowing Box Shadow */}
-          <div className="absolute -inset-2 bg-gradient-to-r from-cyan-200 via-blue-300 to-indigo-300 dark:from-cyan-900/30 dark:via-blue-900/30 dark:to-indigo-900/30 rounded-[2.5rem] blur-2xl opacity-40 animate-pulse pointer-events-none transition-opacity duration-700 group-hover:opacity-70"></div>
+          <div className="absolute -inset-2 bg-gradient-to-r from-emerald-300/30 via-teal-300/30 to-emerald-300/30 dark:from-emerald-950/40 dark:via-teal-950/40 dark:to-emerald-950/40 rounded-[2.5rem] blur-2xl opacity-40 animate-pulse pointer-events-none transition-opacity duration-700 group-hover:opacity-70"></div>
 
           {/* Main Map Frame */}
           <div className="relative bg-white dark:bg-slate-900 p-2.5 rounded-[2rem] shadow-xl ring-1 ring-slate-200/50 dark:ring-slate-800 z-10 transition-shadow duration-500 group-hover:shadow-2xl">

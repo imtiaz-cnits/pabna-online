@@ -40,8 +40,8 @@ export default function CyberGlobe() {
     const earthGeo = new THREE.SphereGeometry(1.6, 64, 64);
     const earthMat = new THREE.MeshPhongMaterial({
       map: earthMap,
-      color: 0x66bbff,       // Light cyber-blue tint so the map pops out
-      emissive: 0x031025,    // Very subtle base glow
+      color: 0x10b981,       // Cyber Emerald tint
+      emissive: 0x022c22,    // Subtle deep emerald base glow
       specular: new THREE.Color(0x222222),
       shininess: 25,
     });
@@ -84,7 +84,7 @@ export default function CyberGlobe() {
       const points = curve.getPoints(20);
       const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
       const lineMat = new THREE.LineBasicMaterial({
-        color: 0x00c3ff,
+        color: 0x10b981,
         transparent: true,
         opacity: 0.2, // Slightly more visible lines
         blending: THREE.AdditiveBlending,
@@ -94,7 +94,7 @@ export default function CyberGlobe() {
 
       // Core Nodes
       const nodeGeo = new THREE.SphereGeometry(0.012, 8, 8);
-      const nodeMat = new THREE.MeshBasicMaterial({ color: 0x00ffff });
+      const nodeMat = new THREE.MeshBasicMaterial({ color: 0x34d399 });
 
       const n1 = new THREE.Mesh(nodeGeo, nodeMat);
       n1.position.copy(p1);
@@ -121,7 +121,7 @@ export default function CyberGlobe() {
     // 4. Outer Atmospheric Halo Glow
     const haloGeo = new THREE.SphereGeometry(1.72, 32, 32);
     const haloMat = new THREE.MeshBasicMaterial({
-      color: 0x0055ff,
+      color: 0x059669,
       transparent: true,
       opacity: 0.12,
       blending: THREE.AdditiveBlending,
@@ -134,7 +134,7 @@ export default function CyberGlobe() {
     const ambientLight = new THREE.AmbientLight(0xffffff, 2.5); // Increased ambient light
     scene.add(ambientLight);
 
-    const dirLight = new THREE.DirectionalLight(0x00e5ff, 3);
+    const dirLight = new THREE.DirectionalLight(0x10b981, 3);
     dirLight.position.set(5, 5, 5);
     scene.add(dirLight);
 
@@ -225,8 +225,8 @@ export default function CyberGlobe() {
       />
 
       {/* Floating Info Toolboxes with Translate Floating Animations */}
-      <div className="absolute top-16 left-0 z-30 bg-slate-950/90 backdrop-blur-xl border border-blue-500/30 px-3.5 py-2 rounded-xl flex items-center gap-3 shadow-xl shadow-blue-500/10 animate-float-1 transition-transform hover:scale-105">
-        <div className="w-7 h-7 rounded-lg bg-blue-500/20 flex items-center justify-center text-cyan-400 border border-cyan-500/20">
+      <div className="absolute top-16 left-0 z-30 bg-slate-950/90 backdrop-blur-xl border border-emerald-500/30 px-3.5 py-2 rounded-xl flex items-center gap-3 shadow-xl shadow-emerald-500/10 animate-float-1 transition-transform hover:scale-105">
+        <div className="w-7 h-7 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 border border-emerald-500/20">
           <Zap className="w-4 h-4" />
         </div>
         <div>
@@ -235,8 +235,8 @@ export default function CyberGlobe() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 right-0 z-30 bg-slate-950/90 backdrop-blur-xl border border-blue-500/30 px-3.5 py-2 rounded-xl flex items-center gap-3 shadow-xl shadow-blue-500/10 animate-float-2 transition-transform hover:scale-105">
-        <div className="w-7 h-7 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400 border border-indigo-500/20">
+      <div className="absolute bottom-8 right-0 z-30 bg-slate-950/90 backdrop-blur-xl border border-teal-500/30 px-3.5 py-2 rounded-xl flex items-center gap-3 shadow-xl shadow-teal-500/10 animate-float-2 transition-transform hover:scale-105">
+        <div className="w-7 h-7 rounded-lg bg-teal-500/20 flex items-center justify-center text-teal-400 border border-teal-500/20">
           <Server className="w-4 h-4" />
         </div>
         <div>
@@ -245,7 +245,7 @@ export default function CyberGlobe() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-0 z-30 bg-slate-950/90 backdrop-blur-xl border border-blue-500/30 px-3.5 py-2 rounded-xl flex items-center gap-3 shadow-xl shadow-blue-500/10 animate-float-3 transition-transform hover:scale-105">
+      <div className="absolute bottom-8 left-0 z-30 bg-slate-950/90 backdrop-blur-xl border border-emerald-500/30 px-3.5 py-2 rounded-xl flex items-center gap-3 shadow-xl shadow-emerald-500/10 animate-float-3 transition-transform hover:scale-105">
         <div className="w-7 h-7 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 border border-emerald-500/20">
           <ShieldCheck className="w-4 h-4" />
         </div>

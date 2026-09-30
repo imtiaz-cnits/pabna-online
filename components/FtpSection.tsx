@@ -17,7 +17,7 @@ const ftpServers = [
 
 export default function FtpSection() {
   return (
-    <section id="ftv" className="py-16 lg-py-24 bg-white relative overflow-hidden transition-colors">
+    <section id="ftv" className="py-16 lg:py-24 bg-white dark:bg-slate-900 relative overflow-hidden transition-colors duration-500">
 
       {/* --- Modern ISP Decorative Shapes & Vectors --- */}
       {/* 1. Concentric WiFi Radar Wave Rings (Top Right) */}
@@ -52,8 +52,8 @@ export default function FtpSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Modern Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-500/30 text-cyan-700 text-xs sm:text-sm font-extrabold uppercase tracking-widest shadow-xs mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-16 reveal-on-scroll">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-500/30 dark:border-cyan-500/40 text-cyan-700 dark:text-cyan-300 text-xs sm:text-sm font-extrabold uppercase tracking-widest shadow-xs mb-4">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gradient-to-r from-cyan-500 to-blue-600" />
@@ -63,7 +63,7 @@ export default function FtpSection() {
             </span>
           </div>
 
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tight">
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight tracking-tight">
             Choose what you want to watch,<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] via-[#0077b6] to-[#7209b7]">
               with various FTP servers
@@ -71,24 +71,24 @@ export default function FtpSection() {
           </h3>
         </div>
 
-        {/* 10 Highly Stylish FTP Server Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 sm:gap-6">
+        {/* 10 Highly Stylish FTP Server Cards (Staggered Animation) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 sm:gap-6" data-reveal-group>
           {ftpServers.map((server, idx) => (
             <div
               key={idx}
-              className="group relative bg-white rounded-3xl p-4 sm:p-4 border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_45px_-8px_rgba(0,195,255,0.25)] hover:-translate-y-2 hover:border-cyan-300 transition-all duration-300 flex flex-col items-center justify-between text-center overflow-hidden"
+              className="reveal-stagger-item group relative bg-white dark:bg-slate-900 rounded-3xl p-4 sm:p-4 border border-slate-200/90 dark:border-slate-800 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_45px_-8px_rgba(0,195,255,0.25)] hover:-translate-y-2 hover:border-cyan-300 dark:hover:border-cyan-500/50 transition-all duration-300 flex flex-col items-center justify-between text-center overflow-hidden"
             >
               {/* Subtle Ambient Hover Glow in Background of Box */}
               <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
               <div className="w-full flex flex-col items-center">
-                {/* Stylish Server Logo Container */}
-                <div className="w-20 h-20 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center p-3 mb-4 group-hover:scale-110 group-hover:bg-cyan-50/60 group-hover:border-cyan-200 shadow-sm group-hover:shadow-[0_10px_25px_-5px_rgba(0,195,255,0.2)] transition-all duration-300 relative z-10">
+                {/* Stylish Server Logo Container (Professional dark tech bg for maximum logo contrast) */}
+                <div className="w-20 h-20 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center p-3 mb-4 group-hover:scale-105 group-hover:border-cyan-500/50 shadow-md shadow-slate-950/10 group-hover:shadow-[0_10px_25px_-5px_rgba(0,195,255,0.3)] transition-all duration-300 relative z-10">
                   {server.img ? (
                     <img
                       src={server.img}
                       alt={server.name}
-                      className="max-h-full max-w-full object-contain filter group-hover:brightness-105 transition-all duration-300"
+                      className="max-h-full max-w-full object-contain filter group-hover:brightness-110 transition-all duration-300"
                     />
                   ) : (
                     <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${server.color} text-white flex items-center justify-center shadow-md shadow-cyan-500/25`}>
@@ -98,7 +98,7 @@ export default function FtpSection() {
                 </div>
 
                 {/* Server Title */}
-                <h4 className="font-black text-slate-900 text-sm sm:text-base group-hover:text-cyan-600 transition-colors line-clamp-1 w-full mb-4 relative z-10">
+                <h4 className="font-black text-slate-900 dark:text-white text-sm sm:text-base group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors line-clamp-1 w-full mb-4 relative z-10">
                   {server.name}
                 </h4>
               </div>

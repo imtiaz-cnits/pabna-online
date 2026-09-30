@@ -37,7 +37,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="service" className="py-16 lg-py-24 bg-[#f8fafc] relative overflow-hidden transition-colors">
+    <section id="service" className="py-16 lg:py-24 bg-[#f8fafc] dark:bg-slate-950 relative overflow-hidden transition-colors duration-500">
 
       {/* --- Modern ISP Decorative Shapes & Network Constellation Lines --- */}
       {/* 1. Network Constellation Node Lines (Left) */}
@@ -75,8 +75,8 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Modern Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-500/30 text-cyan-700 text-xs sm:text-sm font-extrabold uppercase tracking-widest shadow-xs mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-16 reveal-on-scroll">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-500/30 dark:border-cyan-500/40 text-cyan-700 dark:text-cyan-300 text-xs sm:text-sm font-extrabold uppercase tracking-widest shadow-xs mb-4">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gradient-to-r from-cyan-500 to-blue-600" />
@@ -86,7 +86,7 @@ export default function ServicesSection() {
             </span>
           </div>
 
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tight">
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight tracking-tight">
             We are Specialized in the<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] via-[#0077b6] to-[#7209b7]">
               Following Services
@@ -94,14 +94,14 @@ export default function ServicesSection() {
           </h3>
         </div>
 
-        {/* 3 Colorful Modern Feature Cards (No Top Border, Deep Glow Shadows, Rich Lift Animation) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* 3 Colorful Modern Feature Cards (Staggered Animation) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8" data-reveal-group>
           {services.map((service, index) => {
             const IconComp = service.icon;
             return (
               <div
                 key={index}
-                className="group relative bg-white rounded-3xl p-8 border border-slate-200/90 shadow-[0_12px_35px_-8px_rgba(0,0,0,0.06)] hover:shadow-[0_22px_50px_-10px_rgba(0,195,255,0.25)] hover:-translate-y-3 hover:scale-[1.02] hover:border-cyan-300 transition-all duration-500 flex flex-col justify-between overflow-hidden cursor-pointer"
+                className="reveal-stagger-item group relative bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200/90 dark:border-slate-800 shadow-[0_12px_35px_-8px_rgba(0,0,0,0.06)] dark:shadow-[0_12px_35px_-8px_rgba(0,0,0,0.4)] hover:shadow-[0_22px_50px_-10px_rgba(0,195,255,0.25)] hover:-translate-y-3 hover:scale-[1.02] hover:border-cyan-300 dark:hover:border-cyan-500/50 transition-all duration-500 flex flex-col justify-between overflow-hidden cursor-pointer"
               >
                 {/* Dynamic Neon Background Bloom on Hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.bgGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
@@ -118,18 +118,18 @@ export default function ServicesSection() {
                   </a>
 
                   {/* Service Title */}
-                  <h3 className={`text-2xl font-black text-slate-900 mb-3 group-hover:${service.accentText} transition-colors duration-300`}>
+                  <h3 className={`text-2xl font-black text-slate-900 dark:text-white mb-3 group-hover:${service.accentText} transition-colors duration-300`}>
                     {service.title}
                   </h3>
 
                   {/* Service Description */}
-                  <p className="text-sm sm:text-base text-slate-500 leading-relaxed font-normal mb-8">
+                  <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed font-normal mb-8">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Interactive Action Footer */}
-                <div className="relative z-10 pt-5 border-t border-slate-100 flex items-center justify-between">
+                <div className="relative z-10 pt-5 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                   <a
                     href={service.link}
                     className={`inline-flex items-center gap-2 text-sm font-black ${service.accentText} transition-colors`}
@@ -139,13 +139,13 @@ export default function ServicesSection() {
                   </a>
 
                   {/* Animated Circular Button */}
-                  <div className={`w-10 h-10 rounded-full bg-slate-100/90 text-slate-600 ${service.btnBg} group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm group-hover:shadow-md group-hover:scale-110`}>
+                  <div className={`w-10 h-10 rounded-full bg-slate-100/90 dark:bg-slate-800 text-slate-600 dark:text-slate-300 ${service.btnBg} group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm group-hover:shadow-md group-hover:scale-110`}>
                     <ArrowRight className="w-4 h-4 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
                   </div>
                 </div>
 
                 {/* Corner Watermark Circle */}
-                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-slate-50/70 rounded-full pointer-events-none group-hover:scale-150 transition-transform duration-700 -z-0" />
+                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-slate-50/70 dark:bg-slate-800/30 rounded-full pointer-events-none group-hover:scale-150 transition-transform duration-700 -z-0" />
               </div>
             );
           })}

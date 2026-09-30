@@ -32,11 +32,11 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="relative bg-white pt-20 pb-8 border-t border-slate-200">
+    <footer id="contact" className="relative bg-white dark:bg-slate-950 pt-20 pb-8 border-t border-slate-200 dark:border-slate-800/80 transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* --- Main Modern Grid Layout --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-slate-100">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-slate-100 dark:border-slate-800/60">
 
           {/* Column 1: Brand & Socials (4 Columns Width) */}
           <div className="lg:col-span-4 flex flex-col items-start space-y-6">
@@ -44,11 +44,11 @@ export default function Footer() {
               <img
                 src="/Website-img/logo-1.jpg"
                 alt="Pabna Online Logo"
-                className="h-14 sm:h-16 w-auto object-contain"
+                className="h-14 sm:h-16 w-auto object-contain rounded-lg"
               />
             </Link>
 
-            <p className="text-slate-500 text-[15px] leading-relaxed pr-4">
+            <p className="text-slate-500 dark:text-slate-400 text-[15px] leading-relaxed pr-4">
               Pabna Online is your trusted Internet Service Provider, dedicated to delivering ultra-fast, seamless, and reliable broadband connectivity. We empower homes and businesses across Pabna to stay ahead.
             </p>
 
@@ -62,7 +62,7 @@ export default function Footer() {
                   key={idx}
                   href="#"
                   aria-label={social.label}
-                  className="w-9 h-9 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-cyan-600 hover:border-cyan-600 hover:text-white transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+                  className="w-9 h-9 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-cyan-600 hover:border-cyan-600 hover:text-white transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
                 >
                   <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                     <path d={social.icon} />
@@ -77,11 +77,11 @@ export default function Footer() {
 
             {/* Animated Title Border with Left to Right Gradient */}
             <div className="relative mb-6 inline-block pb-2 pr-8">
-              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest relative z-10">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest relative z-10">
                 Company
               </h3>
               {/* Static light background line fading to transparent */}
-              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-slate-200 to-transparent"></span>
+              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-slate-200 dark:from-slate-800 to-transparent"></span>
               {/* Animated glowing line fading to transparent */}
               <span className="absolute bottom-0 left-0 w-12 h-[2px] bg-gradient-to-r from-cyan-500 to-transparent rounded-full animate-pulse"></span>
             </div>
@@ -96,10 +96,10 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={item.link}
-                    className="group flex items-center text-[15px] font-medium text-slate-500 hover:text-cyan-600 transition-colors duration-300 w-fit"
+                    className="group flex items-center text-[15px] font-medium text-slate-500 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300 w-fit"
                   >
                     {/* Modern Dot Icon */}
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-cyan-500 group-hover:scale-[1.5] transition-all duration-300 mr-3"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:bg-cyan-500 group-hover:scale-[1.5] transition-all duration-300 mr-3"></span>
                     {/* Text with animated gradient underline */}
                     <span className="relative">
                       {item.name}
@@ -113,52 +113,52 @@ export default function Footer() {
 
           {/* Column 3: Contact & Support Box (5 Columns Width) */}
           <div className="lg:col-span-5">
-            <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)]">
-              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-6 relative inline-block pr-8 pb-2">
+            <div className="bg-slate-50 dark:bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)]">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest mb-6 relative inline-block pr-8 pb-2">
                 Support & Contact
-                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-slate-200 to-transparent"></span>
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-slate-200 dark:from-slate-800 to-transparent"></span>
                 <span className="absolute bottom-0 left-0 w-12 h-[2px] bg-gradient-to-r from-emerald-500 to-transparent rounded-full animate-pulse"></span>
               </h3>
 
               <div className="space-y-5">
                 {/* Primary WhatsApp Contact */}
-                <a href="https://wa.me/+8801718408293" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:border-emerald-200 hover:shadow-md transition-all duration-300 group">
-                  <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300 shrink-0">
+                <a href="https://wa.me/+8801718408293" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 bg-white dark:bg-slate-800/90 p-4 rounded-2xl border border-slate-100 dark:border-slate-700/60 shadow-sm hover:border-emerald-200 dark:hover:border-emerald-500/40 hover:shadow-md transition-all duration-300 group">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300 shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-0.5">Direct Support</span>
-                    <span className="block text-lg font-extrabold text-slate-800 group-hover:text-emerald-600 transition-colors">01718 408 293</span>
+                    <span className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-0.5">Direct Support</span>
+                    <span className="block text-lg font-extrabold text-slate-800 dark:text-slate-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">01718 408 293</span>
                   </div>
                 </a>
 
                 {/* Secondary Contacts Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
                       <Headphones className="w-4 h-4" />
                     </div>
                     <div>
-                      <a href="tel:+8809639109639" className="block text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors">096 391 09 639</a>
-                      <span className="block text-[11px] text-slate-400 font-medium">Hotline</span>
+                      <a href="tel:+8809639109639" className="block text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">096 391 09 639</a>
+                      <span className="block text-[11px] text-slate-400 dark:text-slate-500 font-medium">Hotline</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
                       <Mail className="w-4 h-4" />
                     </div>
                     {/* Added break-all so it never ellipses */}
                     <div className="w-full">
-                      <a href="mailto:info@pabnaonline.net" className="block text-sm font-bold text-slate-700 hover:text-blue-600 transition-colors break-words">info@pabnaonline.net</a>
-                      <span className="block text-[11px] text-slate-400 font-medium">Email Us</span>
+                      <a href="mailto:info@pabnaonline.net" className="block text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-words">info@pabnaonline.net</a>
+                      <span className="block text-[11px] text-slate-400 dark:text-slate-500 font-medium">Email Us</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Address */}
-                <div className="flex items-start gap-3 pt-3 border-t border-slate-200/60 mt-4">
-                  <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
-                  <p className="text-sm text-slate-500 leading-relaxed font-medium">
+                <div className="flex items-start gap-3 pt-3 border-t border-slate-200/60 dark:border-slate-800/80 mt-4">
+                  <MapPin className="w-4 h-4 text-slate-400 dark:text-slate-500 shrink-0 mt-0.5" />
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
                     3rd Floor, Hazi Akbar ali Super Market, Abdul Hamid Road, Pabna
                   </p>
                 </div>
@@ -169,9 +169,9 @@ export default function Footer() {
         </div>
 
         {/* --- Bottom Copyright Bar --- */}
-        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium text-slate-400">
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium text-slate-400 dark:text-slate-500">
           <p className="text-center md:text-left">
-            © {new Date().getFullYear()} <span className="text-slate-800 font-bold">PABNA ONLINE</span>. All Rights Reserved.
+            © {new Date().getFullYear()} <span className="text-slate-800 dark:text-slate-200 font-bold">PABNA ONLINE</span>. All Rights Reserved.
           </p>
           <p className="text-center md:text-right flex items-center gap-1.5">
             Developed by

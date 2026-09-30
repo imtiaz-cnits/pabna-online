@@ -40,26 +40,26 @@ export default function IptvSection() {
   return (
     <>
       {/* IPTV Links Banner Section */}
-      <section className="py-20 bg-slate-50 relative overflow-hidden">
+      <section className="py-20 bg-slate-50 dark:bg-slate-950 relative overflow-hidden transition-colors duration-500">
         {/* Subtle Background Glows */}
         <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-cyan-200/30 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* Centered Section Title */}
-          <div className="text-center mb-12 max-w-2xl mx-auto">
-            <h4 className="text-3xl font-extrabold font-black text-slate-900 uppercase tracking-wide border-b-2 border-cyan-500 inline-block pb-1.5">
+          <div className="text-center mb-12 max-w-2xl mx-auto reveal-on-scroll">
+            <h4 className="text-3xl font-extrabold font-black text-slate-900 dark:text-white uppercase tracking-wide border-b-2 border-cyan-500 inline-block pb-1.5">
               IPTV Links
             </h4>
-            <p className="text-md font-medium text-slate-500 mt-3">Direct server links for live television</p>
+            <p className="text-md font-medium text-slate-500 dark:text-slate-400 mt-3">Direct server links for live television</p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6" data-reveal-group>
             {iptvLinks.map((item, idx) => (
               <div
                 key={idx}
                 onMouseMove={handleMouseMove}
-                className="group relative bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-[0_15px_30px_rgba(0,0,0,0.06)] hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col items-center justify-between min-h-[190px] text-center"
+                className="reveal-stagger-item group relative bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_15px_30px_rgba(0,0,0,0.06)] hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col items-center justify-between min-h-[190px] text-center"
               >
                 {/* Spotlight Glow Effect */}
                 <div
@@ -77,7 +77,7 @@ export default function IptvSection() {
                   <div className="text-cyan-500 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300 opacity-80 group-hover:opacity-100 mb-3">
                     <item.icon className="w-8 h-8 stroke-[1.5]" />
                   </div>
-                  <h4 className="font-bold text-lg md:text-xl text-slate-800 leading-snug">{item.name}</h4>
+                  <h4 className="font-bold text-lg md:text-xl text-slate-800 dark:text-slate-100 leading-snug">{item.name}</h4>
                 </div>
 
                 {/* Updated Button matching IPTV Apps style */}
@@ -85,7 +85,7 @@ export default function IptvSection() {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative z-10 inline-flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl border-2 border-slate-100 bg-slate-50 text-slate-600 font-bold text-[14px] uppercase tracking-wider transition-all duration-300 group-hover:border-cyan-500 group-hover:bg-cyan-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-cyan-500/30"
+                  className="relative z-10 inline-flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl border-2 border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold text-[14px] uppercase tracking-wider transition-all duration-300 group-hover:border-cyan-500 group-hover:bg-cyan-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-cyan-500/30"
                 >
                   WATCH NOW
                   <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -97,26 +97,26 @@ export default function IptvSection() {
       </section>
 
       {/* IPTV Apps Section */}
-      <section className="py-20 bg-white relative overflow-hidden border-t border-slate-100">
+      <section className="py-20 bg-white dark:bg-slate-900 relative overflow-hidden border-t border-slate-100 dark:border-slate-800 transition-colors duration-500">
         {/* Subtle Background Glows */}
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-amber-100/40 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* Centered Section Title */}
-          <div className="text-center mb-12 max-w-2xl mx-auto">
-            <h4 className="text-3xl font-extrabold font-black text-slate-900 uppercase tracking-wide border-b-2 border-amber-500 inline-block pb-1.5">
+          <div className="text-center mb-12 max-w-2xl mx-auto reveal-on-scroll">
+            <h4 className="text-3xl font-extrabold font-black text-slate-900 dark:text-white uppercase tracking-wide border-b-2 border-amber-500 inline-block pb-1.5">
               IPTV Apps
             </h4>
-            <p className="text-md font-medium text-slate-500 mt-3">Download official apps for best experience</p>
+            <p className="text-md font-medium text-slate-500 dark:text-slate-400 mt-3">Download official apps for best experience</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto" data-reveal-group>
             {iptvApps.map((app, idx) => (
               <div
                 key={idx}
                 onMouseMove={handleMouseMove}
-                className="group relative bg-slate-50/50 rounded-[2rem] p-8 border border-slate-200 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2.5 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[180px]"
+                className="reveal-stagger-item group relative bg-slate-50/50 dark:bg-slate-950/80 rounded-[2rem] p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2.5 transition-all duration-300 overflow-hidden flex flex-col justify-between min-h-[180px]"
               >
                 {/* Spotlight Glow Effect */}
                 <div
@@ -132,7 +132,7 @@ export default function IptvSection() {
                 {/* Content */}
                 <div className="relative z-10 flex items-start justify-between mb-8">
                   <div className="flex flex-col text-left">
-                    <h4 className="font-extrabold text-slate-900 text-lg md:text-xl tracking-tight mb-1">{app.name}</h4>
+                    <h4 className="font-extrabold text-slate-900 dark:text-white text-lg md:text-xl tracking-tight mb-1">{app.name}</h4>
                     <span className="text-[11px] font-bold uppercase tracking-widest text-slate-400">Application</span>
                   </div>
 
@@ -146,7 +146,7 @@ export default function IptvSection() {
                   href={app.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative z-10 inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl border-2 border-slate-200 text-slate-600 font-bold text-sm transition-all duration-300 group-hover:border-amber-400 group-hover:bg-amber-400 group-hover:text-white group-hover:shadow-lg group-hover:shadow-amber-500/30"
+                  className="relative z-10 inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl border-2 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-bold text-sm transition-all duration-300 group-hover:border-amber-400 group-hover:bg-amber-400 group-hover:text-white group-hover:shadow-lg group-hover:shadow-amber-500/30"
                 >
                   WATCH NOW
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

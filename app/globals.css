@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ============================================================
    🎨  DESIGN TOKEN SYSTEM — PABNA ONLINE
    ============================================================
@@ -62,6 +64,63 @@
   --shadow-button-hover: 0 18px 40px rgba(99, 102, 241, 0.45);
   --shadow-glow-cyan:    0 8px 24px -4px rgba(0, 195, 255, 0.5);
   --shadow-glow-indigo:  0 8px 24px -4px rgba(99, 102, 241, 0.5);
+}
+
+.dark {
+  --background:    #030712;
+  --foreground:    #f8fafc;
+  --surface:       #0b0f19;
+  --surface-alt:   #030712;
+  --surface-card:  #0f172a;
+  --surface-dark:  #020617;
+  --text-heading:  #ffffff;
+  --text-body:     #94a3b8;
+  --text-muted:    #64748b;
+  --border-base:   #1e293b;
+  --shadow-card:   0 10px 30px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   Synchronized Universal Dark/Light Theme Transition
+   Guarantees that all elements shift colors simultaneously
+   ============================================================ */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              fill 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-delay: 0s !important;
+}
+
+/* ============================================================
+   Scroll Entrance & Stagger Reveal Animations
+   ============================================================ */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--reveal-delay, 0) * 85ms);
+  will-change: opacity, transform;
+}
+.reveal-stagger-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ============================================================

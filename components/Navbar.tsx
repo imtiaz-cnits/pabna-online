@@ -69,6 +69,9 @@ export default function Navbar() {
   }, []);
 
   const toggleDarkMode = () => {
+    // Add synchronized transition class to html root
+    document.documentElement.classList.add("theme-transition");
+
     if (darkMode) {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
@@ -78,6 +81,11 @@ export default function Navbar() {
       localStorage.setItem("theme", "dark");
       setDarkMode(true);
     }
+
+    // Remove transition helper after animation finishes
+    setTimeout(() => {
+      document.documentElement.classList.remove("theme-transition");
+    }, 550);
   };
 
   const navLinks = [

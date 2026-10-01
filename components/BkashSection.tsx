@@ -87,7 +87,7 @@ const bkashSteps: Step[] = [
   },
   {
     step: 8,
-    title: "ডিজিタル রিসিট",
+    title: "ডিজিটাল রিসিট",
     action: "রিসিট সংরক্ষণ",
     instruction: "বিকাশ অ্যাপে ডিজিটাল রিসিট ও স্টেটমেন্ট দেখে নিতে ও ডাউনলোড করে সংরক্ষণ করতে পারেন।",
     img: "/Website-img/bkash-steps/step-8.png",
@@ -179,11 +179,10 @@ export default function BkashSection() {
             <button
               type="button"
               onClick={() => setViewMode("interactive")}
-              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 cursor-pointer ${
-                viewMode === "interactive"
-                  ? "bg-gradient-to-r from-[#e2136e] to-[#b30b55] text-white shadow-lg shadow-[#e2136e]/40 bkash-neon-btn scale-105"
-                  : "text-slate-400 hover:text-white border border-transparent"
-              }`}
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 cursor-pointer ${viewMode === "interactive"
+                ? "bg-gradient-to-r from-[#e2136e] to-[#b30b55] text-white shadow-lg shadow-[#e2136e]/40 bkash-neon-btn scale-105"
+                : "text-slate-400 hover:text-white border border-transparent"
+                }`}
             >
               <Smartphone className="w-4 h-4" />
               ধাপ অনুযায়ী গাইড
@@ -191,11 +190,10 @@ export default function BkashSection() {
             <button
               type="button"
               onClick={() => setViewMode("grid")}
-              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 cursor-pointer ${
-                viewMode === "grid"
-                  ? "bg-gradient-to-r from-[#e2136e] to-[#b30b55] text-white shadow-lg shadow-[#e2136e]/40 bkash-neon-btn scale-105"
-                  : "text-slate-400 hover:text-white border border-transparent"
-              }`}
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 cursor-pointer ${viewMode === "grid"
+                ? "bg-gradient-to-r from-[#e2136e] to-[#b30b55] text-white shadow-lg shadow-[#e2136e]/40 bkash-neon-btn scale-105"
+                : "text-slate-400 hover:text-white border border-transparent"
+                }`}
             >
               <Layers className="w-4 h-4" />
               সবগুলো স্ক্রিন (৮টি ধাপ)
@@ -215,11 +213,10 @@ export default function BkashSection() {
                     key={s.step}
                     type="button"
                     onClick={() => setActiveStep(idx)}
-                    className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer border ${
-                      activeStep === idx
-                        ? "bg-[#e2136e] text-white border-[#e2136e] shadow-lg shadow-[#e2136e]/40 scale-105 bkash-neon-btn"
-                        : "bg-white/5 text-slate-400 border-white/10 hover:border-[#e2136e]/50 hover:text-white"
-                    }`}
+                    className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer border ${activeStep === idx
+                      ? "bg-[#e2136e] text-white border-[#e2136e] shadow-lg shadow-[#e2136e]/40 scale-105 bkash-neon-btn"
+                      : "bg-white/5 text-slate-400 border-white/10 hover:border-[#e2136e]/50 hover:text-white"
+                      }`}
                   >
                     ধাপ {idx + 1}
                   </button>
@@ -377,30 +374,6 @@ export default function BkashSection() {
             </div>
           )}
         </div>
-
-        {/* Bottom Trust & External Guide Bar with Neon Glow */}
-        <div className="mt-14 p-5 sm:p-6 rounded-3xl bg-white/[0.03] backdrop-blur-xl max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 bkash-neon-card">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#e2136e]/20 text-[#ff79b4] border border-[#e2136e]/30 flex items-center justify-center shrink-0 shadow-sm">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <div className="text-left">
-              <p className="text-sm font-bold text-white">১০০% নিরাপদ ও ভেরিফায়েড পেমেন্ট</p>
-              <p className="text-xs text-slate-400">বিকাশের অফিশিয়াল পে-বিল গেটওয়ের মাধ্যমে পরিশোধিত হয়</p>
-            </div>
-          </div>
-
-          <a
-            href="https://pabnaonline.net/bkash-payment-instruction/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/10 hover:bg-[#e2136e] text-white text-xs sm:text-sm font-bold border border-white/15 hover:border-[#e2136e] shadow-sm hover:shadow-lg hover:shadow-[#e2136e]/40 transition-all cursor-pointer bkash-neon-btn"
-          >
-            <span>অফিশিয়াল নির্দেশাবলি পেজ</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
-        </div>
-
       </div>
 
       {/* ── High-Resolution Single Image Zoom Modal (90vh Compact, Zero Scroll) ── */}
@@ -485,11 +458,10 @@ export default function BkashSection() {
                     type="button"
                     onClick={() => setModalIndex(i)}
                     aria-label={`Go to step ${i + 1}`}
-                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      modalIndex === i
-                        ? "w-5 bg-[#e2136e] shadow-[0_0_8px_rgba(226,19,110,0.8)]"
-                        : "w-2 bg-white/25 hover:bg-white/50"
-                    }`}
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${modalIndex === i
+                      ? "w-5 bg-[#e2136e] shadow-[0_0_8px_rgba(226,19,110,0.8)]"
+                      : "w-2 bg-white/25 hover:bg-white/50"
+                      }`}
                   />
                 ))}
               </div>

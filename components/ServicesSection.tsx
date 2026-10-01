@@ -95,14 +95,14 @@ export default function ServicesSection() {
           </h3>
         </div>
 
-        {/* 3 Colorful Modern Feature Cards (Staggered Animation) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8" data-reveal-group>
+        {/* 3 Colorful Modern Feature Cards (Pure Smooth Hover Lift identical to Price Cards) */}
+        <div className="reveal-on-scroll grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const IconComp = service.icon;
             return (
               <div
                 key={index}
-                className="reveal-stagger-item group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-3xl p-8 border border-slate-200/80 dark:border-white/10 shadow-[0_12px_35px_-8px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_12px_35px_-8px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_22px_50px_-10px_rgba(5,150,105,0.25)] hover:-translate-y-1.5 hover:scale-[1.01] hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-500 ease-out flex flex-col justify-between overflow-hidden cursor-pointer"
+                className="group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-3xl p-8 border border-slate-200/80 dark:border-white/10 shadow-[0_12px_35px_-8px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_12px_35px_-8px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_22px_50px_-10px_rgba(5,150,105,0.25)] hover:-translate-y-1.5 hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-500 ease-out flex flex-col justify-between overflow-hidden cursor-pointer"
               >
                 {/* Dynamic Neon Background Bloom on Hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.bgGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />

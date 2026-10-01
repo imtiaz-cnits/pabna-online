@@ -154,6 +154,13 @@ html.theme-transition *::after {
 .reveal-stagger-item.is-visible {
   opacity: 1;
   transform: translateY(0);
+  transition-delay: 0s !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, background-color 0.4s ease, opacity 0.6s ease;
+}
+
+.reveal-stagger-item.is-visible:hover {
+  transition-delay: 0s !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, background-color 0.4s ease;
 }
 
 /* ============================================================

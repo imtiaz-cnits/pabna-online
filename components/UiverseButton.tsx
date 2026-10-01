@@ -29,9 +29,10 @@ export default function UiverseButton({
 }: UiverseButtonProps) {
   const { ref: magneticRef, handlers: magneticHandlers } =
     useMagneticSpring<any>({
-      pull: 0.28,
-      scaleHover: 1.04,
-      scalePress: 0.93,
+      pull: 0.12,
+      maxOffset: 5,
+      scaleHover: 1.03,
+      scalePress: 0.95,
     });
 
   const content = (

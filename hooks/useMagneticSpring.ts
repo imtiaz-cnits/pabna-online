@@ -3,7 +3,8 @@
 import { useRef, useCallback } from "react";
 
 interface MagneticOptions {
-  pull?: number; // magnetic strength (e.g. 0.3)
+  pull?: number; // magnetic strength (subtle micro-pull)
+  maxOffset?: number; // maximum travel distance in pixels
   scaleHover?: number; // scale when hovered
   scalePress?: number; // scale when clicked down
 }
@@ -11,7 +12,13 @@ interface MagneticOptions {
 export function useMagneticSpring<T extends HTMLElement = HTMLElement>(
   options: MagneticOptions = {}
 ) {
-  const { pull = 0.32, scaleHover = 1.05, scalePress = 0.93 } = options;
+  const {
+    pull = 0.12,
+    maxOffset = 6,
+    scaleHover = 1.03,
+    scalePress = 0.95,
+  } = options;
+
   const ref = useRef<T | null>(null);
 
   const state = useRef({
@@ -31,20 +38,23 @@ export function useMagneticSpring<T extends HTMLElement = HTMLElement>(
       s.isHovered = true;
       s.isPressed = false;
 
-      // Stable center of the element in viewport (unaffected by prior transforms)
+      // Stable center of the element in viewport
       const rect = el.getBoundingClientRect();
       s.originX = rect.left + rect.width / 2 - s.currentX;
       s.originY = rect.top + rect.height / 2 - s.currentY;
 
-      const deltaX = (e.clientX - s.originX) * pull;
-      const deltaY = (e.clientY - s.originY) * pull;
+      const rawX = (e.clientX - s.originX) * pull;
+      const rawY = (e.clientY - s.originY) * pull;
+      const deltaX = Math.max(-maxOffset, Math.min(maxOffset, rawX));
+      const deltaY = Math.max(-maxOffset, Math.min(maxOffset, rawY));
+
       s.currentX = deltaX;
       s.currentY = deltaY;
 
-      el.style.transition = "transform 0.18s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.2s ease";
+      el.style.transition = "transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.2s ease";
       el.style.transform = `translate3d(${deltaX.toFixed(1)}px, ${deltaY.toFixed(1)}px, 0) scale(${scaleHover})`;
     },
-    [pull, scaleHover]
+    [pull, maxOffset, scaleHover]
   );
 
   const onMouseMove = useCallback(
@@ -59,18 +69,21 @@ export function useMagneticSpring<T extends HTMLElement = HTMLElement>(
         s.originY = rect.top + rect.height / 2 - s.currentY;
       }
 
-      const deltaX = (e.clientX - s.originX) * pull;
-      const deltaY = (e.clientY - s.originY) * pull;
+      const rawX = (e.clientX - s.originX) * pull;
+      const rawY = (e.clientY - s.originY) * pull;
+      const deltaX = Math.max(-maxOffset, Math.min(maxOffset, rawX));
+      const deltaY = Math.max(-maxOffset, Math.min(maxOffset, rawY));
+
       s.currentX = deltaX;
       s.currentY = deltaY;
 
       el.style.transition = s.isPressed
         ? "transform 0.08s ease-out"
-        : "transform 0.12s cubic-bezier(0.25, 1, 0.5, 1)";
+        : "transform 0.15s cubic-bezier(0.25, 1, 0.5, 1)";
       const scale = s.isPressed ? scalePress : scaleHover;
       el.style.transform = `translate3d(${deltaX.toFixed(1)}px, ${deltaY.toFixed(1)}px, 0) scale(${scale})`;
     },
-    [pull, scaleHover, scalePress]
+    [pull, maxOffset, scaleHover, scalePress]
   );
 
   const onMouseDown = useCallback(() => {
@@ -87,9 +100,9 @@ export function useMagneticSpring<T extends HTMLElement = HTMLElement>(
     if (!el) return;
     const s = state.current;
     s.isPressed = false;
-    // Spring bounce recoil on release
-    el.style.transition = "transform 0.35s cubic-bezier(0.34, 1.8, 0.64, 1)";
-    el.style.transform = `translate3d(${s.currentX.toFixed(1)}px, ${s.currentY.toFixed(1)}px, 0) scale(${scaleHover * 1.02})`;
+    // Gentle spring bounce recoil on release
+    el.style.transition = "transform 0.35s cubic-bezier(0.34, 1.6, 0.64, 1)";
+    el.style.transform = `translate3d(${s.currentX.toFixed(1)}px, ${s.currentY.toFixed(1)}px, 0) scale(${scaleHover * 1.015})`;
   }, [scaleHover]);
 
   const onMouseLeave = useCallback(() => {
@@ -103,9 +116,8 @@ export function useMagneticSpring<T extends HTMLElement = HTMLElement>(
     s.originX = 0;
     s.originY = 0;
 
-    // "cursor remove korle bounce hobeee":
-    // Hardware accelerated elastic spring overshoot back to center
-    el.style.transition = "transform 0.65s cubic-bezier(0.34, 1.8, 0.64, 1), box-shadow 0.3s ease";
+    // Smooth elastic spring settle back to center
+    el.style.transition = "transform 0.55s cubic-bezier(0.34, 1.5, 0.64, 1), box-shadow 0.3s ease";
     el.style.transform = "translate3d(0px, 0px, 0) scale(1)";
   }, []);
 

@@ -54,7 +54,7 @@ export default function LocationSection() {
           <div className="relative bg-white dark:bg-slate-900 p-2.5 rounded-[2rem] shadow-xl ring-1 ring-slate-200/50 dark:ring-slate-800 z-10 transition-shadow duration-500 group-hover:shadow-2xl">
             <div className="rounded-[1.5rem] overflow-hidden bg-slate-100 dark:bg-slate-800">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227.7929077542913!2d89.23751159053505!3d24.006844305705968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe9b5b4a35c9e7%3A0xcb692fab6b815d87!2sCodeNext%20IT%20Solution!5e0!3m2!1sen!2sbd!4v1685784652503!5m2!1sen!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.684932630535!2d89.23510137403608!3d24.00690047888322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaa1fbe62298c1f45%3A0x9f5c88fc8fda658c!2sPabna%20Online!5e0!3m2!1sen!2sbd!4v1790841382189!5m2!1sen!2sbd"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}

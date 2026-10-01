@@ -56,12 +56,12 @@ export default function IptvSection() {
             <p className="text-md font-medium text-slate-500 dark:text-slate-400 mt-3">Direct server links for live television</p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6" data-reveal-group>
+          <div className="reveal-on-scroll grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
             {iptvLinks.map((item, idx) => (
               <div
                 key={idx}
                 onMouseMove={handleMouseMove}
-                className="reveal-stagger-item group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-2xl p-5 border border-slate-200/80 dark:border-white/10 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_15px_35px_rgba(5,150,105,0.18)] hover:-translate-y-1.5 hover:border-emerald-400/50 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-500 ease-out overflow-hidden flex flex-col items-center justify-between min-h-[190px] text-center"
+                className="group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-2xl p-5 border border-slate-200/80 dark:border-white/10 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_15px_35px_rgba(5,150,105,0.18)] hover:-translate-y-1.5 hover:border-emerald-400/50 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-500 ease-out overflow-hidden flex flex-col items-center justify-between min-h-[190px] text-center"
               >
                 {/* Spotlight Glow Effect */}
                 <div
@@ -113,12 +113,12 @@ export default function IptvSection() {
             <p className="text-md font-medium text-slate-500 dark:text-slate-400 mt-3">Download official apps for best experience</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto" data-reveal-group>
+          <div className="reveal-on-scroll grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {iptvApps.map((app, idx) => (
               <div
                 key={idx}
                 onMouseMove={handleMouseMove}
-                className="reveal-stagger-item group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-[2rem] p-8 border border-slate-200/80 dark:border-white/10 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_10px_30px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_20px_45px_rgba(5,150,105,0.2)] hover:-translate-y-1.5 hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-500 ease-out overflow-hidden flex flex-col justify-between min-h-[180px]"
+                className="group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-[2rem] p-8 border border-slate-200/80 dark:border-white/10 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_10px_30px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_20px_45px_rgba(5,150,105,0.2)] hover:-translate-y-1.5 hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-500 ease-out overflow-hidden flex flex-col justify-between min-h-[180px]"
               >
                 {/* Spotlight Glow Effect */}
                 <div

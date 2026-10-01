@@ -118,13 +118,13 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        {/* 4 Connected Step Cards Grid (Staggered Animation) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 relative" data-reveal-group>
+        {/* 4 Connected Step Cards Grid (Pure Smooth Hover Lift identical to Price Cards) */}
+        <div className="reveal-on-scroll grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 relative">
 
           {steps.map((item, idx) => (
             <div
               key={idx}
-              className="reveal-stagger-item group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-white/10 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_10px_30px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_20px_45px_-8px_rgba(5,150,105,0.22)] hover:-translate-y-1.5 hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-500 ease-out flex flex-col justify-between"
+              className="group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-3xl p-6 sm:p-7 border border-slate-200/80 dark:border-white/10 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_10px_30px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_20px_45px_-8px_rgba(5,150,105,0.22)] hover:-translate-y-1.5 hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-500 ease-out flex flex-col justify-between"
             >
               {/* Top Row: Step Badge + Icon */}
               <div>

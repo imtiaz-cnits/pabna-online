@@ -95,11 +95,11 @@ export default function AboutSection() {
               Hundreds of satisfied customers are already getting more buyers and earn much mor If you are looking for a reliable partner for the growth of your business.
             </p>
 
-            {/* Colorful Feature Cards with Staggered Entrance Reveal */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2" data-reveal-group>
+            {/* Colorful Feature Cards with Pure Smooth Hover Lift */}
+            <div className="reveal-on-scroll grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
 
               {/* Card 1: Cyber Emerald */}
-              <div className="reveal-stagger-item group relative p-4 rounded-2xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_18px_35px_-5px_rgba(5,150,105,0.25)] hover:-translate-y-1.5 hover:scale-[1.01] hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-800/80 transition-all duration-500 ease-out overflow-hidden">
+              <div className="group relative p-4 rounded-2xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_18px_35px_-5px_rgba(5,150,105,0.25)] hover:-translate-y-1.5 hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-800/80 transition-all duration-500 ease-out overflow-hidden">
                 <div className="relative flex items-center gap-3">
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-md shadow-emerald-500/25 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                     <Wifi className="w-5 h-5" />
@@ -112,7 +112,7 @@ export default function AboutSection() {
               </div>
 
               {/* Card 2: Deep Teal */}
-              <div className="reveal-stagger-item group relative p-4 rounded-2xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_18px_35px_-5px_rgba(5,150,105,0.25)] hover:-translate-y-1.5 hover:scale-[1.01] hover:border-teal-400/60 hover:bg-white/90 dark:hover:bg-slate-800/80 transition-all duration-500 ease-out overflow-hidden">
+              <div className="group relative p-4 rounded-2xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_18px_35px_-5px_rgba(5,150,105,0.25)] hover:-translate-y-1.5 hover:border-teal-400/60 hover:bg-white/90 dark:hover:bg-slate-800/80 transition-all duration-500 ease-out overflow-hidden">
                 <div className="relative flex items-center gap-3">
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-teal-600 to-emerald-700 text-white flex items-center justify-center shadow-md shadow-emerald-500/25 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                     <Zap className="w-5 h-5" />
@@ -125,7 +125,7 @@ export default function AboutSection() {
               </div>
 
               {/* Card 3: Emerald Support */}
-              <div className="reveal-stagger-item group relative p-4 rounded-2xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_18px_35px_-5px_rgba(5,150,105,0.25)] hover:-translate-y-1.5 hover:scale-[1.01] hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-800/80 transition-all duration-500 ease-out overflow-hidden">
+              <div className="group relative p-4 rounded-2xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_18px_35px_-5px_rgba(5,150,105,0.25)] hover:-translate-y-1.5 hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-800/80 transition-all duration-500 ease-out overflow-hidden">
                 <div className="relative flex items-center gap-3">
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white flex items-center justify-center shadow-md shadow-emerald-500/25 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                     <ShieldCheck className="w-5 h-5" />

@@ -132,8 +132,8 @@ export default function Footer() {
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-0.5">Direct Support</span>
-                    <span className="block text-lg font-extrabold text-slate-800 dark:text-slate-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">01718 408 293</span>
+                    <span className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-0.5">Hotline</span>
+                    <span className="block text-lg font-extrabold text-slate-800 dark:text-slate-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">096 391 09 639</span>
                   </div>
                 </a>
 
@@ -144,8 +144,8 @@ export default function Footer() {
                       <Headphones className="w-4 h-4" />
                     </div>
                     <div>
-                      <a href="tel:+8809639109639" className="block text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">096 391 09 639</a>
-                      <span className="block text-[11px] text-slate-400 dark:text-slate-500 font-medium">Hotline</span>
+                      <a href="tel:+8809639109639" className="block text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">01718 408 293</a>
+                      <span className="block text-[11px] text-slate-400 dark:text-slate-500 font-medium">Direct Support</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">

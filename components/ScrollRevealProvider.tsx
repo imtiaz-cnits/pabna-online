@@ -30,6 +30,11 @@ export default function ScrollRevealProvider() {
                   el.classList.add("is-visible");
                 });
               });
+              setTimeout(() => {
+                items.forEach((item) => {
+                  (item as HTMLElement).style.removeProperty("--reveal-delay");
+                });
+              }, 800);
               observer.unobserve(target);
             } else {
               target.classList.add("is-visible");

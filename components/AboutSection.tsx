@@ -99,7 +99,7 @@ export default function AboutSection() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2" data-reveal-group>
 
               {/* Card 1: Cyber Emerald */}
-              <div className="reveal-stagger-item group relative p-4 rounded-2xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_18px_35px_-5px_rgba(5,150,105,0.25)] hover:-translate-y-2 hover:scale-[1.02] hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-800/80 transition-all duration-300 overflow-hidden">
+              <div className="reveal-stagger-item group relative p-4 rounded-2xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_18px_35px_-5px_rgba(5,150,105,0.25)] hover:-translate-y-1.5 hover:scale-[1.01] hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-800/80 transition-all duration-500 ease-out overflow-hidden">
                 <div className="relative flex items-center gap-3">
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-md shadow-emerald-500/25 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                     <Wifi className="w-5 h-5" />
@@ -112,7 +112,7 @@ export default function AboutSection() {
               </div>
 
               {/* Card 2: Deep Teal */}
-              <div className="reveal-stagger-item group relative p-4 rounded-2xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_18px_35px_-5px_rgba(5,150,105,0.25)] hover:-translate-y-2 hover:scale-[1.02] hover:border-teal-400/60 hover:bg-white/90 dark:hover:bg-slate-800/80 transition-all duration-300 overflow-hidden">
+              <div className="reveal-stagger-item group relative p-4 rounded-2xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_18px_35px_-5px_rgba(5,150,105,0.25)] hover:-translate-y-1.5 hover:scale-[1.01] hover:border-teal-400/60 hover:bg-white/90 dark:hover:bg-slate-800/80 transition-all duration-500 ease-out overflow-hidden">
                 <div className="relative flex items-center gap-3">
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-teal-600 to-emerald-700 text-white flex items-center justify-center shadow-md shadow-emerald-500/25 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                     <Zap className="w-5 h-5" />
@@ -125,7 +125,7 @@ export default function AboutSection() {
               </div>
 
               {/* Card 3: Emerald Support */}
-              <div className="reveal-stagger-item group relative p-4 rounded-2xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_18px_35px_-5px_rgba(5,150,105,0.25)] hover:-translate-y-2 hover:scale-[1.02] hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-800/80 transition-all duration-300 overflow-hidden">
+              <div className="reveal-stagger-item group relative p-4 rounded-2xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_18px_35px_-5px_rgba(5,150,105,0.25)] hover:-translate-y-1.5 hover:scale-[1.01] hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-800/80 transition-all duration-500 ease-out overflow-hidden">
                 <div className="relative flex items-center gap-3">
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white flex items-center justify-center shadow-md shadow-emerald-500/25 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                     <ShieldCheck className="w-5 h-5" />
@@ -195,14 +195,14 @@ export default function AboutSection() {
                     transform: "translateZ(55px)",
                     boxShadow: "0 25px 40px -10px rgba(5,150,105,0.35), inset 0 1px 1px rgba(255,255,255,0.8)",
                   }}
-                  className="absolute -bottom-5 -left-3 sm:-left-5 bg-white/90 dark:bg-slate-900/85 backdrop-blur-2xl border border-white/80 dark:border-white/20 p-3.5 sm:p-4 rounded-2xl flex items-center gap-3.5 transition-transform duration-200"
+                  className="absolute bottom-2.5 left-2.5 sm:-bottom-5 sm:-left-5 max-w-[calc(100%-1.25rem)] bg-white/95 dark:bg-slate-900/90 backdrop-blur-2xl border border-white/80 dark:border-white/20 p-2.5 sm:p-4 rounded-xl sm:rounded-2xl flex items-center gap-2.5 sm:gap-3.5 transition-transform duration-200 shadow-xl"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-md shadow-emerald-500/30">
-                    <Sparkles className="w-6 h-6 animate-pulse" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-md shadow-emerald-500/30 shrink-0">
+                    <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse" />
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase font-black text-emerald-600 dark:text-emerald-400 tracking-wider">Pabna Online ISP</p>
-                    <p className="text-sm sm:text-base font-black text-slate-900 dark:text-white">Gigabit Optical Fiber</p>
+                    <p className="text-[9px] sm:text-[10px] uppercase font-black text-emerald-600 dark:text-emerald-400 tracking-wider">Pabna Online ISP</p>
+                    <p className="text-xs sm:text-base font-black text-slate-900 dark:text-white">Gigabit Optical Fiber</p>
                   </div>
                 </div>
 
@@ -212,14 +212,14 @@ export default function AboutSection() {
                     transform: "translateZ(70px)",
                     boxShadow: "0 20px 35px -8px rgba(5,150,105,0.35), inset 0 1px 1px rgba(255,255,255,0.8)",
                   }}
-                  className="absolute -top-3 -right-3 sm:-right-4 bg-white/90 dark:bg-slate-900/85 backdrop-blur-2xl border border-white/80 dark:border-white/20 p-3 rounded-2xl flex items-center gap-2.5 transition-transform duration-200"
+                  className="absolute top-2.5 right-2.5 sm:-top-3 sm:-right-4 max-w-[calc(100%-1.25rem)] bg-white/95 dark:bg-slate-900/90 backdrop-blur-2xl border border-white/80 dark:border-white/20 p-2 sm:p-3 rounded-xl sm:rounded-2xl flex items-center gap-2 sm:gap-2.5 transition-transform duration-200 shadow-xl"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-sm">
-                    <Activity className="w-4 h-4 animate-bounce" />
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-sm shrink-0">
+                    <Activity className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-bounce" />
                   </div>
                   <div>
-                    <p className="text-[9px] uppercase font-black text-emerald-600 dark:text-emerald-400">Active Speed</p>
-                    <p className="text-xs font-black text-slate-900 dark:text-white">Up to 100 Mbps</p>
+                    <p className="text-[8px] sm:text-[9px] uppercase font-black text-emerald-600 dark:text-emerald-400">Active Speed</p>
+                    <p className="text-[11px] sm:text-xs font-black text-slate-900 dark:text-white">Up to 100 Mbps</p>
                   </div>
                 </div>
               </div>

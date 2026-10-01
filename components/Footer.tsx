@@ -42,9 +42,14 @@ export default function Footer() {
           <div className="lg:col-span-4 flex flex-col items-start space-y-6">
             <Link href="/" className="inline-block transition-transform hover:opacity-90">
               <img
+                src="/logo-new-white.png"
+                alt="Pabna Online Logo"
+                className="h-12 sm:h-14 w-auto object-contain hidden dark:block"
+              />
+              <img
                 src="/Website-img/logo-1.jpg"
                 alt="Pabna Online Logo"
-                className="h-14 sm:h-16 w-auto object-contain rounded-lg"
+                className="h-12 sm:h-14 w-auto object-contain block dark:hidden rounded-lg"
               />
             </Link>
 

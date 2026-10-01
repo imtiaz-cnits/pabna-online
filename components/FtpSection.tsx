@@ -77,7 +77,7 @@ export default function FtpSection() {
           {ftpServers.map((server, idx) => (
             <div
               key={idx}
-              className="reveal-stagger-item group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-3xl p-4 sm:p-4 border border-slate-200/80 dark:border-white/10 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_20px_45px_-8px_rgba(5,150,105,0.22)] hover:-translate-y-2 hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-300 flex flex-col items-center justify-between text-center overflow-hidden"
+              className="reveal-stagger-item group relative bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl rounded-3xl p-4 sm:p-4 border border-slate-200/80 dark:border-white/10 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,0.7)] dark:shadow-[0_10px_25px_-5px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.08)] hover:shadow-[0_20px_45px_-8px_rgba(5,150,105,0.22)] hover:-translate-y-1.5 hover:border-emerald-400/60 hover:bg-white/90 dark:hover:bg-slate-900/80 transition-all duration-500 ease-out flex flex-col items-center justify-between text-center overflow-hidden"
             >
               {/* Spider Net Constellation Interactive Canvas Background */}
               <SpiderNetCanvas particleCount={14} maxDistance={65} opacity={0.3} />
@@ -107,12 +107,14 @@ export default function FtpSection() {
                 </h4>
               </div>
 
-              {/* Prominent Root Theme Uiverse Button */}
+              {/* Prominent Root Theme Uiverse Button (Connect on mobile, Connect Server on desktop) */}
               <div className="w-full relative z-10 pt-2">
                 <UiverseButton
                   text="Connect Server"
+                  mobileText="Connect"
                   href={server.url}
                   fullWidth
+                  className="!px-2.5 sm:!px-4 !py-2 sm:!py-2.5 !text-xs sm:!text-sm"
                 />
               </div>
             </div>

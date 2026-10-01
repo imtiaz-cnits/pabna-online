@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Sun, Moon, Menu, X } from "lucide-react";
+import UiverseButton from "./UiverseButton";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(true);
@@ -101,26 +102,38 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   };
 
+
+
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
-            ? "bg-slate-950/45 dark:bg-slate-950/50 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.1)] py-3"
-            : "bg-slate-950/20 backdrop-blur-xl border-b border-white/[0.05] shadow-[0_4px_24px_rgba(0,0,0,0.15)] py-4"
+          ? "bg-white/95 dark:bg-slate-950/90 backdrop-blur-2xl border-b border-slate-200/80 dark:border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] py-3"
+          : "bg-transparent border-b border-transparent shadow-none py-4"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Logo with Website-img/logo-1.jpg */}
+          {/* Brand Logo: White Logo when on dark hero or in dark mode; original logo when scrolled in light mode */}
           <Link href="/" className="flex items-center gap-3">
+            <img
+              src="/logo-new-white.png"
+              alt="Pabna Online Logo"
+              className={`h-8 sm:h-9 md:h-10 w-auto object-contain transition-all ${isScrolled ? "hidden dark:block" : "block"
+                }`}
+            />
             <img
               src="/Website-img/logo-1.jpg"
               alt="Pabna Online Logo"
-              className="h-12 sm:h-14 md:h-16 w-auto object-contain rounded-lg"
+              className={`h-9 sm:h-11 md:h-12 w-auto object-contain rounded-lg ${isScrolled ? "block dark:hidden" : "hidden"
+                }`}
             />
           </Link>
 
-          {/* Desktop Navigation Links: iPhone-style Frosted Glass Capsule Dock */}
-          <nav className="hidden md:flex items-center gap-1 xl:gap-2 bg-white/[0.08] dark:bg-white/[0.05] p-1.5 rounded-full border border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_8px_25px_rgba(0,0,0,0.3)] backdrop-blur-2xl transition-all duration-300">
+          {/* Desktop Navigation Links: Frosted Glass Capsule Dock with Animated Neon Glow */}
+          <nav className={`hidden md:flex items-center gap-1 xl:gap-2 p-1.5 rounded-full border nav-neon-dock backdrop-blur-2xl transition-all duration-300 ${isScrolled
+              ? "bg-slate-900/[0.03] dark:bg-white/[0.05] border-slate-200/60 dark:border-white/20 shadow-[0_2px_8px_rgba(0,0,0,0.03)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_8px_25px_rgba(0,0,0,0.3)]"
+              : "bg-white/[0.08] dark:bg-white/[0.05] border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_8px_25px_rgba(0,0,0,0.3)]"
+            }`}>
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -129,7 +142,9 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => handleNavClick(link.id)}
                   className={`relative px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 ease-in-out flex items-center gap-1.5 border ${isActive
-                      ? "bg-emerald-500/25 text-emerald-300 font-extrabold border-emerald-400/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.35),0_2px_10px_rgba(16,185,129,0.3)]"
+                    ? "bg-emerald-500/25 text-emerald-600 dark:text-emerald-300 font-extrabold border-emerald-400/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.35),0_2px_10px_rgba(16,185,129,0.3)]"
+                    : isScrolled
+                      ? "text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-white hover:bg-black/[0.05] dark:hover:bg-white/[0.1] border-transparent"
                       : "text-slate-200 hover:text-white hover:bg-white/[0.1] border-transparent"
                     }`}
                 >
@@ -144,45 +159,28 @@ export default function Navbar() {
 
           {/* Desktop Right Controls: Dark Toggle on Left of View Pricing */}
           <div className="hidden md:flex items-center gap-4">
-            {/* Dark Mode Toggle Switch (iPhone Frosted Glass Button) */}
+            {/* Dark Mode Toggle Switch */}
             <button
               onClick={toggleDarkMode}
               aria-label="Toggle Dark Mode"
-              className="p-2.5 rounded-full bg-white/[0.08] hover:bg-white/[0.18] text-emerald-400 border border-white/20 backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_4px_12px_rgba(0,0,0,0.15)] transition-all cursor-pointer hover:scale-105 active:scale-95"
+              className={`p-2.5 rounded-full border backdrop-blur-xl transition-all cursor-pointer hover:scale-105 active:scale-95 ${isScrolled
+                  ? "bg-slate-100 dark:bg-white/[0.08] hover:bg-slate-200 dark:hover:bg-white/[0.18] text-emerald-600 dark:text-emerald-400 border-slate-200 dark:border-white/20 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_4px_12px_rgba(0,0,0,0.15)]"
+                  : "bg-white/[0.08] hover:bg-white/[0.18] text-emerald-400 border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_4px_12px_rgba(0,0,0,0.15)]"
+                }`}
             >
               {darkMode ? (
                 <Sun className="w-4 h-4 text-emerald-400" />
               ) : (
-                <Moon className="w-4 h-4 text-slate-200" />
+                <Moon className={`w-4 h-4 ${isScrolled ? "text-slate-700 dark:text-slate-200" : "text-slate-200"}`} />
               )}
             </button>
 
-            {/* Uiverse Animated Button */}
-            <div className="btn-wrapper">
-              <a href="#pricing" className="btn-uiverse group" aria-label="View Pricing">
-                <svg className="btn-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
-                  />
-                </svg>
-                <span className="txt-wrapper">
-                  <span className="btn-letter">V</span>
-                  <span className="btn-letter">i</span>
-                  <span className="btn-letter">e</span>
-                  <span className="btn-letter">w</span>
-                  <span className="inline-block w-1.5" />
-                  <span className="btn-letter">P</span>
-                  <span className="btn-letter">r</span>
-                  <span className="btn-letter">i</span>
-                  <span className="btn-letter">c</span>
-                  <span className="btn-letter">i</span>
-                  <span className="btn-letter">n</span>
-                  <span className="btn-letter">g</span>
-                </span>
-              </a>
-            </div>
+            {/* Trendy Modern Cyber Emerald Button with Magnetic Spring Bounce */}
+            <UiverseButton
+              href="#pricing"
+              text="View Pricing"
+              className="!py-2 !px-4.5 sm:!px-5 text-xs sm:text-sm"
+            />
           </div>
 
           {/* Mobile Topbar Controls */}
@@ -190,14 +188,20 @@ export default function Navbar() {
             <button
               onClick={toggleDarkMode}
               aria-label="Toggle Dark Mode"
-              className="p-2.5 rounded-full bg-white/[0.08] text-emerald-400 hover:bg-white/[0.18] border border-white/20 backdrop-blur-xl cursor-pointer"
+              className={`p-2.5 rounded-full border backdrop-blur-xl cursor-pointer transition-all ${isScrolled
+                  ? "bg-slate-100 dark:bg-white/[0.08] text-emerald-600 dark:text-emerald-400 hover:bg-slate-200 dark:hover:bg-white/[0.18] border-slate-200 dark:border-white/20 shadow-sm"
+                  : "bg-white/[0.08] text-emerald-400 hover:bg-white/[0.18] border-white/20"
+                }`}
             >
-              {darkMode ? <Sun className="w-4.5 h-4.5 text-emerald-400" /> : <Moon className="w-4.5 h-4.5 text-slate-200" />}
+              {darkMode ? <Sun className="w-4.5 h-4.5 text-emerald-400" /> : <Moon className={`w-4.5 h-4.5 ${isScrolled ? "text-slate-700 dark:text-slate-200" : "text-slate-200"}`} />}
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2.5 rounded-xl bg-white/[0.08] text-white hover:bg-white/[0.18] border border-white/15 backdrop-blur-xl cursor-pointer"
+              className={`p-2.5 rounded-xl border backdrop-blur-xl cursor-pointer transition-all ${isScrolled
+                  ? "bg-slate-100 dark:bg-white/[0.08] text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-white/[0.18] border-slate-200 dark:border-white/15 shadow-sm"
+                  : "bg-white/[0.08] text-white hover:bg-white/[0.18] border-white/15"
+                }`}
               aria-label="Open Mobile Menu"
             >
               <Menu className="w-6 h-6" />
@@ -206,26 +210,35 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Offcanvas Drawer & Backdrop */}
+      {/* Mobile Offcanvas Drawer & Backdrop (Mobile Only: md:hidden) */}
       <div
         onClick={() => setMobileMenuOpen(false)}
-        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`md:hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none invisible"
           }`}
       />
 
-      {/* Left Offcanvas Sidebar: Frosted Glass */}
+      {/* Left Offcanvas Sidebar (Mobile Only: md:hidden, shadow-none when closed) */}
       <div
-        className={`fixed top-0 left-0 z-50 h-full w-72 bg-slate-950/80 backdrop-blur-2xl border-r border-white/15 p-6 shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col justify-between text-white transition-transform duration-300 ease-in-out ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        className={`md:hidden fixed top-0 left-0 z-50 h-full w-72 bg-slate-950/95 backdrop-blur-2xl border-r border-white/10 p-6 flex flex-col justify-between text-white transition-all duration-300 ease-in-out rounded-none overflow-y-auto ${mobileMenuOpen
+            ? "translate-x-0 opacity-100 shadow-[15px_0_35px_rgba(0,0,0,0.6)] visible pointer-events-auto"
+            : "-translate-x-full opacity-0 shadow-none invisible pointer-events-none"
           }`}
       >
         <div>
           {/* Offcanvas Header */}
           <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
-            <img
-              src="/Website-img/logo-1.jpg"
-              alt="Pabna Online Logo"
-              className="h-12 w-auto object-contain rounded-lg"
-            />
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
+              <img
+                src="/logo-new-white.png"
+                alt="Pabna Online Logo"
+                className="h-10 sm:h-12 w-auto object-contain hidden dark:block"
+              />
+              <img
+                src="/Website-img/logo-1.jpg"
+                alt="Pabna Online Logo"
+                className="h-10 sm:h-12 w-auto object-contain block dark:hidden rounded-lg"
+              />
+            </Link>
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="p-2 rounded-lg bg-white/10 text-white hover:bg-white/20 cursor-pointer"
@@ -245,8 +258,8 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => handleNavClick(link.id)}
                   className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200 border ${isActive
-                      ? "bg-emerald-600/20 text-emerald-400 font-extrabold border-l-4 border-l-emerald-500 border-y-emerald-500/20 border-r-emerald-500/20 shadow-md shadow-emerald-500/10"
-                      : "text-slate-200 hover:text-emerald-400 hover:bg-white/5 border-transparent"
+                    ? "bg-emerald-600/20 text-emerald-400 font-extrabold border-l-4 border-l-emerald-500 border-y-emerald-500/20 border-r-emerald-500/20 shadow-md shadow-emerald-500/10"
+                    : "text-slate-200 hover:text-emerald-400 hover:bg-white/5 border-transparent"
                     }`}
                 >
                   <span>{link.label}</span>
@@ -255,36 +268,14 @@ export default function Navbar() {
               );
             })}
 
-            {/* Uiverse Animated Button inside mobile menu */}
-            <div className="pt-3 flex justify-center">
-              <a
+            {/* Trendy Modern Button inside mobile menu */}
+            <div className="pt-3">
+              <UiverseButton
                 href="#pricing"
+                text="View Pricing"
+                fullWidth
                 onClick={() => setMobileMenuOpen(false)}
-                className="btn-uiverse w-full py-3.5 flex items-center justify-center gap-2"
-                aria-label="View Pricing"
-              >
-                <svg className="btn-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
-                  />
-                </svg>
-                <span className="txt-wrapper">
-                  <span className="btn-letter">V</span>
-                  <span className="btn-letter">i</span>
-                  <span className="btn-letter">e</span>
-                  <span className="btn-letter">w</span>
-                  <span className="inline-block w-1.5" />
-                  <span className="btn-letter">P</span>
-                  <span className="btn-letter">r</span>
-                  <span className="btn-letter">i</span>
-                  <span className="btn-letter">c</span>
-                  <span className="btn-letter">i</span>
-                  <span className="btn-letter">n</span>
-                  <span className="btn-letter">g</span>
-                </span>
-              </a>
+              />
             </div>
           </nav>
         </div>

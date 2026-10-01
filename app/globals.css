@@ -419,6 +419,7 @@ input[type="button"] {
 }
 
 .btn-uiverse {
+  position: relative;
   --border-radius: 9999px;
   --padding: 3px;
   --transition: 0.4s;
@@ -454,8 +455,8 @@ input[type="button"] {
   transition:
     box-shadow var(--transition),
     border var(--transition),
-    background-color var(--transition),
-    transform var(--transition);
+    background-color var(--transition);
+  will-change: transform;
 }
 
 .btn-uiverse::before {
@@ -567,7 +568,6 @@ input[type="button"] {
 .btn-uiverse:hover {
   border: solid 1px hsla(var(--highlight-color-hue), 100%, 80%, 45%);
   box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);
-  transform: translateY(-1px);
 }
 
 .btn-uiverse:hover::before {
@@ -595,7 +595,6 @@ input[type="button"] {
 .btn-uiverse:active {
   border: solid 1px hsla(var(--highlight-color-hue), 100%, 80%, 70%);
   background-color: hsla(var(--highlight-color-hue), 50%, 20%, 0.5);
-  transform: translateY(1px);
 }
 
 /* ============================================================
@@ -636,4 +635,48 @@ input[type="button"] {
 .bkash-neon-btn:hover {
   border-color: rgba(255, 121, 180, 0.95);
   box-shadow: 0 0 22px rgba(226, 19, 110, 0.7);
+}
+
+/* ============================================================
+   Navbar Desktop Capsule Dock Animated Neon Effect
+   ============================================================ */
+@keyframes nav-neon-glow {
+  0%, 100% {
+    border-color: rgba(16, 185, 129, 0.25);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.4),
+      0 2px 10px rgba(16, 185, 129, 0.08);
+  }
+  50% {
+    border-color: rgba(52, 211, 153, 0.45);
+    box-shadow:
+      inset 0 1px 2px rgba(255, 255, 255, 0.5),
+      0 3px 14px rgba(16, 185, 129, 0.15);
+  }
+}
+
+@keyframes nav-neon-glow-dark {
+  0%, 100% {
+    border-color: rgba(16, 185, 129, 0.35);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.25),
+      0 8px 25px rgba(0, 0, 0, 0.3),
+      0 0 10px rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    border-color: rgba(52, 211, 153, 0.65);
+    box-shadow:
+      inset 0 1px 2px rgba(255, 255, 255, 0.35),
+      0 8px 30px rgba(0, 0, 0, 0.35),
+      0 0 20px rgba(16, 185, 129, 0.45),
+      inset 0 0 8px rgba(16, 185, 129, 0.12);
+  }
+}
+
+.nav-neon-dock {
+  animation: nav-neon-glow 4s ease-in-out infinite;
+}
+
+.dark .nav-neon-dock {
+  animation: nav-neon-glow-dark 4s ease-in-out infinite;
 }

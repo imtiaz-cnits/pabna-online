@@ -104,10 +104,25 @@ export default function PricingSection() {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedPkg(null);
+      }
+    };
+
+    if (selectedPkg) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "";
+    }
+
     return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, []);
+  }, [selectedPkg]);
 
   // Mouse tracking for internal glowing spotlight effect
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -160,9 +175,9 @@ export default function PricingSection() {
               key={pkg.id}
               onClick={() => setSelectedPkg(pkg)}
               onMouseMove={handleMouseMove}
-              className={`group relative rounded-[2rem] bg-white dark:bg-slate-900 transition-all duration-500 cursor-pointer flex flex-col h-full ${pkg.isPopular
-                  ? "scale-105 z-20 shadow-[0_20px_60px_-15px_rgba(16,185,129,0.3)] dark:shadow-[0_20px_50px_-15px_rgba(16,185,129,0.2)] border-2 border-emerald-500 dark:border-emerald-500"
-                  : "z-10 border border-slate-200 dark:border-slate-800 shadow-sm hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] hover:border-emerald-300 dark:hover:border-emerald-500/50"
+              className={`group relative rounded-[2rem] bg-white dark:bg-slate-900 transition-all duration-500 ease-out cursor-pointer flex flex-col h-full ${pkg.isPopular
+                  ? "scale-105 hover:scale-[1.06] hover:-translate-y-1.5 z-20 shadow-[0_20px_60px_-15px_rgba(16,185,129,0.3)] dark:shadow-[0_20px_50px_-15px_rgba(16,185,129,0.2)] border-2 border-emerald-500 dark:border-emerald-500"
+                  : "z-10 border border-slate-200 dark:border-slate-800 shadow-sm hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] hover:border-emerald-300 dark:hover:border-emerald-500/50"
                 }`}
             >
               {/* Spider Net Constellation Interactive Canvas Background */}
@@ -247,14 +262,24 @@ export default function PricingSection() {
 
       {/* Modern Order Connection Modal */}
       {selectedPkg && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[2rem] p-6 sm:p-8 max-w-md w-full shadow-2xl relative transform transition-all duration-300 scale-100">
-
+        <div
+          onClick={() => setSelectedPkg(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-in fade-in duration-300 cursor-pointer"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[2rem] p-6 sm:p-8 max-w-md w-full shadow-2xl relative transform transition-all duration-300 scale-100 cursor-default"
+          >
             <button
-              onClick={() => setSelectedPkg(null)}
-              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors"
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedPkg(null);
+              }}
+              className="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer z-30 shadow-sm hover:scale-105 active:scale-95"
+              aria-label="Close modal"
             >
-              <X className="w-4 h-4" />
+              <X className="w-5 h-5" />
             </button>
 
             {submitted ? (

@@ -208,14 +208,14 @@ export default function BkashSection() {
           {/* ── Mode 1: Interactive Step-by-Step Flow ── */}
           {viewMode === "interactive" ? (
             <div className="max-w-5xl mx-auto animate-fadeIn">
-              {/* Step Selector Pills Bar */}
-              <div className="flex items-center justify-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-8 scrollbar-none">
+              {/* Step Selector Pills Bar (Wrapped and Centered on Mobile, no horizontal scroll) */}
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pb-4 mb-8 max-w-2xl mx-auto px-2">
                 {bkashSteps.map((s, idx) => (
                   <button
                     key={s.step}
                     type="button"
                     onClick={() => setActiveStep(idx)}
-                    className={`px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer shrink-0 border ${
+                    className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer border ${
                       activeStep === idx
                         ? "bg-[#e2136e] text-white border-[#e2136e] shadow-lg shadow-[#e2136e]/40 scale-105 bkash-neon-btn"
                         : "bg-white/5 text-slate-400 border-white/10 hover:border-[#e2136e]/50 hover:text-white"
@@ -335,7 +335,7 @@ export default function BkashSection() {
                   <div
                     key={step.step}
                     onClick={() => openModal(idx)}
-                    className="group relative bg-white/[0.04] backdrop-blur-xl rounded-3xl p-4 sm:p-5 shadow-lg hover:shadow-[0_15px_35px_rgba(226,19,110,0.35)] hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between cursor-pointer overflow-hidden bkash-neon-card"
+                    className="group relative bg-white/[0.04] backdrop-blur-xl rounded-3xl p-4 sm:p-5 shadow-lg hover:shadow-[0_15px_35px_rgba(226,19,110,0.35)] hover:-translate-y-1.5 transition-all duration-500 ease-out flex flex-col justify-between cursor-pointer overflow-hidden bkash-neon-card"
                   >
                     {/* Step Pill */}
                     <div className="flex items-center justify-between mb-3 z-10">

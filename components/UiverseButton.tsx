@@ -1,9 +1,12 @@
 "use client";
 
 import React from "react";
+import { Sparkles, ArrowRight } from "lucide-react";
+import { useMagneticSpring } from "@/hooks/useMagneticSpring";
 
 interface UiverseButtonProps {
   text: string;
+  mobileText?: string;
   href?: string;
   onClick?: (e: React.MouseEvent) => void;
   type?: "button" | "submit" | "reset";
@@ -15,6 +18,7 @@ interface UiverseButtonProps {
 
 export default function UiverseButton({
   text,
+  mobileText,
   href,
   onClick,
   type = "button",
@@ -23,46 +27,60 @@ export default function UiverseButton({
   icon,
   ariaLabel,
 }: UiverseButtonProps) {
+  const { ref: magneticRef, handlers: magneticHandlers } =
+    useMagneticSpring<any>({
+      pull: 0.28,
+      scaleHover: 1.04,
+      scalePress: 0.93,
+    });
+
   const content = (
     <>
+      {/* Animated Light Sweep Shimmer */}
+      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
+
+      {/* Left Icon (Custom or Default Sparkles) */}
       {icon ? (
-        icon
+        <span className="shrink-0 transition-transform duration-300 group-hover:scale-110">
+          {icon}
+        </span>
       ) : (
-        <svg className="btn-svg shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
-          />
-        </svg>
+        <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-200 shrink-0 group-hover:rotate-12 transition-transform duration-300" />
       )}
-      <span className="txt-wrapper">
-        {text.split("").map((char, idx) =>
-          char === " " ? (
-            <span key={idx} className="inline-block w-1.5" />
-          ) : (
-            <span
-              key={idx}
-              className="btn-letter"
-              style={{ animationDelay: `${(idx % 12) * 0.08}s` }}
-            >
-              {char}
-            </span>
-          )
-        )}
-      </span>
+
+      {/* Button Text (Responsive Desktop / Mobile) */}
+      {mobileText ? (
+        <span className="inline-flex items-center">
+          <span className="inline-flex sm:hidden font-extrabold tracking-wide drop-shadow-sm">
+            {mobileText}
+          </span>
+          <span className="hidden sm:inline-flex font-extrabold tracking-wide drop-shadow-sm">
+            {text}
+          </span>
+        </span>
+      ) : (
+        <span className="font-extrabold tracking-wide drop-shadow-sm">{text}</span>
+      )}
+
+      {/* Right Arrow Icon */}
+      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-200 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
     </>
   );
 
-  const wrapperClass = `btn-wrapper ${fullWidth ? "w-full flex" : "inline-block"}`;
-  const btnClass = `btn-uiverse ${fullWidth ? "w-full !justify-center" : ""} ${className}`;
+  const baseBtnClass =
+    "relative group overflow-hidden px-5 sm:px-6 py-2.5 sm:py-3 rounded-full inline-flex items-center justify-center gap-2 text-white bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:via-teal-500 hover:to-emerald-600 shadow-[0_4px_16px_rgba(16,185,129,0.32),inset_0_1px_1px_rgba(255,255,255,0.35)] hover:shadow-[0_6px_24px_rgba(16,185,129,0.5),inset_0_1px_2px_rgba(255,255,255,0.5)] border border-emerald-300/40 text-xs sm:text-sm font-extrabold cursor-pointer select-none will-change-transform";
+
+  const btnClass = `${baseBtnClass} ${fullWidth ? "!w-full" : ""} ${className}`;
+  const wrapperClass = fullWidth ? "w-full" : "inline-block";
 
   if (href) {
     return (
       <div className={wrapperClass}>
         <a
+          ref={magneticRef}
           href={href}
           onClick={onClick}
+          {...magneticHandlers}
           className={btnClass}
           aria-label={ariaLabel || text}
         >
@@ -75,8 +93,10 @@ export default function UiverseButton({
   return (
     <div className={wrapperClass}>
       <button
+        ref={magneticRef}
         type={type}
         onClick={onClick}
+        {...magneticHandlers}
         className={btnClass}
         aria-label={ariaLabel || text}
       >

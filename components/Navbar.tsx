@@ -108,8 +108,8 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
-          ? "bg-white/95 dark:bg-slate-950/90 backdrop-blur-2xl border-b border-slate-200/80 dark:border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] py-3"
-          : "bg-transparent border-b border-transparent shadow-none py-4"
+          ? "bg-white/95 dark:bg-slate-950/90 backdrop-blur-2xl border-b border-slate-200/80 dark:border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_36px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] py-1"
+          : "bg-transparent border-b border-transparent shadow-none py-1"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -118,21 +118,21 @@ export default function Navbar() {
             <img
               src="/logo-new-white.png"
               alt="Pabna Online Logo"
-              className={`h-8 sm:h-9 md:h-10 w-auto object-contain transition-all ${isScrolled ? "hidden dark:block" : "block"
+              className={`h-11 sm:h-16 md:h-18 w-auto object-contain transition-all ${isScrolled ? "hidden dark:block" : "block"
                 }`}
             />
             <img
               src="/Website-img/logo-1.jpg"
               alt="Pabna Online Logo"
-              className={`h-9 sm:h-11 md:h-12 w-auto object-contain rounded-lg ${isScrolled ? "block dark:hidden" : "hidden"
+              className={`h-11 sm:h-16 md:h-18 w-auto object-contain rounded-lg ${isScrolled ? "block dark:hidden" : "hidden"
                 }`}
             />
           </Link>
 
           {/* Desktop Navigation Links: Frosted Glass Capsule Dock with Animated Neon Glow */}
           <nav className={`hidden md:flex items-center gap-1 xl:gap-2 p-1.5 rounded-full border nav-neon-dock backdrop-blur-2xl transition-all duration-300 ${isScrolled
-              ? "bg-slate-900/[0.03] dark:bg-white/[0.05] border-slate-200/60 dark:border-white/20 shadow-[0_2px_8px_rgba(0,0,0,0.03)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_8px_25px_rgba(0,0,0,0.3)]"
-              : "bg-white/[0.08] dark:bg-white/[0.05] border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_8px_25px_rgba(0,0,0,0.3)]"
+            ? "bg-slate-900/[0.03] dark:bg-white/[0.05] border-slate-200/60 dark:border-white/20 shadow-[0_2px_8px_rgba(0,0,0,0.03)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_8px_25px_rgba(0,0,0,0.3)]"
+            : "bg-white/[0.08] dark:bg-white/[0.05] border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_8px_25px_rgba(0,0,0,0.3)]"
             }`}>
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
@@ -164,8 +164,8 @@ export default function Navbar() {
               onClick={toggleDarkMode}
               aria-label="Toggle Dark Mode"
               className={`p-2.5 rounded-full border backdrop-blur-xl transition-all cursor-pointer hover:scale-105 active:scale-95 ${isScrolled
-                  ? "bg-slate-100 dark:bg-white/[0.08] hover:bg-slate-200 dark:hover:bg-white/[0.18] text-emerald-600 dark:text-emerald-400 border-slate-200 dark:border-white/20 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_4px_12px_rgba(0,0,0,0.15)]"
-                  : "bg-white/[0.08] hover:bg-white/[0.18] text-emerald-400 border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_4px_12px_rgba(0,0,0,0.15)]"
+                ? "bg-slate-100 dark:bg-white/[0.08] hover:bg-slate-200 dark:hover:bg-white/[0.18] text-emerald-600 dark:text-emerald-400 border-slate-200 dark:border-white/20 shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_4px_12px_rgba(0,0,0,0.15)]"
+                : "bg-white/[0.08] hover:bg-white/[0.18] text-emerald-400 border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25),0_4px_12px_rgba(0,0,0,0.15)]"
                 }`}
             >
               {darkMode ? (
@@ -189,8 +189,8 @@ export default function Navbar() {
               onClick={toggleDarkMode}
               aria-label="Toggle Dark Mode"
               className={`p-2.5 rounded-full border backdrop-blur-xl cursor-pointer transition-all ${isScrolled
-                  ? "bg-slate-100 dark:bg-white/[0.08] text-emerald-600 dark:text-emerald-400 hover:bg-slate-200 dark:hover:bg-white/[0.18] border-slate-200 dark:border-white/20 shadow-sm"
-                  : "bg-white/[0.08] text-emerald-400 hover:bg-white/[0.18] border-white/20"
+                ? "bg-slate-100 dark:bg-white/[0.08] text-emerald-600 dark:text-emerald-400 hover:bg-slate-200 dark:hover:bg-white/[0.18] border-slate-200 dark:border-white/20 shadow-sm"
+                : "bg-white/[0.08] text-emerald-400 hover:bg-white/[0.18] border-white/20"
                 }`}
             >
               {darkMode ? <Sun className="w-4.5 h-4.5 text-emerald-400" /> : <Moon className={`w-4.5 h-4.5 ${isScrolled ? "text-slate-700 dark:text-slate-200" : "text-slate-200"}`} />}
@@ -199,8 +199,8 @@ export default function Navbar() {
             <button
               onClick={() => setMobileMenuOpen(true)}
               className={`p-2.5 rounded-xl border backdrop-blur-xl cursor-pointer transition-all ${isScrolled
-                  ? "bg-slate-100 dark:bg-white/[0.08] text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-white/[0.18] border-slate-200 dark:border-white/15 shadow-sm"
-                  : "bg-white/[0.08] text-white hover:bg-white/[0.18] border-white/15"
+                ? "bg-slate-100 dark:bg-white/[0.08] text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-white/[0.18] border-slate-200 dark:border-white/15 shadow-sm"
+                : "bg-white/[0.08] text-white hover:bg-white/[0.18] border-white/15"
                 }`}
               aria-label="Open Mobile Menu"
             >
@@ -220,8 +220,8 @@ export default function Navbar() {
       {/* Left Offcanvas Sidebar (Mobile Only: md:hidden, shadow-none when closed) */}
       <div
         className={`md:hidden fixed top-0 left-0 z-50 h-full w-72 bg-slate-950/95 backdrop-blur-2xl border-r border-white/10 p-6 flex flex-col justify-between text-white transition-all duration-300 ease-in-out rounded-none overflow-y-auto ${mobileMenuOpen
-            ? "translate-x-0 opacity-100 shadow-[15px_0_35px_rgba(0,0,0,0.6)] visible pointer-events-auto"
-            : "-translate-x-full opacity-0 shadow-none invisible pointer-events-none"
+          ? "translate-x-0 opacity-100 shadow-[15px_0_35px_rgba(0,0,0,0.6)] visible pointer-events-auto"
+          : "-translate-x-full opacity-0 shadow-none invisible pointer-events-none"
           }`}
       >
         <div>

@@ -48,12 +48,26 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${plusJakartaSans.variable} ${hindSiliguri.variable} dark scroll-smooth`}
+      suppressHydrationWarning
+      className={`${inter.variable} ${plusJakartaSans.variable} ${hindSiliguri.variable} scroll-smooth`}
     >
       <head>
         <link rel="icon" href="/fav.png" type="image/png" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.getItem('theme') === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
       </head>
-      <body className="min-h-screen flex flex-col bg-slate-950 text-slate-100 antialiased font-sans">
+      <body className="min-h-screen flex flex-col bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased font-sans">
         {children}
       </body>
     </html>

@@ -6,19 +6,19 @@ import { Sun, Moon, Menu, X } from "lucide-react";
 import UiverseButton from "./UiverseButton";
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "light") {
-      setDarkMode(false);
-      document.documentElement.classList.remove("dark");
-    } else {
+    if (savedTheme === "dark") {
       setDarkMode(true);
       document.documentElement.classList.add("dark");
+    } else {
+      setDarkMode(false);
+      document.documentElement.classList.remove("dark");
     }
 
     const handleScroll = () => {
@@ -113,19 +113,12 @@ export default function Navbar() {
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Logo: White Logo when on dark hero or in dark mode; original logo when scrolled in light mode */}
+          {/* Brand Logo: Colorful Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <img
-              src="/logo-new-white.png"
-              alt="Pabna Online Logo"
-              className={`h-11 sm:h-16 md:h-18 w-auto object-contain transition-all ${isScrolled ? "hidden dark:block" : "block"
-                }`}
-            />
             <img
               src="/Website-img/logo-1.jpg"
               alt="Pabna Online Logo"
-              className={`h-11 sm:h-16 md:h-18 w-auto object-contain rounded-lg ${isScrolled ? "block dark:hidden" : "hidden"
-                }`}
+              className="h-11 sm:h-16 md:h-18 w-auto object-contain rounded-lg"
             />
           </Link>
 
@@ -229,14 +222,9 @@ export default function Navbar() {
           <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
               <img
-                src="/logo-new-white.png"
-                alt="Pabna Online Logo"
-                className="h-10 sm:h-12 w-auto object-contain hidden dark:block"
-              />
-              <img
                 src="/Website-img/logo-1.jpg"
                 alt="Pabna Online Logo"
-                className="h-10 sm:h-12 w-auto object-contain block dark:hidden rounded-lg"
+                className="h-10 sm:h-12 w-auto object-contain rounded-lg"
               />
             </Link>
             <button

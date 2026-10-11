@@ -9,7 +9,7 @@ const packages = [
   {
     id: 1,
     name: "Bit",
-    price: "525",
+    price: "500",
     speed: "32",
     features: [
       { name: "Youtube Speed", desc: "Bufferless. (Up to 100 Mbps)" },
@@ -21,25 +21,11 @@ const packages = [
     icon: Wifi,
     isPopular: false,
   },
+
   {
     id: 2,
-    name: "Byte",
-    price: "630",
-    speed: "50",
-    features: [
-      { name: "Youtube Speed", desc: "Bufferless. (Up to 100 Mbps)" },
-      { name: "Facebook Speed", desc: "Bufferless. (Up to 100 Mbps)" },
-      { name: "NON-Stop BDIX Speed", desc: "Unlimited. (Up to 100 Mbps)" },
-      { name: "Local FTP/Web Server", desc: "Bufferless. (Up to 100 Mbps)" },
-      { name: "Streaming", desc: "Bufferless. (Up to 100 Mbps)" },
-    ],
-    icon: Rocket,
-    isPopular: false,
-  },
-  {
-    id: 3,
-    name: "Binary",
-    price: "850",
+    name: " Byte",
+    price: "800",
     speed: "80",
     features: [
       { name: "Youtube Speed", desc: "Bufferless. (Up to 100 Mbps)" },
@@ -52,9 +38,9 @@ const packages = [
     isPopular: true, // Signature popular package
   },
   {
-    id: 4,
-    name: "Pi",
-    price: "1050",
+    id: 3,
+    name: " Binary",
+    price: "1000",
     speed: "100",
     features: [
       { name: "Youtube Speed", desc: "Bufferless. (Above 100 Mbps)" },
@@ -67,9 +53,9 @@ const packages = [
     isPopular: false,
   },
   {
-    id: 5,
-    name: "Lambda",
-    price: "1250",
+    id: 4,
+    name: " Pi",
+    price: "1200",
     speed: "130",
     features: [
       { name: "Youtube Speed", desc: "Bufferless. (Above 100 Mbps)" },
@@ -82,9 +68,9 @@ const packages = [
     isPopular: false,
   },
   {
-    id: 6,
-    name: "Core",
-    price: "1550",
+    id: 5,
+    name: " Lambda",
+    price: "1500",
     speed: "160",
     features: [
       { name: "Youtube Speed", desc: "Bufferless. (Above 100 Mbps)" },
@@ -94,6 +80,21 @@ const packages = [
       { name: "Streaming", desc: "Bufferless. (Above 100 Mbps)" },
     ],
     icon: Cpu,
+    isPopular: false,
+  },
+  {
+    id: 6,
+    name: "Core",
+    price: "2000",
+    speed: "190",
+    features: [
+      { name: "Youtube Speed", desc: "Bufferless. (Up to 100 Mbps)" },
+      { name: "Facebook Speed", desc: "Bufferless. (Up to 100 Mbps)" },
+      { name: "NON-Stop BDIX Speed", desc: "Unlimited. (Up to 100 Mbps)" },
+      { name: "Local FTP/Web Server", desc: "Bufferless. (Up to 100 Mbps)" },
+      { name: "Streaming", desc: "Bufferless. (Up to 100 Mbps)" },
+    ],
+    icon: Rocket,
     isPopular: false,
   },
 ];
@@ -176,8 +177,8 @@ export default function PricingSection() {
               onClick={() => setSelectedPkg(pkg)}
               onMouseMove={handleMouseMove}
               className={`group relative rounded-[2rem] bg-white dark:bg-slate-900 transition-all duration-500 ease-out cursor-pointer flex flex-col h-full ${pkg.isPopular
-                  ? "scale-105 hover:scale-[1.06] hover:-translate-y-1.5 z-20 shadow-[0_20px_60px_-15px_rgba(16,185,129,0.3)] dark:shadow-[0_20px_50px_-15px_rgba(16,185,129,0.2)] border-2 border-emerald-500 dark:border-emerald-500"
-                  : "z-10 border border-slate-200 dark:border-slate-800 shadow-sm hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] hover:border-emerald-300 dark:hover:border-emerald-500/50"
+                ? "scale-105 hover:scale-[1.06] hover:-translate-y-1.5 z-20 shadow-[0_20px_60px_-15px_rgba(16,185,129,0.3)] dark:shadow-[0_20px_50px_-15px_rgba(16,185,129,0.2)] border-2 border-emerald-500 dark:border-emerald-500"
+                : "z-10 border border-slate-200 dark:border-slate-800 shadow-sm hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.4)] hover:border-emerald-300 dark:hover:border-emerald-500/50"
                 }`}
             >
               {/* Spider Net Constellation Interactive Canvas Background */}
